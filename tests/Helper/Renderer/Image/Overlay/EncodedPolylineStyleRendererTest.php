@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\EncodedPolylineStyleRenderer;
-use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EncodedPolylineStyleRendererTest extends \PHPUnit_Framework_TestCase
+class EncodedPolylineStyleRendererTest extends TestCase
 {
     /**
      * @var EncodedPolylineStyleRenderer
@@ -28,7 +28,7 @@ class EncodedPolylineStyleRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->encodedPolylineStyleRenderer = new EncodedPolylineStyleRenderer();
     }

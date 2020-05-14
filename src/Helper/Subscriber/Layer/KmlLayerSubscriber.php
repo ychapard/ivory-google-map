@@ -33,11 +33,6 @@ class KmlLayerSubscriber extends AbstractSubscriber
      */
     private $kmlLayerRenderer;
 
-    /**
-     * @param Formatter         $formatter
-     * @param KmlLayerCollector $kmlLayerCollector
-     * @param KmlLayerRenderer  $kmlLayerRenderer
-     */
     public function __construct(
         Formatter $formatter,
         KmlLayerCollector $kmlLayerCollector,
@@ -57,9 +52,6 @@ class KmlLayerSubscriber extends AbstractSubscriber
         return $this->kmlLayerCollector;
     }
 
-    /**
-     * @param KmlLayerCollector $kmlLayerCollector
-     */
     public function setKmlLayerCollector(KmlLayerCollector $kmlLayerCollector)
     {
         $this->kmlLayerCollector = $kmlLayerCollector;
@@ -73,17 +65,11 @@ class KmlLayerSubscriber extends AbstractSubscriber
         return $this->kmlLayerRenderer;
     }
 
-    /**
-     * @param KmlLayerRenderer $kmlLayerRenderer
-     */
     public function setKmlLayerRenderer(KmlLayerRenderer $kmlLayerRenderer)
     {
         $this->kmlLayerRenderer = $kmlLayerRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

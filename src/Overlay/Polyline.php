@@ -87,8 +87,6 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface, StaticOpti
     }
 
     /**
-     * @param Coordinate $coordinate
-     *
      * @return bool
      */
     public function hasCoordinate(Coordinate $coordinate)
@@ -96,17 +94,11 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface, StaticOpti
         return in_array($coordinate, $this->coordinates, true);
     }
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function addCoordinate(Coordinate $coordinate)
     {
         $this->coordinates[] = $coordinate;
     }
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function removeCoordinate(Coordinate $coordinate)
     {
         unset($this->coordinates[array_search($coordinate, $this->coordinates, true)]);
@@ -149,8 +141,6 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface, StaticOpti
     }
 
     /**
-     * @param IconSequence $iconSequence
-     *
      * @return bool
      */
     public function hasIconSequence(IconSequence $iconSequence)
@@ -158,17 +148,11 @@ class Polyline implements ExtendableInterface, OptionsAwareInterface, StaticOpti
         return in_array($iconSequence, $this->iconSequences, true);
     }
 
-    /**
-     * @param IconSequence $iconSequence
-     */
     public function addIconSequence(IconSequence $iconSequence)
     {
         $this->iconSequences[] = $iconSequence;
     }
 
-    /**
-     * @param IconSequence $iconSequence
-     */
     public function removeIconSequence(IconSequence $iconSequence)
     {
         unset($this->iconSequences[array_search($iconSequence, $this->iconSequences, true)]);

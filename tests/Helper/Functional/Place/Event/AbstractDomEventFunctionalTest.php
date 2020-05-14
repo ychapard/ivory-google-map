@@ -27,7 +27,7 @@ abstract class AbstractDomEventFunctionalTest extends AbstractEventFunctionalTes
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

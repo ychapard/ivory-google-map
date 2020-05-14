@@ -60,12 +60,8 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
     private $infoWindow;
 
     /**
-     * @param Coordinate       $position
-     * @param string|null      $animation
-     * @param Icon|null        $icon
-     * @param MarkerShape|null $shape
-     * @param Symbol|null      $symbol
-     * @param mixed[]          $options
+     * @param string|null $animation
+     * @param mixed[]     $options
      */
     public function __construct(
         Coordinate $position,
@@ -80,9 +76,9 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         $this->setShape($shape);
         $this->addOptions($options);
 
-        if ($icon !== null) {
+        if (null !== $icon) {
             $this->setIcon($icon);
-        } elseif ($symbol !== null) {
+        } elseif (null !== $symbol) {
             $this->setSymbol($symbol);
         }
     }
@@ -95,9 +91,6 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         return $this->position;
     }
 
-    /**
-     * @param Coordinate $position
-     */
     public function setPosition(Coordinate $position)
     {
         $this->position = $position;
@@ -108,7 +101,7 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
      */
     public function hasAnimation()
     {
-        return $this->animation !== null;
+        return null !== $this->animation;
     }
 
     /**
@@ -132,7 +125,7 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
      */
     public function hasIcon()
     {
-        return $this->icon !== null;
+        return null !== $this->icon;
     }
 
     /**
@@ -143,14 +136,11 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         return $this->icon;
     }
 
-    /**
-     * @param Icon|null $icon
-     */
     public function setIcon(Icon $icon = null)
     {
         $this->icon = $icon;
 
-        if ($icon !== null) {
+        if (null !== $icon) {
             $this->setSymbol(null);
         }
     }
@@ -160,7 +150,7 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
      */
     public function hasSymbol()
     {
-        return $this->symbol !== null;
+        return null !== $this->symbol;
     }
 
     /**
@@ -171,14 +161,11 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         return $this->symbol;
     }
 
-    /**
-     * @param Symbol|null $symbol
-     */
     public function setSymbol(Symbol $symbol = null)
     {
         $this->symbol = $symbol;
 
-        if ($symbol !== null) {
+        if (null !== $symbol) {
             $this->setIcon(null);
         }
     }
@@ -188,7 +175,7 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
      */
     public function hasShape()
     {
-        return $this->shape !== null;
+        return null !== $this->shape;
     }
 
     /**
@@ -199,9 +186,6 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         return $this->shape;
     }
 
-    /**
-     * @param MarkerShape|null $shape
-     */
     public function setShape(MarkerShape $shape = null)
     {
         $this->shape = $shape;
@@ -212,7 +196,7 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
      */
     public function hasInfoWindow()
     {
-        return $this->infoWindow !== null;
+        return null !== $this->infoWindow;
     }
 
     /**
@@ -223,9 +207,6 @@ class Marker implements ExtendableInterface, OptionsAwareInterface, StaticOption
         return $this->infoWindow;
     }
 
-    /**
-     * @param InfoWindow|null $infoWindow
-     */
     public function setInfoWindow(InfoWindow $infoWindow = null)
     {
         $this->infoWindow = $infoWindow;

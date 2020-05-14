@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Overlay\Circle;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CircleTest extends \PHPUnit_Framework_TestCase
+class CircleTest extends TestCase
 {
     /**
      * @var \Ivory\GoogleMap\Overlay\Circle
@@ -28,14 +30,14 @@ class CircleTest extends \PHPUnit_Framework_TestCase
     private $circle;
 
     /**
-     * @var Coordinate|\PHPUnit_Framework_MockObject_MockObject
+     * @var Coordinate|MockObject
      */
     private $center;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->circle = new Circle($this->center = $this->createCoordinateMock());
     }
@@ -80,7 +82,7 @@ class CircleTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

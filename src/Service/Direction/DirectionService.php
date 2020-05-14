@@ -25,11 +25,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class DirectionService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -39,8 +34,6 @@ class DirectionService extends AbstractSerializableService
     }
 
     /**
-     * @param DirectionRequestInterface $request
-     *
      * @return DirectionResponse
      */
     public function route(DirectionRequestInterface $request)

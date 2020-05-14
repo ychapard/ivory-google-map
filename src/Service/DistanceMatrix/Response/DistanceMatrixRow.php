@@ -57,8 +57,6 @@ class DistanceMatrixRow
     }
 
     /**
-     * @param DistanceMatrixElement $element
-     *
      * @return bool
      */
     public function hasElement(DistanceMatrixElement $element)
@@ -66,9 +64,6 @@ class DistanceMatrixRow
         return in_array($element, $this->elements, true);
     }
 
-    /**
-     * @param DistanceMatrixElement $element
-     */
     public function addElement(DistanceMatrixElement $element)
     {
         if (!$this->hasElement($element)) {
@@ -76,9 +71,6 @@ class DistanceMatrixRow
         }
     }
 
-    /**
-     * @param DistanceMatrixElement $element
-     */
     public function removeElement(DistanceMatrixElement $element)
     {
         unset($this->elements[array_search($element, $this->elements, true)]);

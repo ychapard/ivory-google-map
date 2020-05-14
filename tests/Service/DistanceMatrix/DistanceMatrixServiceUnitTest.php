@@ -9,13 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Elevation;
+namespace Ivory\Tests\GoogleMap\Service\DistanceMatrix;
 
 use Ivory\GoogleMap\Service\DistanceMatrix\DistanceMatrixService;
 use Ivory\GoogleMap\Service\DistanceMatrix\Request\DistanceMatrixRequestInterface;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixResponse;
 use Ivory\Serializer\Context\Context;
 use Ivory\Tests\GoogleMap\Service\AbstractUnitServiceTest;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,7 +31,7 @@ class DistanceMatrixServiceUnitTest extends AbstractUnitServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -105,7 +106,7 @@ class DistanceMatrixServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DistanceMatrixRequestInterface
+     * @return MockObject|DistanceMatrixRequestInterface
      */
     private function createDistanceMatrixRequestMock()
     {
@@ -113,7 +114,7 @@ class DistanceMatrixServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DistanceMatrixResponse
+     * @return MockObject|DistanceMatrixResponse
      */
     private function createDistanceMatrixResponseMock()
     {

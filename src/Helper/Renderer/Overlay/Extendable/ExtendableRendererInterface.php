@@ -20,9 +20,6 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 interface ExtendableRendererInterface
 {
     /**
-     * @param ExtendableInterface $extendable
-     * @param Bound               $bound
-     *
      * @return string
      */
     public function render(ExtendableInterface $extendable, Bound $bound);

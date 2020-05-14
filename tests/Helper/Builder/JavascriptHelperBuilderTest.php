@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class JavascriptHelperBuilderTest extends \PHPUnit_Framework_TestCase
+class JavascriptHelperBuilderTest extends TestCase
 {
     /**
      * @var AbstractJavascriptHelperBuilder
@@ -29,7 +31,7 @@ class JavascriptHelperBuilderTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->helperBuilder = $this->createAbstractJavascriptHelperBuilder();
     }
@@ -77,10 +79,7 @@ class JavascriptHelperBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractJavascriptHelperBuilder
+     * @return MockObject|AbstractJavascriptHelperBuilder
      */
     private function createAbstractJavascriptHelperBuilder(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
     {
@@ -90,7 +89,7 @@ class JavascriptHelperBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Formatter
+     * @return MockObject|Formatter
      */
     private function createFormatterMock()
     {
@@ -98,7 +97,7 @@ class JavascriptHelperBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|JsonBuilder
+     * @return MockObject|JsonBuilder
      */
     private function createJsonBuilderMock()
     {

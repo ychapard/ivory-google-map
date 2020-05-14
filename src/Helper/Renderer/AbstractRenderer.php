@@ -23,9 +23,6 @@ abstract class AbstractRenderer
      */
     private $formatter;
 
-    /**
-     * @param Formatter $formatter
-     */
     public function __construct(Formatter $formatter)
     {
         $this->setFormatter($formatter);

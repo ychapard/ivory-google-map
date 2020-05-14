@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\EncodedPolylineRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EncodedPolylineRendererTest extends \PHPUnit_Framework_TestCase
+class EncodedPolylineRendererTest extends TestCase
 {
     /**
      * @var EncodedPolylineRenderer
@@ -32,7 +34,7 @@ class EncodedPolylineRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->encodedPolylineRenderer = new EncodedPolylineRenderer(
             $formatter = new Formatter(),
@@ -68,7 +70,7 @@ class EncodedPolylineRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EncodingRenderer
+     * @return MockObject|EncodingRenderer
      */
     private function createEncodingRendererMock()
     {

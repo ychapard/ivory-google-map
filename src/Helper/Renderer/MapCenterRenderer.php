@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Map;
 class MapCenterRenderer extends AbstractRenderer
 {
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function render(Map $map)

@@ -38,7 +38,7 @@ class DirectionWaypoint
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -49,9 +49,6 @@ class DirectionWaypoint
         return $this->location;
     }
 
-    /**
-     * @param Coordinate $location
-     */
     public function setLocation(Coordinate $location)
     {
         $this->location = $location;
@@ -62,7 +59,7 @@ class DirectionWaypoint
      */
     public function hasStepIndex()
     {
-        return $this->stepIndex !== null;
+        return null !== $this->stepIndex;
     }
 
     /**
@@ -86,7 +83,7 @@ class DirectionWaypoint
      */
     public function hasStepInterpolation()
     {
-        return $this->stepInterpolation !== null;
+        return null !== $this->stepInterpolation;
     }
 
     /**

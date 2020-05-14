@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Overlay\Polyline;
 class PolylineStyleRenderer extends AbstractPolylineStyleRenderer
 {
     /**
-     * @param Polyline $polyline
-     *
      * @return string
      */
     public function render(Polyline $polyline)

@@ -30,7 +30,7 @@ abstract class AbstractGeocoderRequest implements GeocoderRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**
@@ -64,8 +64,6 @@ abstract class AbstractGeocoderRequest implements GeocoderRequestInterface
     }
 
     /**
-     * @param Coordinate $place
-     *
      * @return string
      */
     protected function buildCoordinate(Coordinate $place)

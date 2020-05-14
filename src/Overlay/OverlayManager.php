@@ -73,7 +73,7 @@ class OverlayManager
      */
     public function hasMap()
     {
-        return $this->map !== null;
+        return null !== $this->map;
     }
 
     /**
@@ -84,9 +84,6 @@ class OverlayManager
         return $this->map;
     }
 
-    /**
-     * @param Map $map
-     */
     public function setMap(Map $map)
     {
         $this->map = $map;
@@ -104,9 +101,6 @@ class OverlayManager
         return $this->markerCluster;
     }
 
-    /**
-     * @param MarkerCluster $markerCluster
-     */
     public function setMarkerCluster(MarkerCluster $markerCluster)
     {
         $this->markerCluster = $markerCluster;
@@ -149,8 +143,6 @@ class OverlayManager
     }
 
     /**
-     * @param Marker $marker
-     *
      * @return bool
      */
     public function hasMarker(Marker $marker)
@@ -158,17 +150,11 @@ class OverlayManager
         return $this->markerCluster->hasMarker($marker);
     }
 
-    /**
-     * @param Marker $marker
-     */
     public function addMarker(Marker $marker)
     {
         $this->markerCluster->addMarker($marker);
     }
 
-    /**
-     * @param Marker $marker
-     */
     public function removeMarker(Marker $marker)
     {
         $this->markerCluster->removeMarker($marker);
@@ -213,8 +199,6 @@ class OverlayManager
     }
 
     /**
-     * @param InfoWindow $infoWindow
-     *
      * @return bool
      */
     public function hasInfoWindow(InfoWindow $infoWindow)
@@ -222,9 +206,6 @@ class OverlayManager
         return in_array($infoWindow, $this->infoWindows, true);
     }
 
-    /**
-     * @param InfoWindow $infoWindow
-     */
     public function addInfoWindow(InfoWindow $infoWindow)
     {
         if (!$this->hasInfoWindow($infoWindow)) {
@@ -234,9 +215,6 @@ class OverlayManager
         $this->addExtendable($infoWindow);
     }
 
-    /**
-     * @param InfoWindow $infoWindow
-     */
     public function removeInfoWindow(InfoWindow $infoWindow)
     {
         unset($this->infoWindows[array_search($infoWindow, $this->infoWindows, true)]);
@@ -283,8 +261,6 @@ class OverlayManager
     }
 
     /**
-     * @param Polyline $polyline
-     *
      * @return bool
      */
     public function hasPolyline(Polyline $polyline)
@@ -292,9 +268,6 @@ class OverlayManager
         return in_array($polyline, $this->polylines, true);
     }
 
-    /**
-     * @param Polyline $polyline
-     */
     public function addPolyline(Polyline $polyline)
     {
         if (!$this->hasPolyline($polyline)) {
@@ -304,9 +277,6 @@ class OverlayManager
         $this->addExtendable($polyline);
     }
 
-    /**
-     * @param Polyline $polyline
-     */
     public function removePolyline(Polyline $polyline)
     {
         unset($this->polylines[array_search($polyline, $this->polylines, true)]);
@@ -353,8 +323,6 @@ class OverlayManager
     }
 
     /**
-     * @param EncodedPolyline $encodedPolyline
-     *
      * @return bool
      */
     public function hasEncodedPolyline(EncodedPolyline $encodedPolyline)
@@ -362,9 +330,6 @@ class OverlayManager
         return in_array($encodedPolyline, $this->encodedPolylines, true);
     }
 
-    /**
-     * @param EncodedPolyline $encodedPolyline
-     */
     public function addEncodedPolyline(EncodedPolyline $encodedPolyline)
     {
         if (!$this->hasEncodedPolyline($encodedPolyline)) {
@@ -374,9 +339,6 @@ class OverlayManager
         $this->addExtendable($encodedPolyline);
     }
 
-    /**
-     * @param EncodedPolyline $encodedPolyline
-     */
     public function removeEncodedPolyline(EncodedPolyline $encodedPolyline)
     {
         unset($this->encodedPolylines[array_search($encodedPolyline, $this->encodedPolylines, true)]);
@@ -423,8 +385,6 @@ class OverlayManager
     }
 
     /**
-     * @param Polygon $polygon
-     *
      * @return bool
      */
     public function hasPolygon(Polygon $polygon)
@@ -432,9 +392,6 @@ class OverlayManager
         return in_array($polygon, $this->polygons, true);
     }
 
-    /**
-     * @param Polygon $polygon
-     */
     public function addPolygon(Polygon $polygon)
     {
         if (!$this->hasPolygon($polygon)) {
@@ -444,9 +401,6 @@ class OverlayManager
         $this->addExtendable($polygon);
     }
 
-    /**
-     * @param Polygon $polygon
-     */
     public function removePolygon(Polygon $polygon)
     {
         unset($this->polygons[array_search($polygon, $this->polygons, true)]);
@@ -493,8 +447,6 @@ class OverlayManager
     }
 
     /**
-     * @param Rectangle $rectangle
-     *
      * @return bool
      */
     public function hasRectangle(Rectangle $rectangle)
@@ -502,9 +454,6 @@ class OverlayManager
         return in_array($rectangle, $this->rectangles, true);
     }
 
-    /**
-     * @param Rectangle $rectangle
-     */
     public function addRectangle(Rectangle $rectangle)
     {
         if (!$this->hasRectangle($rectangle)) {
@@ -514,9 +463,6 @@ class OverlayManager
         $this->addExtendable($rectangle);
     }
 
-    /**
-     * @param Rectangle $rectangle
-     */
     public function removeRectangle(Rectangle $rectangle)
     {
         unset($this->rectangles[array_search($rectangle, $this->rectangles, true)]);
@@ -563,8 +509,6 @@ class OverlayManager
     }
 
     /**
-     * @param Circle $circle
-     *
      * @return bool
      */
     public function hasCircle(Circle $circle)
@@ -572,9 +516,6 @@ class OverlayManager
         return in_array($circle, $this->circles, true);
     }
 
-    /**
-     * @param Circle $circle
-     */
     public function addCircle(Circle $circle)
     {
         if (!$this->hasCircle($circle)) {
@@ -584,9 +525,6 @@ class OverlayManager
         $this->addExtendable($circle);
     }
 
-    /**
-     * @param Circle $circle
-     */
     public function removeCircle(Circle $circle)
     {
         unset($this->circles[array_search($circle, $this->circles, true)]);
@@ -633,8 +571,6 @@ class OverlayManager
     }
 
     /**
-     * @param GroundOverlay $groundOverlay
-     *
      * @return bool
      */
     public function hasGroundOverlay(GroundOverlay $groundOverlay)
@@ -642,9 +578,6 @@ class OverlayManager
         return in_array($groundOverlay, $this->groundOverlays, true);
     }
 
-    /**
-     * @param GroundOverlay $groundOverlay
-     */
     public function addGroundOverlay(GroundOverlay $groundOverlay)
     {
         if (!$this->hasGroundOverlay($groundOverlay)) {
@@ -654,9 +587,6 @@ class OverlayManager
         $this->addExtendable($groundOverlay);
     }
 
-    /**
-     * @param GroundOverlay $groundOverlay
-     */
     public function removeGroundOverlay(GroundOverlay $groundOverlay)
     {
         unset($this->groundOverlays[array_search($groundOverlay, $this->groundOverlays, true)]);
@@ -664,9 +594,6 @@ class OverlayManager
         $this->removeExtendable($groundOverlay);
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     private function addExtendable(ExtendableInterface $extendable)
     {
         if ($this->isAutoZoom()) {
@@ -674,9 +601,6 @@ class OverlayManager
         }
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     private function removeExtendable(ExtendableInterface $extendable)
     {
         if ($this->isAutoZoom()) {

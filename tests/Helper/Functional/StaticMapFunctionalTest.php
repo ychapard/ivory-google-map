@@ -28,6 +28,7 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\GoogleMap\Overlay\Icon;
 use Ivory\GoogleMap\Overlay\Marker;
 use Ivory\GoogleMap\Overlay\Polyline;
+use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 
@@ -36,7 +37,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
  *
  * @group functional
  */
-class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
+class StaticMapFunctionalTest extends TestCase
 {
     /**
      * @var StaticMapHelper
@@ -61,7 +62,7 @@ class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!isset($_SERVER['API_KEY'])) {
             $this->markTestSkipped();
@@ -167,7 +168,7 @@ class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
                 'rules'   => [
                     'visibility' => 'simplified',
                     'color'      => '0xbababa',
-                ]
+                ],
             ],
         ]);
 
@@ -363,8 +364,7 @@ class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped();
         }
 
-        $this->staticMapHelper = StaticMapHelperBuilder::create()
-            ->setKey($_SERVER['API_KEY'])
+        $this->staticMapHelper = StaticMapHelperBuilder::create($_SERVER['API_KEY'])
             ->setSecret($_SERVER['API_SECRET'])
             ->build();
 
@@ -376,8 +376,7 @@ class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
      */
     protected function createStaticMapHelper()
     {
-        return StaticMapHelperBuilder::create()
-            ->setKey($_SERVER['API_KEY'])
+        return StaticMapHelperBuilder::create($_SERVER['API_KEY'])
             ->build();
     }
 
@@ -418,9 +417,6 @@ class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
         return new EncodedPolyline('yv_tHizrQiGsR`HcP');
     }
 
-    /**
-     * @param Map $map
-     */
     private function renderMap(Map $map)
     {
         $request = $this->messageFactory->createRequest('GET', $this->staticMapHelper->render($map));

@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Place\AutocompleteComponentType;
 use Ivory\GoogleMap\Place\AutocompleteType;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\AbstractPlaceAutocompleteRequest;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\PlaceAutocompleteRequest;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteRequestTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteRequestTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteRequest
@@ -34,7 +35,7 @@ class PlaceAutocompleteRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new PlaceAutocompleteRequest($this->input = 'input');
     }

@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\ApiInitRenderer;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ApiInitRendererTest extends\PHPUnit_Framework_TestCase
+class ApiInitRendererTest extends TestCase
 {
     /**
      * @var ApiInitRenderer
@@ -28,7 +29,7 @@ class ApiInitRendererTest extends\PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->apiInitRenderer = new ApiInitRenderer(new Formatter());
     }

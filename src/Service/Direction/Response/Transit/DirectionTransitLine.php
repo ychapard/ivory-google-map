@@ -61,7 +61,7 @@ class DirectionTransitLine
      */
     public function hasName()
     {
-        return $this->name !== null;
+        return null !== $this->name;
     }
 
     /**
@@ -85,7 +85,7 @@ class DirectionTransitLine
      */
     public function hasShortName()
     {
-        return $this->shortName !== null;
+        return null !== $this->shortName;
     }
 
     /**
@@ -109,7 +109,7 @@ class DirectionTransitLine
      */
     public function hasColor()
     {
-        return $this->color !== null;
+        return null !== $this->color;
     }
 
     /**
@@ -133,7 +133,7 @@ class DirectionTransitLine
      */
     public function hasUrl()
     {
-        return $this->url !== null;
+        return null !== $this->url;
     }
 
     /**
@@ -157,7 +157,7 @@ class DirectionTransitLine
      */
     public function hasIcon()
     {
-        return $this->icon !== null;
+        return null !== $this->icon;
     }
 
     /**
@@ -181,7 +181,7 @@ class DirectionTransitLine
      */
     public function hasTextColor()
     {
-        return $this->textColor !== null;
+        return null !== $this->textColor;
     }
 
     /**
@@ -205,7 +205,7 @@ class DirectionTransitLine
      */
     public function hasVehicle()
     {
-        return $this->vehicle !== null;
+        return null !== $this->vehicle;
     }
 
     /**
@@ -216,9 +216,6 @@ class DirectionTransitLine
         return $this->vehicle;
     }
 
-    /**
-     * @param DirectionTransitVehicle|null $vehicle
-     */
     public function setVehicle(DirectionTransitVehicle $vehicle = null)
     {
         $this->vehicle = $vehicle;
@@ -260,8 +257,6 @@ class DirectionTransitLine
     }
 
     /**
-     * @param DirectionTransitAgency $agency
-     *
      * @return bool
      */
     public function hasAgency(DirectionTransitAgency $agency)
@@ -269,9 +264,6 @@ class DirectionTransitLine
         return in_array($agency, $this->agencies, true);
     }
 
-    /**
-     * @param DirectionTransitAgency $agency
-     */
     public function addAgency(DirectionTransitAgency $agency)
     {
         if (!$this->hasAgency($agency)) {
@@ -279,9 +271,6 @@ class DirectionTransitLine
         }
     }
 
-    /**
-     * @param DirectionTransitAgency $agency
-     */
     public function removeAgency(DirectionTransitAgency $agency)
     {
         unset($this->agencies[array_search($agency, $this->agencies, true)]);

@@ -31,11 +31,13 @@ use Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlStyleRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ControlManagerRendererTest extends \PHPUnit_Framework_TestCase
+class ControlManagerRendererTest extends TestCase
 {
     /**
      * @var ControlManagerRenderer
@@ -45,7 +47,7 @@ class ControlManagerRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->controlManagerRenderer = new ControlManagerRenderer();
     }
@@ -146,7 +148,7 @@ class ControlManagerRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ControlRendererInterface
+     * @return MockObject|ControlRendererInterface
      */
     private function createControlRendererMock()
     {

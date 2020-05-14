@@ -33,11 +33,6 @@ class ExtendableSubscriber extends AbstractSubscriber
      */
     private $extendableRenderer;
 
-    /**
-     * @param Formatter           $formatter
-     * @param ExtendableCollector $extendableCollector
-     * @param ExtendableRenderer  $extendableRenderer
-     */
     public function __construct(
         Formatter $formatter,
         ExtendableCollector $extendableCollector,
@@ -57,9 +52,6 @@ class ExtendableSubscriber extends AbstractSubscriber
         return $this->extendableCollector;
     }
 
-    /**
-     * @param ExtendableCollector $extendableCollector
-     */
     public function setExtendableCollector(ExtendableCollector $extendableCollector)
     {
         $this->extendableCollector = $extendableCollector;
@@ -73,17 +65,11 @@ class ExtendableSubscriber extends AbstractSubscriber
         return $this->extendableRenderer;
     }
 
-    /**
-     * @param ExtendableRenderer $extendableRenderer
-     */
     public function setExtendableRenderer(ExtendableRenderer $extendableRenderer)
     {
         $this->extendableRenderer = $extendableRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

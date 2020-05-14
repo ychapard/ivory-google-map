@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Helper\Collector\Overlay\RectangleCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\GroundOverlay;
 use Ivory\GoogleMap\Overlay\Rectangle;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class BoundCollectorTest extends \PHPUnit_Framework_TestCase
+class BoundCollectorTest extends TestCase
 {
     /**
      * @var BoundCollector
@@ -32,7 +34,7 @@ class BoundCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->boundCollector = new BoundCollector(new GroundOverlayCollector(), new RectangleCollector());
     }
@@ -83,7 +85,7 @@ class BoundCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|GroundOverlayCollector
+     * @return MockObject|GroundOverlayCollector
      */
     private function createGroundOverlayCollectorMock()
     {
@@ -91,7 +93,7 @@ class BoundCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|RectangleCollector
+     * @return MockObject|RectangleCollector
      */
     private function createRectangleCollectorMock()
     {

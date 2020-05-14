@@ -23,11 +23,6 @@ class StylesheetTagRenderer extends AbstractTagRenderer
      */
     private $stylesheetRenderer;
 
-    /**
-     * @param Formatter          $formatter
-     * @param TagRenderer        $tagRenderer
-     * @param StylesheetRenderer $stylesheetRenderer
-     */
     public function __construct(Formatter $formatter, TagRenderer $tagRenderer, StylesheetRenderer $stylesheetRenderer)
     {
         parent::__construct($formatter, $tagRenderer);
@@ -43,9 +38,6 @@ class StylesheetTagRenderer extends AbstractTagRenderer
         return $this->stylesheetRenderer;
     }
 
-    /**
-     * @param StylesheetRenderer $stylesheetRenderer
-     */
     public function setStylesheetRenderer(StylesheetRenderer $stylesheetRenderer)
     {
         $this->stylesheetRenderer = $stylesheetRenderer;

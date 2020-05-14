@@ -33,11 +33,6 @@ class CircleSubscriber extends AbstractSubscriber
      */
     private $circleRenderer;
 
-    /**
-     * @param Formatter       $formatter
-     * @param CircleCollector $circleCollector
-     * @param CircleRenderer  $circleRenderer
-     */
     public function __construct(
         Formatter $formatter,
         CircleCollector $circleCollector,
@@ -57,9 +52,6 @@ class CircleSubscriber extends AbstractSubscriber
         return $this->circleCollector;
     }
 
-    /**
-     * @param CircleCollector $circleCollector
-     */
     public function setCircleCollector(CircleCollector $circleCollector)
     {
         $this->circleCollector = $circleCollector;
@@ -73,17 +65,11 @@ class CircleSubscriber extends AbstractSubscriber
         return $this->circleRenderer;
     }
 
-    /**
-     * @param CircleRenderer $circleRenderer
-     */
     public function setCircleRenderer(CircleRenderer $circleRenderer)
     {
         $this->circleRenderer = $circleRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

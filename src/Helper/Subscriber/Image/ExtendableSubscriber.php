@@ -32,19 +32,12 @@ class ExtendableSubscriber implements EventSubscriberInterface
      */
     private $extendableRenderer;
 
-    /**
-     * @param ExtendableCollector $extendableCollector
-     * @param ExtendableRenderer  $extendableRenderer
-     */
     public function __construct(ExtendableCollector $extendableCollector, ExtendableRenderer $extendableRenderer)
     {
         $this->extendableCollector = $extendableCollector;
         $this->extendableRenderer = $extendableRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $map = $event->getMap();

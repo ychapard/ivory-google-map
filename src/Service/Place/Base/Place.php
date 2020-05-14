@@ -134,7 +134,7 @@ class Place
      */
     public function hasId()
     {
-        return $this->id !== null;
+        return null !== $this->id;
     }
 
     /**
@@ -158,7 +158,7 @@ class Place
      */
     public function hasPlaceId()
     {
-        return $this->placeId !== null;
+        return null !== $this->placeId;
     }
 
     /**
@@ -182,7 +182,7 @@ class Place
      */
     public function hasName()
     {
-        return $this->name !== null;
+        return null !== $this->name;
     }
 
     /**
@@ -206,7 +206,7 @@ class Place
      */
     public function hasFormattedAddress()
     {
-        return $this->formattedAddress !== null;
+        return null !== $this->formattedAddress;
     }
 
     /**
@@ -230,7 +230,7 @@ class Place
      */
     public function hasFormattedPhoneNumber()
     {
-        return $this->formattedPhoneNumber !== null;
+        return null !== $this->formattedPhoneNumber;
     }
 
     /**
@@ -254,7 +254,7 @@ class Place
      */
     public function hasInternationalPhoneNumber()
     {
-        return $this->internationalPhoneNumber !== null;
+        return null !== $this->internationalPhoneNumber;
     }
 
     /**
@@ -278,7 +278,7 @@ class Place
      */
     public function hasUrl()
     {
-        return $this->url !== null;
+        return null !== $this->url;
     }
 
     /**
@@ -302,7 +302,7 @@ class Place
      */
     public function hasIcon()
     {
-        return $this->icon !== null;
+        return null !== $this->icon;
     }
 
     /**
@@ -326,7 +326,7 @@ class Place
      */
     public function hasScope()
     {
-        return $this->scope !== null;
+        return null !== $this->scope;
     }
 
     /**
@@ -350,7 +350,7 @@ class Place
      */
     public function hasPriceLevel()
     {
-        return $this->priceLevel !== null;
+        return null !== $this->priceLevel;
     }
 
     /**
@@ -374,7 +374,7 @@ class Place
      */
     public function hasRating()
     {
-        return $this->rating !== null;
+        return null !== $this->rating;
     }
 
     /**
@@ -398,7 +398,7 @@ class Place
      */
     public function hasUtcOffset()
     {
-        return $this->utcOffset !== null;
+        return null !== $this->utcOffset;
     }
 
     /**
@@ -422,7 +422,7 @@ class Place
      */
     public function hasVicinity()
     {
-        return $this->vicinity !== null;
+        return null !== $this->vicinity;
     }
 
     /**
@@ -446,7 +446,7 @@ class Place
      */
     public function hasWebsite()
     {
-        return $this->website !== null;
+        return null !== $this->website;
     }
 
     /**
@@ -470,7 +470,7 @@ class Place
      */
     public function hasGeometry()
     {
-        return $this->geometry !== null;
+        return null !== $this->geometry;
     }
 
     /**
@@ -481,9 +481,6 @@ class Place
         return $this->geometry;
     }
 
-    /**
-     * @param Geometry|null $geometry
-     */
     public function setGeometry(Geometry $geometry = null)
     {
         $this->geometry = $geometry;
@@ -494,7 +491,7 @@ class Place
      */
     public function hasOpeningHours()
     {
-        return $this->openingHours !== null;
+        return null !== $this->openingHours;
     }
 
     /**
@@ -505,9 +502,6 @@ class Place
         return $this->openingHours;
     }
 
-    /**
-     * @param OpeningHours|null $openingHours
-     */
     public function setOpeningHours(OpeningHours $openingHours = null)
     {
         $this->openingHours = $openingHours;
@@ -532,7 +526,7 @@ class Place
      */
     public function getAddressComponents($type = null)
     {
-        if ($type === null) {
+        if (null === $type) {
             return $this->addressComponents;
         }
 
@@ -567,8 +561,6 @@ class Place
     }
 
     /**
-     * @param AddressComponent $addressComponent
-     *
      * @return bool
      */
     public function hasAddressComponent(AddressComponent $addressComponent)
@@ -576,9 +568,6 @@ class Place
         return in_array($addressComponent, $this->addressComponents, true);
     }
 
-    /**
-     * @param AddressComponent $addressComponent
-     */
     public function addAddressComponent(AddressComponent $addressComponent)
     {
         if (!$this->hasAddressComponent($addressComponent)) {
@@ -586,9 +575,6 @@ class Place
         }
     }
 
-    /**
-     * @param AddressComponent $addressComponent
-     */
     public function removeAddressComponent(AddressComponent $addressComponent)
     {
         unset($this->addressComponents[array_search($addressComponent, $this->addressComponents, true)]);
@@ -631,8 +617,6 @@ class Place
     }
 
     /**
-     * @param Photo $photo
-     *
      * @return bool
      */
     public function hasPhoto(Photo $photo)
@@ -640,9 +624,6 @@ class Place
         return in_array($photo, $this->photos, true);
     }
 
-    /**
-     * @param Photo $photo
-     */
     public function addPhoto(Photo $photo)
     {
         if (!$this->hasPhoto($photo)) {
@@ -650,9 +631,6 @@ class Place
         }
     }
 
-    /**
-     * @param Photo $photo
-     */
     public function removePhoto(Photo $photo)
     {
         unset($this->photos[array_search($photo, $this->photos, true)]);
@@ -695,8 +673,6 @@ class Place
     }
 
     /**
-     * @param AlternatePlaceId $alternatePlaceId
-     *
      * @return bool
      */
     public function hasAlternatePlaceId(AlternatePlaceId $alternatePlaceId)
@@ -711,9 +687,6 @@ class Place
         }
     }
 
-    /**
-     * @param AlternatePlaceId $alternatePlaceId
-     */
     public function removeAlternatePlaceId(AlternatePlaceId $alternatePlaceId)
     {
         unset($this->alternatePlaceIds[array_search($alternatePlaceId, $this->alternatePlaceIds, true)]);
@@ -756,8 +729,6 @@ class Place
     }
 
     /**
-     * @param Review $review
-     *
      * @return bool
      */
     public function hasReview(Review $review)
@@ -765,9 +736,6 @@ class Place
         return in_array($review, $this->reviews, true);
     }
 
-    /**
-     * @param Review $review
-     */
     public function addReview(Review $review)
     {
         if (!$this->hasReview($review)) {
@@ -775,9 +743,6 @@ class Place
         }
     }
 
-    /**
-     * @param Review $review
-     */
     public function removeReview(Review $review)
     {
         unset($this->reviews[array_search($review, $this->reviews, true)]);
@@ -853,7 +818,7 @@ class Place
      */
     public function hasPermanentlyClose()
     {
-        return $this->permanentlyClose !== null;
+        return null !== $this->permanentlyClose;
     }
 
     /**

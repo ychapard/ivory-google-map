@@ -31,8 +31,7 @@ class DirectionWaypoint
     private $stopover;
 
     /**
-     * @param LocationInterface $location
-     * @param bool|null         $stopover
+     * @param bool|null $stopover
      */
     public function __construct(LocationInterface $location, $stopover = null)
     {
@@ -48,9 +47,6 @@ class DirectionWaypoint
         return $this->location;
     }
 
-    /**
-     * @param LocationInterface $location
-     */
     public function setLocation(LocationInterface $location)
     {
         $this->location = $location;
@@ -61,7 +57,7 @@ class DirectionWaypoint
      */
     public function hasStopover()
     {
-        return $this->stopover !== null;
+        return null !== $this->stopover;
     }
 
     /**

@@ -25,11 +25,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class DistanceMatrixService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -44,8 +39,6 @@ class DistanceMatrixService extends AbstractSerializableService
     }
 
     /**
-     * @param DistanceMatrixRequestInterface $request
-     *
      * @return DistanceMatrixResponse
      */
     public function process(DistanceMatrixRequestInterface $request)

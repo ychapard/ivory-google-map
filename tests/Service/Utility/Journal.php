@@ -39,7 +39,7 @@ class Journal implements JournalInterface
      */
     public function addSuccess(RequestInterface $request, ResponseInterface $response)
     {
-        if (substr($request->getUri()->getPath(), -5) === '/json') {
+        if ('/json' === substr($request->getUri()->getPath(), -5)) {
             $this->data = json_decode((string) $response->getBody(), true);
         }
     }

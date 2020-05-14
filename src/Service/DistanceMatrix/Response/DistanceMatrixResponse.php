@@ -48,7 +48,7 @@ class DistanceMatrixResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -72,7 +72,7 @@ class DistanceMatrixResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -83,9 +83,6 @@ class DistanceMatrixResponse
         return $this->request;
     }
 
-    /**
-     * @param DistanceMatrixRequestInterface|null $request
-     */
     public function setRequest(DistanceMatrixRequestInterface $request = null)
     {
         $this->request = $request;
@@ -255,8 +252,6 @@ class DistanceMatrixResponse
     }
 
     /**
-     * @param DistanceMatrixRow $row
-     *
      * @return bool
      */
     public function hasRow(DistanceMatrixRow $row)
@@ -264,9 +259,6 @@ class DistanceMatrixResponse
         return in_array($row, $this->rows, true);
     }
 
-    /**
-     * @param DistanceMatrixRow $row
-     */
     public function addRow(DistanceMatrixRow $row)
     {
         if (!$this->hasRow($row)) {
@@ -274,9 +266,6 @@ class DistanceMatrixResponse
         }
     }
 
-    /**
-     * @param DistanceMatrixRow $row
-     */
     public function removeRow(DistanceMatrixRow $row)
     {
         unset($this->rows[array_search($row, $this->rows, true)]);

@@ -23,11 +23,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class ElevationService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -37,8 +32,6 @@ class ElevationService extends AbstractSerializableService
     }
 
     /**
-     * @param ElevationRequestInterface $request
-     *
      * @return ElevationResponse
      */
     public function process(ElevationRequestInterface $request)

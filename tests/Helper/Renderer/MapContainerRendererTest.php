@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapContainerRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapContainerRendererTest extends \PHPUnit_Framework_TestCase
+class MapContainerRendererTest extends TestCase
 {
     /**
      * @var MapContainerRenderer
@@ -29,7 +30,7 @@ class MapContainerRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapContainerRenderer = new MapContainerRenderer(new Formatter(), new JsonBuilder());
     }

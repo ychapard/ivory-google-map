@@ -20,9 +20,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 abstract class AbstractDelegateSubscriber extends AbstractSubscriber implements DelegateSubscriberInterface
 {
     /**
-     * @param Event                    $event
-     * @param string                   $eventName
-     * @param EventDispatcherInterface $eventDispatcher
+     * @param string $eventName
      */
     public function handle(Event $event, $eventName, EventDispatcherInterface $eventDispatcher)
     {

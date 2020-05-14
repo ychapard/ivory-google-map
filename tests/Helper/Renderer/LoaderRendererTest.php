@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\LoaderRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class LoaderRendererTest extends \PHPUnit_Framework_TestCase
+class LoaderRendererTest extends TestCase
 {
     /**
      * @var LoaderRenderer
@@ -29,7 +30,7 @@ class LoaderRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->loaderRenderer = new LoaderRenderer(new Formatter(), new JsonBuilder());
     }
@@ -127,7 +128,7 @@ EOF;
     public function testRenderSource()
     {
         $this->assertSame(
-            'https://www.google.com/jsapi?callback=callback',
+            'https://maps.googleapis.com/maps/api/js?callback=callback',
             $this->loaderRenderer->renderSource('callback')
         );
     }

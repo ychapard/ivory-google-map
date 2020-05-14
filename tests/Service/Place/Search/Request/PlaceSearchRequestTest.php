@@ -18,21 +18,23 @@ use Ivory\GoogleMap\Service\Place\Base\PriceLevel;
 use Ivory\GoogleMap\Service\Place\Search\Request\AbstractPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRequestInterface;
 use Ivory\GoogleMap\Service\RequestInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class PlaceSearchRequestTest extends TestCase
 {
     /**
-     * @var AbstractPlaceSearchRequest|\PHPUnit_Framework_MockObject_MockObject
+     * @var AbstractPlaceSearchRequest|MockObject
      */
     private $request;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = $this->createRequestMock();
     }
@@ -177,7 +179,7 @@ class PlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractPlaceSearchRequest
+     * @return MockObject|AbstractPlaceSearchRequest
      */
     private function createRequestMock()
     {
@@ -185,7 +187,7 @@ class PlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

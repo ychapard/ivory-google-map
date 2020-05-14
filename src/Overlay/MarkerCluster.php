@@ -44,7 +44,7 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
      */
     public function hasOverlayManager()
     {
-        return $this->overlayManager !== null;
+        return null !== $this->overlayManager;
     }
 
     /**
@@ -55,9 +55,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
         return $this->overlayManager;
     }
 
-    /**
-     * @param OverlayManager $overlayManager
-     */
     public function setOverlayManager(OverlayManager $overlayManager)
     {
         $this->overlayManager = $overlayManager;
@@ -122,8 +119,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
     }
 
     /**
-     * @param Marker $marker
-     *
      * @return bool
      */
     public function hasMarker(Marker $marker)
@@ -131,9 +126,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
         return in_array($marker, $this->markers, true);
     }
 
-    /**
-     * @param Marker $marker
-     */
     public function addMarker(Marker $marker)
     {
         if (!$this->hasMarker($marker)) {
@@ -143,9 +135,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
         $this->addExtendable($marker);
     }
 
-    /**
-     * @param Marker $marker
-     */
     public function removeMarker(Marker $marker)
     {
         unset($this->markers[array_search($marker, $this->markers, true)]);
@@ -153,9 +142,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
         $this->removeExtendable($marker);
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     private function addExtendable(ExtendableInterface $extendable)
     {
         if ($this->isAutoZoom()) {
@@ -163,9 +149,6 @@ class MarkerCluster implements OptionsAwareInterface, VariableAwareInterface
         }
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     private function removeExtendable(ExtendableInterface $extendable)
     {
         if ($this->isAutoZoom()) {

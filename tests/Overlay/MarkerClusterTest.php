@@ -19,11 +19,13 @@ use Ivory\GoogleMap\Overlay\MarkerClusterType;
 use Ivory\GoogleMap\Overlay\OverlayManager;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerClusterTest extends \PHPUnit_Framework_TestCase
+class MarkerClusterTest extends TestCase
 {
     /**
      * @var MarkerCluster
@@ -31,24 +33,24 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
     private $markerCluster;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|OverlayManager
+     * @var MockObject|OverlayManager
      */
     private $overlayManager;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Map
+     * @var MockObject|Map
      */
     private $map;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @var MockObject|Bound
      */
     private $bound;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bound = $this->createBoundMock();
         $this->map = $this->createMapMock($this->bound);
@@ -234,9 +236,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Map|null $map
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|OverlayManager
+     * @return MockObject|OverlayManager
      */
     private function createOverlayManagerMock(Map $map = null)
     {
@@ -244,7 +244,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
         $overlayManager
             ->expects($this->any())
             ->method('hasMap')
-            ->will($this->returnValue($map !== null));
+            ->will($this->returnValue(null !== $map));
 
         $overlayManager
             ->expects($this->any())
@@ -255,9 +255,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Bound|null $bound
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|Map
+     * @return MockObject|Map
      */
     private function createMapMock(Bound $bound = null)
     {
@@ -271,7 +269,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {
@@ -279,7 +277,7 @@ class MarkerClusterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Marker
+     * @return MockObject|Marker
      */
     private function createMarkerMock()
     {

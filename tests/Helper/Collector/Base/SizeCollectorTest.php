@@ -21,11 +21,13 @@ use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Icon;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\Marker;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SizeCollectorTest extends \PHPUnit_Framework_TestCase
+class SizeCollectorTest extends TestCase
 {
     /**
      * @var SizeCollector
@@ -35,7 +37,7 @@ class SizeCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sizeCollector = new SizeCollector(
             new InfoWindowCollector($markerCollector = new MarkerCollector()),
@@ -89,7 +91,7 @@ class SizeCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|InfoWindowCollector
+     * @return MockObject|InfoWindowCollector
      */
     private function createInfoWindowCollectorMock()
     {
@@ -97,7 +99,7 @@ class SizeCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|IconCollector
+     * @return MockObject|IconCollector
      */
     private function createIconCollectorMock()
     {

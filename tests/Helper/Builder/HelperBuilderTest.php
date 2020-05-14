@@ -12,12 +12,14 @@
 namespace Ivory\Tests\GoogleMap\Helper\Builder;
 
 use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HelperBuilderTest extends \PHPUnit_Framework_TestCase
+class HelperBuilderTest extends TestCase
 {
     /**
      * @var AbstractHelperBuilder
@@ -27,7 +29,7 @@ class HelperBuilderTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->helperBuilder = $this->createAbstractHelperBuilder();
     }
@@ -93,7 +95,7 @@ class HelperBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractHelperBuilder
+     * @return MockObject|AbstractHelperBuilder
      */
     private function createAbstractHelperBuilder()
     {
@@ -101,7 +103,7 @@ class HelperBuilderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EventSubscriberInterface
+     * @return MockObject|EventSubscriberInterface
      */
     private function createEventSubscriberMock()
     {

@@ -21,9 +21,6 @@ use Ivory\GoogleMap\Overlay\Polygon;
 class PolygonRenderer extends AbstractJsonRenderer
 {
     /**
-     * @param Polygon $polygon
-     * @param Map     $map
-     *
      * @return string
      */
     public function render(Polygon $polygon, Map $map)

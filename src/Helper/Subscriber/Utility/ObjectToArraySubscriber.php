@@ -27,10 +27,6 @@ class ObjectToArraySubscriber extends AbstractSubscriber
      */
     private $objectToArrayRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param ObjectToArrayRenderer $objectToArrayRenderer
-     */
     public function __construct(Formatter $formatter, ObjectToArrayRenderer $objectToArrayRenderer)
     {
         parent::__construct($formatter);
@@ -46,17 +42,11 @@ class ObjectToArraySubscriber extends AbstractSubscriber
         return $this->objectToArrayRenderer;
     }
 
-    /**
-     * @param ObjectToArrayRenderer $objectToArrayRenderer
-     */
     public function setObjectToArrayRenderer(ObjectToArrayRenderer $objectToArrayRenderer)
     {
         $this->objectToArrayRenderer = $objectToArrayRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $event->addCode($this->getFormatter()->renderContainerAssignment(

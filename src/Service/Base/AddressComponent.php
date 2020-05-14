@@ -36,7 +36,7 @@ class AddressComponent
      */
     public function hasLongName()
     {
-        return $this->longName !== null;
+        return null !== $this->longName;
     }
 
     /**
@@ -60,7 +60,7 @@ class AddressComponent
      */
     public function hasShortName()
     {
-        return $this->shortName !== null;
+        return null !== $this->shortName;
     }
 
     /**

@@ -25,17 +25,12 @@ class PolylineLocationRenderer
      */
     private $coordinateRenderer;
 
-    /**
-     * @param CoordinateRenderer $coordinateRenderer
-     */
     public function __construct(CoordinateRenderer $coordinateRenderer)
     {
         $this->coordinateRenderer = $coordinateRenderer;
     }
 
     /**
-     * @param Polyline $polyline
-     *
      * @return string
      */
     public function render(Polyline $polyline)

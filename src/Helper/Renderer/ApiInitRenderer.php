@@ -17,13 +17,11 @@ namespace Ivory\GoogleMap\Helper\Renderer;
 class ApiInitRenderer extends AbstractRenderer
 {
     /**
-     * @param string            $name
-     * @param \SplObjectStorage $callbacks
-     * @param \SplObjectStorage $requirements
-     * @param string[]          $sources
-     * @param string            $sourceCallback
-     * @param string            $requirementCallback
-     * @param bool              $newLine
+     * @param string   $name
+     * @param string[] $sources
+     * @param string   $sourceCallback
+     * @param string   $requirementCallback
+     * @param bool     $newLine
      *
      * @return string
      */

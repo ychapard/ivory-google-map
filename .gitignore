@@ -11,3 +11,7 @@
 # PHPUnit
 /phpunit.xml
 /build
+
+#cache
+/tests/**/.cache/
+/.phpunit.result.cache

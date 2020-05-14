@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteBoundCollector;
 use Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteCoordinateCollector;
 use Ivory\GoogleMap\Place\Autocomplete;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteCoordinateCollectorTest extends \PHPUnit_Framework_TestCase
+class AutocompleteCoordinateCollectorTest extends TestCase
 {
     /**
      * @var AutocompleteCoordinateCollector
@@ -30,7 +32,7 @@ class AutocompleteCoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->autocompleteCoordinateCollector = new AutocompleteCoordinateCollector(new AutocompleteBoundCollector());
     }
@@ -60,7 +62,7 @@ class AutocompleteCoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AutocompleteBoundCollector
+     * @return MockObject|AutocompleteBoundCollector
      */
     private function createAutocompleteBoundCollectorMock()
     {

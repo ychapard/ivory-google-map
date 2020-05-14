@@ -20,8 +20,6 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 class SizeRenderer extends AbstractRenderer
 {
     /**
-     * @param Size $size
-     *
      * @return string
      */
     public function render(Size $size)

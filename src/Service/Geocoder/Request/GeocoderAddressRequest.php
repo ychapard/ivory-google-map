@@ -141,7 +141,7 @@ class GeocoderAddressRequest extends AbstractGeocoderRequest
      */
     public function hasBound()
     {
-        return $this->bound !== null;
+        return null !== $this->bound;
     }
 
     /**
@@ -152,9 +152,6 @@ class GeocoderAddressRequest extends AbstractGeocoderRequest
         return $this->bound;
     }
 
-    /**
-     * @param Bound|null $bound
-     */
     public function setBound(Bound $bound = null)
     {
         $this->bound = $bound;
@@ -165,7 +162,7 @@ class GeocoderAddressRequest extends AbstractGeocoderRequest
      */
     public function hasRegion()
     {
-        return $this->region !== null;
+        return null !== $this->region;
     }
 
     /**

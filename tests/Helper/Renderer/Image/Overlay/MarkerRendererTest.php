@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer;
@@ -17,13 +17,13 @@ use Ivory\GoogleMap\Helper\Renderer\Image\Base\PointRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerLocationRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerStyleRenderer;
-use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerRendererTest extends \PHPUnit_Framework_TestCase
+class MarkerRendererTest extends TestCase
 {
     /**
      * @var MarkerRenderer
@@ -33,7 +33,7 @@ class MarkerRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerRenderer = new MarkerRenderer(
             new MarkerStyleRenderer(new PointRenderer()),

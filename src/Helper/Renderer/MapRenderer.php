@@ -38,13 +38,6 @@ class MapRenderer extends AbstractJsonRenderer
      */
     private $requirementRenderer;
 
-    /**
-     * @param Formatter              $formatter
-     * @param JsonBuilder            $jsonBuilder
-     * @param MapTypeIdRenderer      $mapTypeIdRenderer
-     * @param ControlManagerRenderer $controlManagerRenderer
-     * @param RequirementRenderer    $requirementRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -67,9 +60,6 @@ class MapRenderer extends AbstractJsonRenderer
         return $this->mapTypeIdRenderer;
     }
 
-    /**
-     * @param MapTypeIdRenderer $mapTypeIdRenderer
-     */
     public function setMapTypeIdRenderer(MapTypeIdRenderer $mapTypeIdRenderer)
     {
         $this->mapTypeIdRenderer = $mapTypeIdRenderer;
@@ -83,9 +73,6 @@ class MapRenderer extends AbstractJsonRenderer
         return $this->controlManagerRenderer;
     }
 
-    /**
-     * @param ControlManagerRenderer $controlManagerRenderer
-     */
     public function setControlManagerRenderer(ControlManagerRenderer $controlManagerRenderer)
     {
         $this->controlManagerRenderer = $controlManagerRenderer;
@@ -108,8 +95,6 @@ class MapRenderer extends AbstractJsonRenderer
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function render(Map $map)

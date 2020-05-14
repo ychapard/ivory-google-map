@@ -21,9 +21,6 @@ use Ivory\GoogleMap\Overlay\GroundOverlay;
 class GroundOverlayRenderer extends AbstractJsonRenderer
 {
     /**
-     * @param GroundOverlay $groundOverlay
-     * @param Map           $map
-     *
      * @return string
      */
     public function render(GroundOverlay $groundOverlay, Map $map)

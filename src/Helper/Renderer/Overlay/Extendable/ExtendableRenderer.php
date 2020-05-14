@@ -80,8 +80,7 @@ class ExtendableRenderer implements ExtendableRendererInterface
     }
 
     /**
-     * @param string                      $name
-     * @param ExtendableRendererInterface $renderer
+     * @param string $name
      */
     public function setRenderer($name, ExtendableRendererInterface $renderer)
     {
@@ -103,11 +102,8 @@ class ExtendableRenderer implements ExtendableRendererInterface
     {
         $renderer = $this->getRenderer(get_class($extendable));
 
-        if ($renderer === null) {
-            throw new \InvalidArgumentException(sprintf(
-                'The extendable renderer for "%s" could not be found.',
-                get_class($extendable)
-            ));
+        if (null === $renderer) {
+            throw new \InvalidArgumentException(sprintf('The extendable renderer for "%s" could not be found.', get_class($extendable)));
         }
 
         return $renderer->render($extendable, $bound);

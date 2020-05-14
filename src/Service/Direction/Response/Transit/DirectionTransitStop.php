@@ -33,7 +33,7 @@ class DirectionTransitStop
      */
     public function hasName()
     {
-        return $this->name !== null;
+        return null !== $this->name;
     }
 
     /**
@@ -57,7 +57,7 @@ class DirectionTransitStop
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -68,9 +68,6 @@ class DirectionTransitStop
         return $this->location;
     }
 
-    /**
-     * @param Coordinate|null $location
-     */
     public function setLocation(Coordinate $location = null)
     {
         $this->location = $location;

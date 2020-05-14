@@ -26,17 +26,12 @@ class MarkerStyleRenderer extends AbstractStyleRenderer
      */
     private $pointRenderer;
 
-    /**
-     * @param PointRenderer $pointRenderer
-     */
     public function __construct(PointRenderer $pointRenderer)
     {
         $this->pointRenderer = $pointRenderer;
     }
 
     /**
-     * @param Marker $marker
-     *
      * @return string
      */
     public function render(Marker $marker)
@@ -46,7 +41,7 @@ class MarkerStyleRenderer extends AbstractStyleRenderer
         if ($marker->hasIcon()) {
             $icon = $marker->getIcon();
 
-            if (!isset($options['icon']) && ($url = $icon->getUrl()) !== Icon::DEFAULT_URL) {
+            if (!isset($options['icon']) && Icon::DEFAULT_URL !== ($url = $icon->getUrl())) {
                 $options['icon'] = $url;
             }
 

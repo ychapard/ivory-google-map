@@ -28,8 +28,6 @@ class PlacePhotoService extends AbstractService
     }
 
     /**
-     * @param PlacePhotoRequestInterface $request
-     *
      * @return string
      */
     public function process(PlacePhotoRequestInterface $request)

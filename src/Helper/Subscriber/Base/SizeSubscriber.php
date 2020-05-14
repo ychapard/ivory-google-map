@@ -33,11 +33,6 @@ class SizeSubscriber extends AbstractSubscriber
      */
     private $sizeRenderer;
 
-    /**
-     * @param Formatter     $formatter
-     * @param SizeCollector $sizeCollector
-     * @param SizeRenderer  $sizeRenderer
-     */
     public function __construct(
         Formatter $formatter,
         SizeCollector $sizeCollector,
@@ -57,9 +52,6 @@ class SizeSubscriber extends AbstractSubscriber
         return $this->sizeCollector;
     }
 
-    /**
-     * @param SizeCollector $sizeCollector
-     */
     public function setSizeCollector(SizeCollector $sizeCollector)
     {
         $this->sizeCollector = $sizeCollector;
@@ -73,17 +65,11 @@ class SizeSubscriber extends AbstractSubscriber
         return $this->sizeRenderer;
     }
 
-    /**
-     * @param SizeRenderer $sizeRenderer
-     */
     public function setSizeRenderer(SizeRenderer $sizeRenderer)
     {
         $this->sizeRenderer = $sizeRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

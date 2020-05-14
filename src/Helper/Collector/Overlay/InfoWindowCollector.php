@@ -34,8 +34,7 @@ class InfoWindowCollector extends AbstractCollector
     private $type;
 
     /**
-     * @param MarkerCollector $markerCollector
-     * @param string|null     $type
+     * @param string|null $type
      */
     public function __construct(MarkerCollector $markerCollector, $type = null)
     {
@@ -51,9 +50,6 @@ class InfoWindowCollector extends AbstractCollector
         return $this->markerCollector;
     }
 
-    /**
-     * @param MarkerCollector $markerCollector
-     */
     public function setMarkerCollector(MarkerCollector $markerCollector)
     {
         $this->markerCollector = $markerCollector;
@@ -76,7 +72,6 @@ class InfoWindowCollector extends AbstractCollector
     }
 
     /**
-     * @param Map          $map
      * @param InfoWindow[] $infoWindows
      * @param int|null     $strategy
      *
@@ -84,7 +79,7 @@ class InfoWindowCollector extends AbstractCollector
      */
     public function collect(Map $map, array $infoWindows = [], $strategy = null)
     {
-        if ($strategy === null) {
+        if (null === $strategy) {
             $strategy = self::STRATEGY_MAP | self::STRATEGY_MARKER;
         }
 
@@ -108,7 +103,7 @@ class InfoWindowCollector extends AbstractCollector
      */
     protected function collectValue($value, array $defaults = [])
     {
-        if ($this->type !== null && $value->getType() !== $this->type) {
+        if (null !== $this->type && $value->getType() !== $this->type) {
             return $defaults;
         }
 

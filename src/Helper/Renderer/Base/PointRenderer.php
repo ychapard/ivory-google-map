@@ -20,8 +20,6 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 class PointRenderer extends AbstractRenderer
 {
     /**
-     * @param Point $point
-     *
      * @return string
      */
     public function render(Point $point)

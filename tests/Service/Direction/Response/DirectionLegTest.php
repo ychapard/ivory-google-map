@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Service\Base\Time;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionLeg;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionStep;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionWaypoint;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionLegTest extends \PHPUnit_Framework_TestCase
+class DirectionLegTest extends TestCase
 {
     /**
      * @var DirectionLeg
@@ -32,7 +34,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->leg = new DirectionLeg();
     }
@@ -293,7 +295,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Duration
+     * @return MockObject|Duration
      */
     private function createDurationMock()
     {
@@ -301,7 +303,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Distance
+     * @return MockObject|Distance
      */
     private function createDistanceMock()
     {
@@ -309,7 +311,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {
@@ -317,7 +319,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Time
+     * @return MockObject|Time
      */
     private function createTimeMock()
     {
@@ -325,7 +327,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DirectionStep
+     * @return MockObject|DirectionStep
      */
     private function createStepMock()
     {
@@ -333,7 +335,7 @@ class DirectionLegTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DirectionWaypoint
+     * @return MockObject|DirectionWaypoint
      */
     private function createWaypointMock()
     {

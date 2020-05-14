@@ -127,8 +127,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     }
 
     /**
-     * @param LocationInterface $origin
-     *
      * @return bool
      */
     public function hasOrigin(LocationInterface $origin)
@@ -136,9 +134,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         return in_array($origin, $this->origins, true);
     }
 
-    /**
-     * @param LocationInterface $origin
-     */
     public function addOrigin(LocationInterface $origin)
     {
         if (!$this->hasOrigin($origin)) {
@@ -146,9 +141,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         }
     }
 
-    /**
-     * @param LocationInterface $origin
-     */
     public function removeOrigin(LocationInterface $origin)
     {
         unset($this->origins[array_search($origin, $this->origins, true)]);
@@ -191,8 +183,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     }
 
     /**
-     * @param LocationInterface $destination
-     *
      * @return bool
      */
     public function hasDestination(LocationInterface $destination)
@@ -200,9 +190,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         return in_array($destination, $this->destinations, true);
     }
 
-    /**
-     * @param LocationInterface $destination
-     */
     public function addDestination(LocationInterface $destination)
     {
         if (!$this->hasDestination($destination)) {
@@ -210,9 +197,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         }
     }
 
-    /**
-     * @param LocationInterface $destination
-     */
     public function removeDestination(LocationInterface $destination)
     {
         unset($this->destinations[array_search($destination, $this->destinations, true)]);
@@ -224,7 +208,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasDepartureTime()
     {
-        return $this->departureTime !== null;
+        return null !== $this->departureTime;
     }
 
     /**
@@ -235,9 +219,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         return $this->departureTime;
     }
 
-    /**
-     * @param \DateTime|null $departureTime
-     */
     public function setDepartureTime(\DateTime $departureTime = null)
     {
         $this->departureTime = $departureTime;
@@ -248,7 +229,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasArrivalTime()
     {
-        return $this->arrivalTime !== null;
+        return null !== $this->arrivalTime;
     }
 
     /**
@@ -259,9 +240,6 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         return $this->arrivalTime;
     }
 
-    /**
-     * @param \DateTime|null $arrivalTime
-     */
     public function setArrivalTime(\DateTime $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
@@ -272,7 +250,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasTravelMode()
     {
-        return $this->travelMode !== null;
+        return null !== $this->travelMode;
     }
 
     /**
@@ -296,7 +274,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasAvoid()
     {
-        return $this->avoid !== null;
+        return null !== $this->avoid;
     }
 
     /**
@@ -320,7 +298,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasTrafficModel()
     {
-        return $this->trafficModel !== null;
+        return null !== $this->trafficModel;
     }
 
     /**
@@ -408,7 +386,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasTransitRoutingPreference()
     {
-        return $this->transitRoutingPreference !== null;
+        return null !== $this->transitRoutingPreference;
     }
 
     /**
@@ -432,7 +410,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasRegion()
     {
-        return $this->region !== null;
+        return null !== $this->region;
     }
 
     /**
@@ -456,7 +434,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasUnitSystem()
     {
-        return $this->unitSystem !== null;
+        return null !== $this->unitSystem;
     }
 
     /**
@@ -480,7 +458,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**

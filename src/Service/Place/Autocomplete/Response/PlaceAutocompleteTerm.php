@@ -31,7 +31,7 @@ class PlaceAutocompleteTerm
      */
     public function hasValue()
     {
-        return $this->value !== null;
+        return null !== $this->value;
     }
 
     /**
@@ -55,7 +55,7 @@ class PlaceAutocompleteTerm
      */
     public function hasOffset()
     {
-        return $this->offset !== null;
+        return null !== $this->offset;
     }
 
     /**

@@ -60,8 +60,6 @@ class ControlManagerRenderer
     }
 
     /**
-     * @param ControlRendererInterface $renderer
-     *
      * @return bool
      */
     public function hasRenderer(ControlRendererInterface $renderer)
@@ -69,9 +67,6 @@ class ControlManagerRenderer
         return in_array($renderer, $this->renderers, true);
     }
 
-    /**
-     * @param ControlRendererInterface $renderer
-     */
     public function addRenderer(ControlRendererInterface $renderer)
     {
         if (!$this->hasRenderer($renderer)) {
@@ -79,9 +74,6 @@ class ControlManagerRenderer
         }
     }
 
-    /**
-     * @param ControlRendererInterface $renderer
-     */
     public function removeRenderer(ControlRendererInterface $renderer)
     {
         unset($this->renderers[array_search($renderer, $this->renderers, true)]);
@@ -89,9 +81,6 @@ class ControlManagerRenderer
     }
 
     /**
-     * @param ControlManager $controlManager
-     * @param JsonBuilder    $jsonBuilder
-     *
      * @return string
      */
     public function render(ControlManager $controlManager, JsonBuilder $jsonBuilder)
@@ -99,7 +88,7 @@ class ControlManagerRenderer
         foreach ($this->renderers as $renderer) {
             $control = get_class($renderer);
 
-            if (($position = strrpos($control, '\\')) !== false) {
+            if (false !== ($position = strrpos($control, '\\'))) {
                 $control = substr($control, ++$position, -8);
             }
 

@@ -12,7 +12,6 @@
 namespace Ivory\GoogleMap\Helper\Renderer\Overlay;
 
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
-use Ivory\GoogleMap\Overlay\Icon;
 use Ivory\GoogleMap\Overlay\IconSequence;
 
 /**
@@ -21,8 +20,6 @@ use Ivory\GoogleMap\Overlay\IconSequence;
 class IconSequenceRenderer extends AbstractJsonRenderer
 {
     /**
-     * @param IconSequence $icon
-     *
      * @return string
      */
     public function render(IconSequence $icon)

@@ -19,21 +19,23 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\DefaultInfoWindowRenderer;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DefaultInfoWindowRendererTest extends \PHPUnit_Framework_TestCase
+class DefaultInfoWindowRendererTest extends TestCase
 {
     /**
-     * @var DefaultInfoWindowRenderer|\PHPUnit_Framework_MockObject_MockObject
+     * @var DefaultInfoWindowRenderer|MockObject
      */
     private $defaultInfoWindowRenderer;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->defaultInfoWindowRenderer = new DefaultInfoWindowRenderer(new Formatter(), new JsonBuilder());
     }

@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Service\Base\Location;
+namespace Ivory\Tests\GoogleMap\Service\Base\Location;
 
 use Ivory\GoogleMap\Service\Base\Location\AddressLocation;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AddressLocationTest extends \PHPUnit_Framework_TestCase
+class AddressLocationTest extends TestCase
 {
     /**
      * @var AddressLocation
@@ -32,7 +33,7 @@ class AddressLocationTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->addressLocation = new AddressLocation($this->address = 'address');
     }

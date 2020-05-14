@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer\Utility;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\ObjectToArrayRenderer;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ObjectToArrayRendererTest extends \PHPUnit_Framework_TestCase
+class ObjectToArrayRendererTest extends TestCase
 {
     /**
      * @var ObjectToArrayRenderer
@@ -28,7 +29,7 @@ class ObjectToArrayRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->objectToArrayRenderer = new ObjectToArrayRenderer(new Formatter());
     }

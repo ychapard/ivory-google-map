@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Base\Coordinate;
 class CoordinateRenderer
 {
     /**
-     * @param Coordinate $coordinate
-     *
      * @return string
      */
     public function render(Coordinate $coordinate)

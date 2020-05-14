@@ -32,10 +32,6 @@ class SizeCollector extends AbstractCollector
      */
     private $iconCollector;
 
-    /**
-     * @param InfoWindowCollector $infoWindowCollector
-     * @param IconCollector       $iconCollector
-     */
     public function __construct(InfoWindowCollector $infoWindowCollector, IconCollector $iconCollector)
     {
         $this->setInfoWindowCollector($infoWindowCollector);
@@ -50,9 +46,6 @@ class SizeCollector extends AbstractCollector
         return $this->infoWindowCollector;
     }
 
-    /**
-     * @param InfoWindowCollector $infoWindowCollector
-     */
     public function setInfoWindowCollector(InfoWindowCollector $infoWindowCollector)
     {
         $this->infoWindowCollector = $infoWindowCollector;
@@ -66,16 +59,12 @@ class SizeCollector extends AbstractCollector
         return $this->iconCollector;
     }
 
-    /**
-     * @param IconCollector $iconCollector
-     */
     public function setIconCollector(IconCollector $iconCollector)
     {
         $this->iconCollector = $iconCollector;
     }
 
     /**
-     * @param Map    $map
      * @param Size[] $sizes
      *
      * @return Size[]

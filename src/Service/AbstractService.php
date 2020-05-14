@@ -60,7 +60,7 @@ abstract class AbstractService
      */
     public function hasKey()
     {
-        return $this->key !== null;
+        return null !== $this->key;
     }
 
     /**
@@ -84,7 +84,7 @@ abstract class AbstractService
      */
     public function hasBusinessAccount()
     {
-        return $this->businessAccount !== null;
+        return null !== $this->businessAccount;
     }
 
     /**
@@ -104,8 +104,6 @@ abstract class AbstractService
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return string
      */
     protected function createUrl(RequestInterface $request)
@@ -126,8 +124,6 @@ abstract class AbstractService
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return string
      */
     protected function createBaseUrl(RequestInterface $request)

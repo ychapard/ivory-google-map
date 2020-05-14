@@ -22,17 +22,13 @@ use Ivory\GoogleMap\Overlay\Marker;
 class InfoWindowOpenRenderer extends AbstractRenderer
 {
     /**
-     * @param InfoWindow  $infoWindow
-     * @param Map         $map
-     * @param Marker|null $marker
-     *
      * @return string
      */
     public function render(InfoWindow $infoWindow, Map $map, Marker $marker = null)
     {
         $arguments = [$map->getVariable()];
 
-        if ($marker !== null) {
+        if (null !== $marker) {
             $arguments[] = $marker->getVariable();
         }
 

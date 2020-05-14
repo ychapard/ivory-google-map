@@ -30,8 +30,6 @@ class LoaderRenderer extends AbstractJsonRenderer
     private $key;
 
     /**
-     * @param Formatter   $formatter
-     * @param JsonBuilder $jsonBuilder
      * @param string      $language
      * @param string|null $key
      */
@@ -64,7 +62,7 @@ class LoaderRenderer extends AbstractJsonRenderer
      */
     public function hasKey()
     {
-        return $this->key !== null;
+        return null !== $this->key;
     }
 
     /**
@@ -128,6 +126,12 @@ class LoaderRenderer extends AbstractJsonRenderer
      */
     public function renderSource($callback)
     {
-        return 'https://www.google.com/jsapi?callback='.$callback;
+        if ($this->hasKey()) {
+            $arguments['key'] = $this->key;
+        }
+
+        $arguments['callback'] = $callback;
+
+        return 'https://maps.googleapis.com/maps/api/js?'.http_build_query($arguments);
     }
 }

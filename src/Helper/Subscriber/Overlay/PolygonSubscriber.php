@@ -33,11 +33,6 @@ class PolygonSubscriber extends AbstractSubscriber
      */
     private $polygonRenderer;
 
-    /**
-     * @param Formatter        $formatter
-     * @param PolygonCollector $polygonCollector
-     * @param PolygonRenderer  $polygonRenderer
-     */
     public function __construct(
         Formatter $formatter,
         PolygonCollector $polygonCollector,
@@ -57,9 +52,6 @@ class PolygonSubscriber extends AbstractSubscriber
         return $this->polygonCollector;
     }
 
-    /**
-     * @param PolygonCollector $polygonCollector
-     */
     public function setPolygonCollector(PolygonCollector $polygonCollector)
     {
         $this->polygonCollector = $polygonCollector;
@@ -73,17 +65,11 @@ class PolygonSubscriber extends AbstractSubscriber
         return $this->polygonRenderer;
     }
 
-    /**
-     * @param PolygonRenderer $polygonRenderer
-     */
     public function setPolygonRenderer(PolygonRenderer $polygonRenderer)
     {
         $this->polygonRenderer = $polygonRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

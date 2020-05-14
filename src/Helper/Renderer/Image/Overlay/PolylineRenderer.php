@@ -28,10 +28,6 @@ class PolylineRenderer
      */
     private $polylineLocationRenderer;
 
-    /**
-     * @param PolylineStyleRenderer    $polylineStyleRenderer
-     * @param PolylineLocationRenderer $polylineLocationRenderer
-     */
     public function __construct(
         PolylineStyleRenderer $polylineStyleRenderer,
         PolylineLocationRenderer $polylineLocationRenderer
@@ -41,8 +37,6 @@ class PolylineRenderer
     }
 
     /**
-     * @param Polyline $polyline
-     *
      * @return string
      */
     public function render(Polyline $polyline)

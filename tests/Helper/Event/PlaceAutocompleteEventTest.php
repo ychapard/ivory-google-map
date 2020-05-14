@@ -14,11 +14,13 @@ namespace Ivory\Tests\GoogleMap\Helper\Event;
 use Ivory\GoogleMap\Helper\Event\AbstractEvent;
 use Ivory\GoogleMap\Helper\Event\PlaceAutocompleteEvent;
 use Ivory\GoogleMap\Place\Autocomplete;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteEventTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteEventTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteEvent
@@ -26,14 +28,14 @@ class PlaceAutocompleteEventTest extends \PHPUnit_Framework_TestCase
     private $placeAutocompleteEvent;
 
     /**
-     * @var Autocomplete|\PHPUnit_Framework_MockObject_MockObject
+     * @var Autocomplete|MockObject
      */
     private $autocomplete;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->autocomplete = $this->createAutocompleteMock();
         $this->placeAutocompleteEvent = new PlaceAutocompleteEvent($this->autocomplete);
@@ -50,7 +52,7 @@ class PlaceAutocompleteEventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Autocomplete
+     * @return MockObject|Autocomplete
      */
     private function createAutocompleteMock()
     {

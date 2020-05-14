@@ -24,17 +24,12 @@ class MarkerLocationRenderer
      */
     private $coordinateRenderer;
 
-    /**
-     * @param CoordinateRenderer $coordinateRenderer
-     */
     public function __construct(CoordinateRenderer $coordinateRenderer)
     {
         $this->coordinateRenderer = $coordinateRenderer;
     }
 
     /**
-     * @param Marker $marker
-     *
      * @return string
      */
     public function render(Marker $marker)

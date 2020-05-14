@@ -44,12 +44,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
      */
     private $javascriptTagRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param AutocompleteRenderer  $autocompleteRenderer
-     * @param CallbackRenderer      $callbackRenderer
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function __construct(
         Formatter $formatter,
         AutocompleteRenderer $autocompleteRenderer,
@@ -71,9 +65,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->autocompleteRenderer;
     }
 
-    /**
-     * @param AutocompleteRenderer $autocompleteRenderer
-     */
     public function setAutocompleteRenderer(AutocompleteRenderer $autocompleteRenderer)
     {
         $this->autocompleteRenderer = $autocompleteRenderer;
@@ -87,9 +78,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->callbackRenderer;
     }
 
-    /**
-     * @param CallbackRenderer $callbackRenderer
-     */
     public function setCallbackRenderer(CallbackRenderer $callbackRenderer)
     {
         $this->callbackRenderer = $callbackRenderer;
@@ -103,9 +91,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->javascriptTagRenderer;
     }
 
-    /**
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function setJavascriptTagRenderer(JavascriptTagRenderer $javascriptTagRenderer)
     {
         $this->javascriptTagRenderer = $javascriptTagRenderer;
@@ -141,9 +126,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
         ];
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     private function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Autocomplete::class) as $autocomplete) {
@@ -153,9 +135,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
         }
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     private function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $formatter = $this->getFormatter();
@@ -168,8 +147,6 @@ class AutocompleteJavascriptSubscriber extends AbstractDelegateSubscriber
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     private function renderCallback(Autocomplete $autocomplete)

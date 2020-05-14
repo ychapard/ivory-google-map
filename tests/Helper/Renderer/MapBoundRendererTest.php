@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapBoundRenderer;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapBoundRendererTest extends \PHPUnit_Framework_TestCase
+class MapBoundRendererTest extends TestCase
 {
     /**
      * @var MapBoundRenderer
@@ -29,7 +30,7 @@ class MapBoundRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapBoundRenderer = new MapBoundRenderer(new Formatter());
     }

@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\Marker;
 class MarkerCollector extends AbstractCollector
 {
     /**
-     * @param Map      $map
      * @param Marker[] $markers
      *
      * @return Marker[]

@@ -20,8 +20,6 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 abstract class AbstractEventRenderer extends AbstractRenderer
 {
     /**
-     * @param Event $event
-     *
      * @return string
      */
     public function render(Event $event)

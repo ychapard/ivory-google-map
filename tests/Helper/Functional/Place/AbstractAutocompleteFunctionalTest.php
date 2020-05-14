@@ -29,7 +29,7 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -37,8 +37,7 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     * @param string|null  $html
+     * @param string|null $html
      */
     protected function renderAutocomplete(Autocomplete $autocomplete, $html = null)
     {
@@ -63,9 +62,6 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
         $this->assertSame([], $this->log('browser'));
     }
 
-    /**
-     * @param Autocomplete $autocomplete
-     */
     protected function assertAutocomplete(Autocomplete $autocomplete)
     {
         $this->assertContainer($autocomplete);
@@ -80,9 +76,6 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
         }
     }
 
-    /**
-     * @param Autocomplete $autocomplete
-     */
     protected function assertAutocompleteHtml(Autocomplete $autocomplete)
     {
         $html = $this->byId($autocomplete->getHtmlId());
@@ -94,9 +87,6 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
         $this->assertSame((string) $autocomplete->getValue(), $html->value());
     }
 
-    /**
-     * @param Autocomplete $autocomplete
-     */
     protected function assertContainer(Autocomplete $autocomplete)
     {
         foreach ($this->getContainerPropertyPaths() as $propertyPath) {
@@ -111,7 +101,7 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
      */
     protected function createPlaceAutocompleteHelper()
     {
-        return PlaceAutocompleteHelperBuilder::create()->build();
+        return PlaceAutocompleteHelperBuilder::create($_SERVER['API_KEY'] ?? null)->build();
     }
 
     /**

@@ -23,8 +23,6 @@ use Ivory\Serializer\Naming\SnakeCaseNamingStrategy;
 class PlaceAutocompleteService extends AbstractPlaceSerializableService
 {
     /**
-     * @param PlaceAutocompleteRequestInterface $request
-     *
      * @return PlaceAutocompleteResponse
      */
     public function process(PlaceAutocompleteRequestInterface $request)

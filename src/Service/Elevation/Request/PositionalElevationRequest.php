@@ -67,8 +67,6 @@ class PositionalElevationRequest implements ElevationRequestInterface
     }
 
     /**
-     * @param LocationInterface $location
-     *
      * @return bool
      */
     public function hasLocation(LocationInterface $location)
@@ -76,9 +74,6 @@ class PositionalElevationRequest implements ElevationRequestInterface
         return in_array($location, $this->locations, true);
     }
 
-    /**
-     * @param LocationInterface $location
-     */
     public function addLocation(LocationInterface $location)
     {
         if (!$this->hasLocation($location)) {
@@ -86,9 +81,6 @@ class PositionalElevationRequest implements ElevationRequestInterface
         }
     }
 
-    /**
-     * @param LocationInterface $location
-     */
     public function removeLocation(LocationInterface $location)
     {
         unset($this->locations[array_search($location, $this->locations, true)]);

@@ -28,10 +28,6 @@ class MarkerRenderer
      */
     private $markerLocationRenderer;
 
-    /**
-     * @param MarkerStyleRenderer    $markerStyleRenderer
-     * @param MarkerLocationRenderer $markerLocationRenderer
-     */
     public function __construct(
         MarkerStyleRenderer $markerStyleRenderer,
         MarkerLocationRenderer $markerLocationRenderer

@@ -25,11 +25,13 @@ use Ivory\GoogleMap\Overlay\MarkerShapeType;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerRendererTest extends \PHPUnit_Framework_TestCase
+class MarkerRendererTest extends TestCase
 {
     /**
      * @var MarkerRenderer
@@ -39,7 +41,7 @@ class MarkerRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerRenderer = new MarkerRenderer(
             $formatter = new Formatter(),
@@ -137,7 +139,7 @@ class MarkerRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AnimationRenderer
+     * @return MockObject|AnimationRenderer
      */
     private function createAnimationRendererMock()
     {

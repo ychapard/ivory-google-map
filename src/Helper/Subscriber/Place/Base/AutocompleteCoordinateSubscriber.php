@@ -33,11 +33,6 @@ class AutocompleteCoordinateSubscriber extends AbstractSubscriber
      */
     private $coordinateRenderer;
 
-    /**
-     * @param Formatter                       $formatter
-     * @param AutocompleteCoordinateCollector $coordinateCollector
-     * @param CoordinateRenderer              $coordinateRenderer
-     */
     public function __construct(
         Formatter $formatter,
         AutocompleteCoordinateCollector $coordinateCollector,
@@ -57,9 +52,6 @@ class AutocompleteCoordinateSubscriber extends AbstractSubscriber
         return $this->coordinateCollector;
     }
 
-    /**
-     * @param AutocompleteCoordinateCollector $coordinateCollector
-     */
     public function setCoordinateCollector(AutocompleteCoordinateCollector $coordinateCollector)
     {
         $this->coordinateCollector = $coordinateCollector;
@@ -73,17 +65,11 @@ class AutocompleteCoordinateSubscriber extends AbstractSubscriber
         return $this->coordinateRenderer;
     }
 
-    /**
-     * @param CoordinateRenderer $coordinateRenderer
-     */
     public function setCoordinateRenderer(CoordinateRenderer $coordinateRenderer)
     {
         $this->coordinateRenderer = $coordinateRenderer;
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     public function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $formatter = $this->getFormatter();

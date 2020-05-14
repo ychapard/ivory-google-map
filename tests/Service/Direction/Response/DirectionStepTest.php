@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Service\Base\Duration;
 use Ivory\GoogleMap\Service\Base\TravelMode;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionStep;
 use Ivory\GoogleMap\Service\Direction\Response\Transit\DirectionTransitDetails;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionStepTest extends \PHPUnit_Framework_TestCase
+class DirectionStepTest extends TestCase
 {
     /**
      * @var DirectionStep
@@ -32,7 +34,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->step = new DirectionStep();
     }
@@ -194,7 +196,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Distance
+     * @return MockObject|Distance
      */
     private function createDistanceMock()
     {
@@ -202,7 +204,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Duration
+     * @return MockObject|Duration
      */
     private function createDurationMock()
     {
@@ -210,7 +212,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {
@@ -218,7 +220,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EncodedPolyline
+     * @return MockObject|EncodedPolyline
      */
     private function createEncodedPolylineMock()
     {
@@ -226,7 +228,7 @@ class DirectionStepTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DirectionTransitDetails
+     * @return MockObject|DirectionTransitDetails
      */
     private function createTransitDetailsMock()
     {

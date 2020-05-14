@@ -33,11 +33,6 @@ class DomEventSubscriber extends AbstractSubscriber
      */
     private $domEventRenderer;
 
-    /**
-     * @param Formatter         $formatter
-     * @param DomEventCollector $domEventCollector
-     * @param DomEventRenderer  $domEventRenderer
-     */
     public function __construct(
         Formatter $formatter,
         DomEventCollector $domEventCollector,
@@ -57,9 +52,6 @@ class DomEventSubscriber extends AbstractSubscriber
         return $this->domEventCollector;
     }
 
-    /**
-     * @param DomEventCollector $domEventCollector
-     */
     public function setDomEventCollector(DomEventCollector $domEventCollector)
     {
         $this->domEventCollector = $domEventCollector;
@@ -73,17 +65,11 @@ class DomEventSubscriber extends AbstractSubscriber
         return $this->domEventRenderer;
     }
 
-    /**
-     * @param DomEventRenderer $domEventRenderer
-     */
     public function setDomEventRenderer(DomEventRenderer $domEventRenderer)
     {
         $this->domEventRenderer = $domEventRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

@@ -36,7 +36,7 @@ class DirectionTransitAgency
      */
     public function hasName()
     {
-        return $this->name !== null;
+        return null !== $this->name;
     }
 
     /**
@@ -60,7 +60,7 @@ class DirectionTransitAgency
      */
     public function hasPhone()
     {
-        return $this->phone !== null;
+        return null !== $this->phone;
     }
 
     /**
@@ -84,7 +84,7 @@ class DirectionTransitAgency
      */
     public function hasUrl()
     {
-        return $this->url !== null;
+        return null !== $this->url;
     }
 
     /**

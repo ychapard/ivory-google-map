@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Map;
 class KmlLayerCollector extends AbstractCollector
 {
     /**
-     * @param Map        $map
      * @param KmlLayer[] $kmlLayers
      *
      * @return KmlLayer[]

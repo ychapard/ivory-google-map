@@ -27,17 +27,11 @@ class CenterSubscriber implements EventSubscriberInterface
      */
     private $coordinateRenderer;
 
-    /**
-     * @param CoordinateRenderer $coordinateRenderer
-     */
     public function __construct(CoordinateRenderer $coordinateRenderer)
     {
         $this->coordinateRenderer = $coordinateRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $map = $event->getMap();

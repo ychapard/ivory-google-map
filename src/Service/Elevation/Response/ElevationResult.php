@@ -38,7 +38,7 @@ class ElevationResult
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -49,9 +49,6 @@ class ElevationResult
         return $this->location;
     }
 
-    /**
-     * @param Coordinate|null $location
-     */
     public function setLocation(Coordinate $location = null)
     {
         $this->location = $location;
@@ -62,7 +59,7 @@ class ElevationResult
      */
     public function hasElevation()
     {
-        return $this->elevation !== null;
+        return null !== $this->elevation;
     }
 
     /**
@@ -86,7 +83,7 @@ class ElevationResult
      */
     public function hasResolution()
     {
-        return $this->resolution !== null;
+        return null !== $this->resolution;
     }
 
     /**

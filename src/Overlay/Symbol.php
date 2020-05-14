@@ -43,10 +43,7 @@ class Symbol implements OptionsAwareInterface, VariableAwareInterface
     private $labelOrigin;
 
     /**
-     * @param string     $path
-     * @param Point|null $anchor
-     * @param Point|null $labelOrigin
-     * @param array      $options
+     * @param string $path
      */
     public function __construct($path, Point $anchor = null, Point $labelOrigin = null, array $options = [])
     {
@@ -77,7 +74,7 @@ class Symbol implements OptionsAwareInterface, VariableAwareInterface
      */
     public function hasAnchor()
     {
-        return $this->anchor !== null;
+        return null !== $this->anchor;
     }
 
     /**
@@ -88,9 +85,6 @@ class Symbol implements OptionsAwareInterface, VariableAwareInterface
         return $this->anchor;
     }
 
-    /**
-     * @param Point|null $anchor
-     */
     public function setAnchor(Point $anchor = null)
     {
         $this->anchor = $anchor;
@@ -101,7 +95,7 @@ class Symbol implements OptionsAwareInterface, VariableAwareInterface
      */
     public function hasLabelOrigin()
     {
-        return $this->labelOrigin !== null;
+        return null !== $this->labelOrigin;
     }
 
     /**
@@ -112,9 +106,6 @@ class Symbol implements OptionsAwareInterface, VariableAwareInterface
         return $this->labelOrigin;
     }
 
-    /**
-     * @param Point|null $labelOrigin
-     */
     public function setLabelOrigin(Point $labelOrigin = null)
     {
         $this->labelOrigin = $labelOrigin;

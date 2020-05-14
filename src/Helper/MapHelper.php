@@ -21,8 +21,6 @@ use Ivory\GoogleMap\Map;
 class MapHelper extends AbstractHelper
 {
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function render(Map $map)
@@ -31,8 +29,6 @@ class MapHelper extends AbstractHelper
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function renderHtml(Map $map)
@@ -41,8 +37,6 @@ class MapHelper extends AbstractHelper
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function renderStylesheet(Map $map)
@@ -51,8 +45,6 @@ class MapHelper extends AbstractHelper
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function renderJavascript(Map $map)
@@ -61,7 +53,6 @@ class MapHelper extends AbstractHelper
     }
 
     /**
-     * @param Map    $map
      * @param string $eventName
      *
      * @return string

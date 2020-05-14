@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
 class EncodedPolylineCollector extends AbstractCollector
 {
     /**
-     * @param Map               $map
      * @param EncodedPolyline[] $encodedPolylines
      *
      * @return EncodedPolyline[]

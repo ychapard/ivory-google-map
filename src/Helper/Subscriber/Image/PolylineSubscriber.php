@@ -32,19 +32,12 @@ class PolylineSubscriber implements EventSubscriberInterface
      */
     private $polylineRenderer;
 
-    /**
-     * @param PolylineCollector $polylineCollector
-     * @param PolylineRenderer  $polylineRenderer
-     */
     public function __construct(PolylineCollector $polylineCollector, PolylineRenderer $polylineRenderer)
     {
         $this->polylineCollector = $polylineCollector;
         $this->polylineRenderer = $polylineRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $result = [];

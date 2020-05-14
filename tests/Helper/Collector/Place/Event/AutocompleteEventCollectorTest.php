@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Place\Event;
 use Ivory\GoogleMap\Event\Event;
 use Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventCollector;
 use Ivory\GoogleMap\Place\Autocomplete;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteEventCollectorTest extends \PHPUnit_Framework_TestCase
+class AutocompleteEventCollectorTest extends TestCase
 {
     /**
      * @var AutocompleteEventCollector
@@ -28,7 +29,7 @@ class AutocompleteEventCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->eventCollector = new AutocompleteEventCollector();
     }

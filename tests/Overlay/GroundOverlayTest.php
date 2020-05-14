@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 use Ivory\GoogleMap\Overlay\GroundOverlay;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GroundOverlayTest extends \PHPUnit_Framework_TestCase
+class GroundOverlayTest extends TestCase
 {
     /**
      * @var GroundOverlay
@@ -40,7 +42,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->groundOverlay = new GroundOverlay(
             $this->url = 'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
@@ -85,7 +87,7 @@ class GroundOverlayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {

@@ -33,11 +33,6 @@ class AutocompleteDomEventSubscriber extends AbstractSubscriber
      */
     private $domEventRenderer;
 
-    /**
-     * @param Formatter                     $formatter
-     * @param AutocompleteDomEventCollector $domEventCollector
-     * @param DomEventRenderer              $domEventRenderer
-     */
     public function __construct(
         Formatter $formatter,
         AutocompleteDomEventCollector $domEventCollector,
@@ -57,9 +52,6 @@ class AutocompleteDomEventSubscriber extends AbstractSubscriber
         return $this->domEventCollector;
     }
 
-    /**
-     * @param AutocompleteDomEventCollector $domEventCollector
-     */
     public function setDomEventCollector(AutocompleteDomEventCollector $domEventCollector)
     {
         $this->domEventCollector = $domEventCollector;
@@ -73,17 +65,11 @@ class AutocompleteDomEventSubscriber extends AbstractSubscriber
         return $this->domEventRenderer;
     }
 
-    /**
-     * @param DomEventRenderer $domEventRenderer
-     */
     public function setDomEventRenderer(DomEventRenderer $domEventRenderer)
     {
         $this->domEventRenderer = $domEventRenderer;
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     public function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $formatter = $this->getFormatter();

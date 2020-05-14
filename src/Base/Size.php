@@ -102,7 +102,7 @@ class Size implements VariableAwareInterface
      */
     public function hasWidthUnit()
     {
-        return $this->widthUnit !== null;
+        return null !== $this->widthUnit;
     }
 
     /**
@@ -126,7 +126,7 @@ class Size implements VariableAwareInterface
      */
     public function hasHeightUnit()
     {
-        return $this->heightUnit !== null;
+        return null !== $this->heightUnit;
     }
 
     /**

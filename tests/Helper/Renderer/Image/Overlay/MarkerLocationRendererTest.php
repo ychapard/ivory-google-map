@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerLocationRenderer;
-use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerLocationRendererTest extends \PHPUnit_Framework_TestCase
+class MarkerLocationRendererTest extends TestCase
 {
     /**
      * @var MarkerLocationRenderer
@@ -30,7 +30,7 @@ class MarkerLocationRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerLocationRenderer = new MarkerLocationRenderer(new CoordinateRenderer());
     }

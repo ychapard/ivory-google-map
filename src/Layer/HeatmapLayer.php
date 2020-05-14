@@ -76,8 +76,6 @@ class HeatmapLayer implements ExtendableInterface, OptionsAwareInterface
     }
 
     /**
-     * @param Coordinate $coordinate
-     *
      * @return bool
      */
     public function hasCoordinate(Coordinate $coordinate)
@@ -85,9 +83,6 @@ class HeatmapLayer implements ExtendableInterface, OptionsAwareInterface
         return in_array($coordinate, $this->coordinates, true);
     }
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function addCoordinate(Coordinate $coordinate)
     {
         if (!$this->hasCoordinate($coordinate)) {
@@ -95,9 +90,6 @@ class HeatmapLayer implements ExtendableInterface, OptionsAwareInterface
         }
     }
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function removeCoordinate(Coordinate $coordinate)
     {
         unset($this->coordinates[array_search($coordinate, $this->coordinates, true)]);

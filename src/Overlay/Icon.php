@@ -53,11 +53,7 @@ class Icon implements VariableAwareInterface
     private $size;
 
     /**
-     * @param string     $url
-     * @param Point|null $anchor
-     * @param Point|null $origin
-     * @param Size|null  $scaledSize
-     * @param Size|null  $size
+     * @param string $url
      */
     public function __construct(
         $url = self::DEFAULT_URL,
@@ -94,7 +90,7 @@ class Icon implements VariableAwareInterface
      */
     public function hasAnchor()
     {
-        return $this->anchor !== null;
+        return null !== $this->anchor;
     }
 
     /**
@@ -105,9 +101,6 @@ class Icon implements VariableAwareInterface
         return $this->anchor;
     }
 
-    /**
-     * @param Point|null $anchor
-     */
     public function setAnchor(Point $anchor = null)
     {
         $this->anchor = $anchor;
@@ -118,7 +111,7 @@ class Icon implements VariableAwareInterface
      */
     public function hasOrigin()
     {
-        return $this->origin !== null;
+        return null !== $this->origin;
     }
 
     /**
@@ -129,9 +122,6 @@ class Icon implements VariableAwareInterface
         return $this->origin;
     }
 
-    /**
-     * @param Point|null $origin
-     */
     public function setOrigin(Point $origin = null)
     {
         $this->origin = $origin;
@@ -142,7 +132,7 @@ class Icon implements VariableAwareInterface
      */
     public function hasScaledSize()
     {
-        return $this->scaledSize !== null;
+        return null !== $this->scaledSize;
     }
 
     /**
@@ -153,9 +143,6 @@ class Icon implements VariableAwareInterface
         return $this->scaledSize;
     }
 
-    /**
-     * @param Size|null $scaledSize
-     */
     public function setScaledSize(Size $scaledSize = null)
     {
         $this->scaledSize = $scaledSize;
@@ -166,7 +153,7 @@ class Icon implements VariableAwareInterface
      */
     public function hasSize()
     {
-        return $this->size !== null;
+        return null !== $this->size;
     }
 
     /**
@@ -177,9 +164,6 @@ class Icon implements VariableAwareInterface
         return $this->size;
     }
 
-    /**
-     * @param Size|null $size
-     */
     public function setSize(Size $size = null)
     {
         $this->size = $size;

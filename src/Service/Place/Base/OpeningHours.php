@@ -36,7 +36,7 @@ class OpeningHours
      */
     public function hasOpenNow()
     {
-        return $this->openNow !== null;
+        return null !== $this->openNow;
     }
 
     /**
@@ -91,8 +91,6 @@ class OpeningHours
     }
 
     /**
-     * @param Period $period
-     *
      * @return bool
      */
     public function hasPeriod(Period $period)
@@ -100,9 +98,6 @@ class OpeningHours
         return in_array($period, $this->periods, true);
     }
 
-    /**
-     * @param Period $period
-     */
     public function addPeriod(Period $period)
     {
         if (!$this->hasPeriod($period)) {
@@ -110,9 +105,6 @@ class OpeningHours
         }
     }
 
-    /**
-     * @param Period $period
-     */
     public function removePeriod(Period $period)
     {
         unset($this->periods[array_search($period, $this->periods, true)]);

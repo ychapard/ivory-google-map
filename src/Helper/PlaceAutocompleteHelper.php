@@ -21,8 +21,6 @@ use Ivory\GoogleMap\Place\Autocomplete;
 class PlaceAutocompleteHelper extends AbstractHelper
 {
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     public function render(Autocomplete $autocomplete)
@@ -31,8 +29,6 @@ class PlaceAutocompleteHelper extends AbstractHelper
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     public function renderHtml(Autocomplete $autocomplete)
@@ -41,8 +37,6 @@ class PlaceAutocompleteHelper extends AbstractHelper
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     public function renderJavascript(Autocomplete $autocomplete)
@@ -51,8 +45,7 @@ class PlaceAutocompleteHelper extends AbstractHelper
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     * @param string       $eventName
+     * @param string $eventName
      *
      * @return string
      */

@@ -13,11 +13,13 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class RendererTest extends \PHPUnit_Framework_TestCase
+class RendererTest extends TestCase
 {
     /**
      * @var AbstractRenderer
@@ -32,7 +34,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formatter = $this->createFormatterMock();
         $this->renderer = $this->createAbstractRendererMock($this->formatter);
@@ -51,9 +53,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Formatter|null $formatter
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractRenderer
+     * @return MockObject|AbstractRenderer
      */
     private function createAbstractRendererMock(Formatter $formatter = null)
     {
@@ -63,7 +63,7 @@ class RendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Formatter
+     * @return MockObject|Formatter
      */
     private function createFormatterMock()
     {

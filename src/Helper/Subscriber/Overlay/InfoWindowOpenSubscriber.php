@@ -27,11 +27,6 @@ class InfoWindowOpenSubscriber extends AbstractInfoWindowSubscriber
      */
     private $infoWindowOpenRenderer;
 
-    /**
-     * @param Formatter              $formatter
-     * @param InfoWindowCollector    $infoWindowCollector
-     * @param InfoWindowOpenRenderer $infoWindowOpenRenderer
-     */
     public function __construct(
         Formatter $formatter,
         InfoWindowCollector $infoWindowCollector,
@@ -50,17 +45,11 @@ class InfoWindowOpenSubscriber extends AbstractInfoWindowSubscriber
         return $this->infoWindowOpenRenderer;
     }
 
-    /**
-     * @param InfoWindowOpenRenderer $infoWindowOpenRenderer
-     */
     public function setInfoWindowOpenRenderer(InfoWindowOpenRenderer $infoWindowOpenRenderer)
     {
         $this->infoWindowOpenRenderer = $infoWindowOpenRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

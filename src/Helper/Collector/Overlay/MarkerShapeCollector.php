@@ -25,9 +25,6 @@ class MarkerShapeCollector extends AbstractCollector
      */
     private $markerCollector;
 
-    /**
-     * @param MarkerCollector $markerCollector
-     */
     public function __construct(MarkerCollector $markerCollector)
     {
         $this->setMarkerCollector($markerCollector);
@@ -41,16 +38,12 @@ class MarkerShapeCollector extends AbstractCollector
         return $this->markerCollector;
     }
 
-    /**
-     * @param MarkerCollector $markerCollector
-     */
     public function setMarkerCollector(MarkerCollector $markerCollector)
     {
         $this->markerCollector = $markerCollector;
     }
 
     /**
-     * @param Map           $map
      * @param MarkerShape[] $markerShapes
      *
      * @return MarkerShape[]

@@ -39,10 +39,6 @@ class Bound implements VariableAwareInterface
      */
     private $extendables = [];
 
-    /**
-     * @param Coordinate|null $southWest
-     * @param Coordinate|null $northEast
-     */
     public function __construct(Coordinate $southWest = null, Coordinate $northEast = null)
     {
         $this->setSouthWest($southWest);
@@ -62,7 +58,7 @@ class Bound implements VariableAwareInterface
      */
     public function hasSouthWest()
     {
-        return $this->southWest !== null;
+        return null !== $this->southWest;
     }
 
     /**
@@ -73,9 +69,6 @@ class Bound implements VariableAwareInterface
         return $this->southWest;
     }
 
-    /**
-     * @param Coordinate|null $southWest
-     */
     public function setSouthWest(Coordinate $southWest = null)
     {
         $this->southWest = $southWest;
@@ -86,7 +79,7 @@ class Bound implements VariableAwareInterface
      */
     public function hasNorthEast()
     {
-        return $this->northEast !== null;
+        return null !== $this->northEast;
     }
 
     /**
@@ -97,9 +90,6 @@ class Bound implements VariableAwareInterface
         return $this->northEast;
     }
 
-    /**
-     * @param Coordinate|null $northEast
-     */
     public function setNorthEast(Coordinate $northEast = null)
     {
         $this->northEast = $northEast;
@@ -141,8 +131,6 @@ class Bound implements VariableAwareInterface
     }
 
     /**
-     * @param ExtendableInterface $extendable
-     *
      * @return bool
      */
     public function hasExtendable(ExtendableInterface $extendable)
@@ -150,9 +138,6 @@ class Bound implements VariableAwareInterface
         return in_array($extendable, $this->extendables, true);
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     public function addExtendable(ExtendableInterface $extendable)
     {
         if (!$this->hasExtendable($extendable)) {
@@ -160,9 +145,6 @@ class Bound implements VariableAwareInterface
         }
     }
 
-    /**
-     * @param ExtendableInterface $extendable
-     */
     public function removeExtendable(ExtendableInterface $extendable)
     {
         unset($this->extendables[array_search($extendable, $this->extendables, true)]);

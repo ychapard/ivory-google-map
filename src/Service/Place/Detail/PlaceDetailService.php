@@ -25,11 +25,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class PlaceDetailService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -44,8 +39,6 @@ class PlaceDetailService extends AbstractSerializableService
     }
 
     /**
-     * @param PlaceDetailRequestInterface $request
-     *
      * @return PlaceDetailResponse
      */
     public function process(PlaceDetailRequestInterface $request)

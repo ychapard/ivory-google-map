@@ -23,9 +23,6 @@ class PlaceAutocompleteEvent extends AbstractEvent
      */
     private $autocomplete;
 
-    /**
-     * @param Autocomplete $autocomplete
-     */
     public function __construct(Autocomplete $autocomplete)
     {
         $this->autocomplete = $autocomplete;

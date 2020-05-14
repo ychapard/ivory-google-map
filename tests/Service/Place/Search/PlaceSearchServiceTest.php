@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Search;
 
+use Http\Client\Common\Exception\ClientErrorException;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Place\Base\PlaceType;
 use Ivory\GoogleMap\Service\Place\Base\PriceLevel;
@@ -19,7 +20,6 @@ use Ivory\GoogleMap\Service\Place\Search\Request\NearbyPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRankBy;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRequestInterface;
-use Ivory\GoogleMap\Service\Place\Search\Request\RadarPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\TextPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Response\PlaceSearchResponse;
 use Ivory\GoogleMap\Service\Place\Search\Response\PlaceSearchResponseIterator;
@@ -39,7 +39,7 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!isset($_SERVER['API_KEY'])) {
             $this->markTestSkipped();
@@ -166,149 +166,34 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndKeyword($format)
-    {
-        $request = $this->createRadarRequest(300);
-        $request->setKeyword('Bank');
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndMinPrice($format)
-    {
-        $request = $this->createRadarRequest(150);
-        $request->setKeyword('Mother');
-        $request->setMinPrice(PriceLevel::FREE);
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndMaxPrice($format)
-    {
-        $request = $this->createRadarRequest(200);
-        $request->setKeyword('Mother');
-        $request->setMaxPrice(PriceLevel::MODERATE);
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndOpenNow($format)
-    {
-        $request = $this->createRadarRequest(150);
-        $request->setKeyword('Mother');
-        $request->setOpenNow(true);
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndType($format)
-    {
-        $request = $this->createRadarRequest(500);
-        $request->setType(PlaceType::BANK);
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithRadarRequestAndLanguage($format)
-    {
-        $request = $this->createRadarRequest(150);
-        $request->setKeyword('Mother');
-        $request->setLanguage('fr');
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequest($format)
+    public function testProcessWithTextRequest()
     {
         $request = $this->createTextRequest();
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequestWithLocation($format)
+    public function testProcessWithTextRequestWithLocation()
     {
         $request = $this->createTextRequest();
         $request->setLocation(new Coordinate(50.637133, 3.063657));
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequestWithRadius($format)
+    public function testProcessWithTextRequestWithRadius()
     {
         $request = $this->createTextRequest();
         $request->setLocation(new Coordinate(50.637133, 3.063657));
         $request->setRadius(1000);
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
@@ -330,33 +215,23 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequestWithMaxPrice($format)
+    public function testProcessWithTextRequestWithMaxPrice()
     {
         $request = $this->createTextRequest('Pizza in Lille');
         $request->setMaxPrice(PriceLevel::MODERATE);
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequestWithOpenNow($format)
+    public function testProcessWithTextRequestWithOpenNow()
     {
         $request = $this->createTextRequest();
         $request->setOpenNow(true);
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
@@ -378,17 +253,12 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testProcessWithTextRequestWithLanguage($format)
+    public function testProcessWithTextRequestWithLanguage()
     {
         $request = $this->createTextRequest();
         $request->setLanguage('fr');
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
@@ -396,7 +266,7 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
 
     public function testIteratorWithNearbyRequest()
     {
-        $request = $this->createNearbyRequest(5000);
+        $request = $this->createNearbyRequest(1000);
         $request->setType(PlaceType::HOSPITAL);
 
         $iterator = $this->service->process($request);
@@ -404,32 +274,11 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertPlaceSearchIterator($iterator, $request);
     }
 
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testIteratorWithRadarRequest($format)
-    {
-        $request = $this->createRadarRequest(1000);
-        $request->setKeyword('Bank');
-
-        $this->service->setFormat($format);
-        $iterator = $this->service->process($request);
-
-        $this->assertPlaceSearchIterator($iterator, $request);
-    }
-
-    /**
-     * @param string $format
-     *
-     * @dataProvider formatProvider
-     */
-    public function testIteratorWithTextRequest($format)
+    public function testIteratorWithTextRequest()
     {
         $request = $this->createTextRequest('Church in Lille');
 
-        $this->service->setFormat($format);
+        $this->service->setFormat('json');
         $iterator = $this->service->process($request);
 
         $this->assertPlaceSearchIterator($iterator, $request);
@@ -439,12 +288,11 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
      * @param string $format
      *
      * @dataProvider formatProvider
-     *
-     * @expectedException \Http\Client\Common\Exception\ClientErrorException
-     * @expectedExceptionMessage REQUEST_DENIED
      */
     public function testErrorRequest($format)
     {
+        $this->expectException(ClientErrorException::class);
+
         $this->service->setFormat($format);
         $this->service->setKey('invalid');
 
@@ -461,19 +309,6 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         return new NearbyPlaceSearchRequest(
             new Coordinate(-33.8670522, 151.1957362),
             PlaceSearchRankBy::PROMINENCE,
-            $radius
-        );
-    }
-
-    /**
-     * @param int $radius
-     *
-     * @return RadarPlaceSearchRequest
-     */
-    private function createRadarRequest($radius = 10)
-    {
-        return new RadarPlaceSearchRequest(
-            new Coordinate(-33.8670522, 151.1957362),
             $radius
         );
     }
@@ -497,7 +332,7 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertInstanceOf(PlaceSearchResponseIterator::class, $iterator);
 
         foreach ($iterator as $key => $response) {
-            $this->assertPlaceSearchResponse($response, $key === 0 ? $request : null);
+            $this->assertPlaceSearchResponse($response, 0 === $key ? $request : null);
 
             if (isset($_SERVER['CACHE_RESET']) && $_SERVER['CACHE_RESET']) {
                 sleep(5);
@@ -520,7 +355,7 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
 
         $this->assertInstanceOf(PlaceSearchResponse::class, $response);
 
-        if ($request !== null) {
+        if (null !== $request) {
             $this->assertSame($request, $response->getRequest());
         } else {
             $this->assertInstanceOf(PageTokenPlaceSearchRequest::class, $response->getRequest());
@@ -529,7 +364,7 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
         $this->assertSame($options['status'], $response->getStatus());
         $this->assertSame($options['html_attributions'], $response->getHtmlAttributions());
 
-        if ($options['next_page_token'] !== null) {
+        if (null !== $options['next_page_token']) {
             $this->assertNotEmpty($options['next_page_token']);
         } else {
             $this->assertNull($options['next_page_token']);

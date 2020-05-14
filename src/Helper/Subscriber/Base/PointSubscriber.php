@@ -33,11 +33,6 @@ class PointSubscriber extends AbstractSubscriber
      */
     private $pointRenderer;
 
-    /**
-     * @param Formatter      $formatter
-     * @param PointCollector $pointCollector
-     * @param PointRenderer  $pointRenderer
-     */
     public function __construct(
         Formatter $formatter,
         PointCollector $pointCollector,
@@ -57,9 +52,6 @@ class PointSubscriber extends AbstractSubscriber
         return $this->pointCollector;
     }
 
-    /**
-     * @param PointCollector $pointCollector
-     */
     public function setPointCollector(PointCollector $pointCollector)
     {
         $this->pointCollector = $pointCollector;
@@ -73,9 +65,6 @@ class PointSubscriber extends AbstractSubscriber
         return $this->pointRenderer;
     }
 
-    /**
-     * @param PointRenderer $pointRenderer
-     */
     public function setPointRenderer(PointRenderer $pointRenderer)
     {
         $this->pointRenderer = $pointRenderer;

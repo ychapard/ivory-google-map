@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Base\Point;
 class PointRenderer
 {
     /**
-     * @param Point $point
-     *
      * @return string
      */
     public function render(Point $point)

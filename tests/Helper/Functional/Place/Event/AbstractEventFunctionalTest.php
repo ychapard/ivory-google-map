@@ -27,7 +27,7 @@ abstract class AbstractEventFunctionalTest extends AbstractAutocompleteFunctiona
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

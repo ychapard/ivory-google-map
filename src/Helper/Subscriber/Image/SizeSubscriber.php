@@ -26,17 +26,11 @@ class SizeSubscriber implements EventSubscriberInterface
      */
     private $sizeRenderer;
 
-    /**
-     * @param SizeRenderer $sizeRenderer
-     */
     public function __construct(SizeRenderer $sizeRenderer)
     {
         $this->sizeRenderer = $sizeRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $event->setParameter('size', $this->sizeRenderer->render($event->getMap()));

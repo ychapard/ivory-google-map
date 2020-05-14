@@ -34,10 +34,6 @@ class PlaceSearchResponseIterator implements \Iterator
      */
     private $position = 0;
 
-    /**
-     * @param PlaceSearchService  $service
-     * @param PlaceSearchResponse $response
-     */
     public function __construct(PlaceSearchService $service, PlaceSearchResponse $response)
     {
         $this->service = $service;

@@ -17,11 +17,12 @@ use Ivory\GoogleMap\Helper\Renderer\Image\Base\PointRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\MarkerStyleRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerCollectorTest extends \PHPUnit_Framework_TestCase
+class MarkerCollectorTest extends TestCase
 {
     /**
      * @var MarkerCollector
@@ -31,7 +32,7 @@ class MarkerCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerCollector = new MarkerCollector(new MarkerStyleRenderer(new PointRenderer()));
     }

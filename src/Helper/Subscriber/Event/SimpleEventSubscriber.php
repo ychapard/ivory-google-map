@@ -33,11 +33,6 @@ class SimpleEventSubscriber extends AbstractSubscriber
      */
     private $eventRenderer;
 
-    /**
-     * @param Formatter      $formatter
-     * @param EventCollector $eventCollector
-     * @param EventRenderer  $eventRenderer
-     */
     public function __construct(
         Formatter $formatter,
         EventCollector $eventCollector,
@@ -57,9 +52,6 @@ class SimpleEventSubscriber extends AbstractSubscriber
         return $this->eventCollector;
     }
 
-    /**
-     * @param EventCollector $eventCollector
-     */
     public function setEventCollector(EventCollector $eventCollector)
     {
         $this->eventCollector = $eventCollector;
@@ -73,17 +65,11 @@ class SimpleEventSubscriber extends AbstractSubscriber
         return $this->eventRenderer;
     }
 
-    /**
-     * @param EventRenderer $eventRenderer
-     */
     public function setEventRenderer(EventRenderer $eventRenderer)
     {
         $this->eventRenderer = $eventRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

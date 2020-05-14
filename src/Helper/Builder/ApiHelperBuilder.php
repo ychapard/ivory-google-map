@@ -55,15 +55,8 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
     private $language;
 
     /**
-     * @var string|null
-     */
-    private $key;
-
-    /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     * @param string           $language
-     * @param string|null      $key
+     * @param string      $language
+     * @param string|null $key
      */
     public function __construct(
         Formatter $formatter = null,
@@ -74,6 +67,7 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
         parent::__construct($formatter, $jsonBuilder);
 
         $this->setLanguage($language);
+        $this->setKey($key);
     }
 
     /**
@@ -92,34 +86,6 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
     public function setLanguage($language)
     {
         $this->language = $language;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasKey()
-    {
-        return $this->key !== null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * @param string|null $key
-     *
-     * @return $this
-     */
-    public function setKey($key)
-    {
-        $this->key = $key;
 
         return $this;
     }

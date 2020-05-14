@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\RequestInterface;
 use Ivory\GoogleMap\Service\TimeZone\Request\TimeZoneRequest;
 use Ivory\GoogleMap\Service\TimeZone\Request\TimeZoneRequestInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class TimeZoneRequestTest extends \PHPUnit_Framework_TestCase
+class TimeZoneRequestTest extends TestCase
 {
     /**
      * @var TimeZoneRequest
@@ -27,7 +29,7 @@ class TimeZoneRequestTest extends \PHPUnit_Framework_TestCase
     private $request;
 
     /**
-     * @var Coordinate|\PHPUnit_Framework_MockObject_MockObject
+     * @var Coordinate|MockObject
      */
     private $location;
 
@@ -39,7 +41,7 @@ class TimeZoneRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new TimeZoneRequest(
             $this->location = $this->createCoordinateMock(),
@@ -102,7 +104,7 @@ class TimeZoneRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

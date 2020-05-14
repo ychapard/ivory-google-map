@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
 use Ivory\GoogleMap\Overlay\Marker;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoWindowCollectorTest extends \PHPUnit_Framework_TestCase
+class InfoWindowCollectorTest extends TestCase
 {
     /**
      * @var InfoWindowCollector
@@ -32,7 +34,7 @@ class InfoWindowCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infoWindowCollector = new InfoWindowCollector(new MarkerCollector());
     }
@@ -53,7 +55,6 @@ class InfoWindowCollectorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @param InfoWindow[] $expected
-     * @param Map          $map
      * @param int          $strategy
      * @param string|null  $type
      *
@@ -106,7 +107,7 @@ class InfoWindowCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MarkerCollector
+     * @return MockObject|MarkerCollector
      */
     private function createMarkerCollectorMock()
     {

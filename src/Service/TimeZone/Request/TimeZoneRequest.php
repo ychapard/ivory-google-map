@@ -33,10 +33,6 @@ class TimeZoneRequest implements TimeZoneRequestInterface
      */
     private $language;
 
-    /**
-     * @param Coordinate     $location
-     * @param \DateTime|null $date
-     */
     public function __construct(Coordinate $location, \DateTime $date = null)
     {
         $this->setLocation($location);
@@ -51,9 +47,6 @@ class TimeZoneRequest implements TimeZoneRequestInterface
         return $this->location;
     }
 
-    /**
-     * @param Coordinate $location
-     */
     public function setLocation(Coordinate $location)
     {
         $this->location = $location;
@@ -67,9 +60,6 @@ class TimeZoneRequest implements TimeZoneRequestInterface
         return $this->date;
     }
 
-    /**
-     * @param \DateTime $date
-     */
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
@@ -80,7 +70,7 @@ class TimeZoneRequest implements TimeZoneRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**
@@ -117,8 +107,6 @@ class TimeZoneRequest implements TimeZoneRequestInterface
     }
 
     /**
-     * @param Coordinate $coordinate
-     *
      * @return string
      */
     private function buildCoordinate(Coordinate $coordinate)

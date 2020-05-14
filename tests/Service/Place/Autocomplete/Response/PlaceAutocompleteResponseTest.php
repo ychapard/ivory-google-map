@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Service\Place\Autocomplete\Request\PlaceAutocompleteRequestI
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompletePrediction;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteResponse;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteStatus;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteResponseTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteResponseTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteResponse
@@ -29,7 +31,7 @@ class PlaceAutocompleteResponseTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->response = new PlaceAutocompleteResponse();
     }
@@ -99,7 +101,7 @@ class PlaceAutocompleteResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceAutocompleteRequestInterface
+     * @return MockObject|PlaceAutocompleteRequestInterface
      */
     private function createRequestMock()
     {
@@ -107,7 +109,7 @@ class PlaceAutocompleteResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceAutocompletePrediction
+     * @return MockObject|PlaceAutocompletePrediction
      */
     private function createPredictionMock()
     {

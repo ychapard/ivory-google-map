@@ -25,9 +25,6 @@ class IconSequenceCollector extends AbstractCollector
      */
     private $polylineCollector;
 
-    /**
-     * @param PolylineCollector $polylineCollector
-     */
     public function __construct(PolylineCollector $polylineCollector)
     {
         $this->setPolylineCollector($polylineCollector);
@@ -41,16 +38,12 @@ class IconSequenceCollector extends AbstractCollector
         return $this->polylineCollector;
     }
 
-    /**
-     * @param PolylineCollector $polylineCollector
-     */
     public function setPolylineCollector(PolylineCollector $polylineCollector)
     {
         $this->polylineCollector = $polylineCollector;
     }
 
     /**
-     * @param Map            $map
      * @param IconSequence[] $icons
      *
      * @return IconSequence[]

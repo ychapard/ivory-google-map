@@ -27,11 +27,6 @@ class InfoWindowCloseSubscriber extends AbstractInfoWindowSubscriber
      */
     private $infoWindowCloseRenderer;
 
-    /**
-     * @param Formatter               $formatter
-     * @param InfoWindowCollector     $infoWindowCollector
-     * @param InfoWindowCloseRenderer $infoWindowCloseRenderer
-     */
     public function __construct(
         Formatter $formatter,
         InfoWindowCollector $infoWindowCollector,
@@ -50,17 +45,11 @@ class InfoWindowCloseSubscriber extends AbstractInfoWindowSubscriber
         return $this->infoWindowCloseRenderer;
     }
 
-    /**
-     * @param InfoWindowCloseRenderer $infoWindowCloseRenderer
-     */
     public function setInfoWindowCloseRenderer(InfoWindowCloseRenderer $infoWindowCloseRenderer)
     {
         $this->infoWindowCloseRenderer = $infoWindowCloseRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

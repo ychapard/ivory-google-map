@@ -26,11 +26,6 @@ class FullscreenControlRenderer extends AbstractJsonRenderer implements ControlR
      */
     private $controlPositionRenderer;
 
-    /**
-     * @param Formatter               $formatter
-     * @param JsonBuilder             $jsonBuilder
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -49,9 +44,6 @@ class FullscreenControlRenderer extends AbstractJsonRenderer implements ControlR
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
@@ -63,11 +55,7 @@ class FullscreenControlRenderer extends AbstractJsonRenderer implements ControlR
     public function render($control)
     {
         if (!$control instanceof FullscreenControl) {
-            throw new \InvalidArgumentException(sprintf(
-                'Expected a "%s", got "%s".',
-                FullscreenControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
-            ));
+            throw new \InvalidArgumentException(sprintf('Expected a "%s", got "%s".', FullscreenControl::class, is_object($control) ? get_class($control) : gettype($control)));
         }
 
         return $this->getJsonBuilder()

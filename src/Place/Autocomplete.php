@@ -92,9 +92,6 @@ class Autocomplete implements VariableAwareInterface
         return $this->eventManager;
     }
 
-    /**
-     * @param EventManager $eventManager
-     */
     public function setEventManager(EventManager $eventManager)
     {
         $this->eventManager = $eventManager;
@@ -105,7 +102,7 @@ class Autocomplete implements VariableAwareInterface
      */
     public function hasBound()
     {
-        return $this->bound !== null;
+        return null !== $this->bound;
     }
 
     /**
@@ -116,9 +113,6 @@ class Autocomplete implements VariableAwareInterface
         return $this->bound;
     }
 
-    /**
-     * @param Bound|null $bound
-     */
     public function setBound(Bound $bound = null)
     {
         $this->bound = $bound;
@@ -265,7 +259,7 @@ class Autocomplete implements VariableAwareInterface
      */
     public function hasValue()
     {
-        return $this->value !== null;
+        return null !== $this->value;
     }
 
     /**

@@ -25,10 +25,6 @@ abstract class AbstractInfoWindowSubscriber extends AbstractSubscriber
      */
     private $infoWindowCollector;
 
-    /**
-     * @param Formatter           $formatter
-     * @param InfoWindowCollector $infoWindowCollector
-     */
     public function __construct(Formatter $formatter, InfoWindowCollector $infoWindowCollector)
     {
         parent::__construct($formatter);
@@ -44,9 +40,6 @@ abstract class AbstractInfoWindowSubscriber extends AbstractSubscriber
         return $this->infoWindowCollector;
     }
 
-    /**
-     * @param InfoWindowCollector $infoWindowCollector
-     */
     public function setInfoWindowCollector(InfoWindowCollector $infoWindowCollector)
     {
         $this->infoWindowCollector = $infoWindowCollector;

@@ -50,7 +50,7 @@ class DistanceMatrixElement
      */
     public function hasStatus()
     {
-        return  $this->status !== null;
+        return  null !== $this->status;
     }
 
     /**
@@ -74,7 +74,7 @@ class DistanceMatrixElement
      */
     public function hasDistance()
     {
-        return $this->distance !== null;
+        return null !== $this->distance;
     }
 
     /**
@@ -85,9 +85,6 @@ class DistanceMatrixElement
         return $this->distance;
     }
 
-    /**
-     * @param Distance|null $distance
-     */
     public function setDistance(Distance $distance = null)
     {
         $this->distance = $distance;
@@ -98,7 +95,7 @@ class DistanceMatrixElement
      */
     public function hasDuration()
     {
-        return $this->duration !== null;
+        return null !== $this->duration;
     }
 
     /**
@@ -109,9 +106,6 @@ class DistanceMatrixElement
         return $this->duration;
     }
 
-    /**
-     * @param Duration|null $duration
-     */
     public function setDuration(Duration $duration = null)
     {
         $this->duration = $duration;
@@ -122,7 +116,7 @@ class DistanceMatrixElement
      */
     public function hasDurationInTraffic()
     {
-        return $this->durationInTraffic !== null;
+        return null !== $this->durationInTraffic;
     }
 
     /**
@@ -133,9 +127,6 @@ class DistanceMatrixElement
         return $this->durationInTraffic;
     }
 
-    /**
-     * @param Duration|null $durationInTraffic
-     */
     public function setDurationInTraffic(Duration $durationInTraffic = null)
     {
         $this->durationInTraffic = $durationInTraffic;
@@ -146,7 +137,7 @@ class DistanceMatrixElement
      */
     public function hasFare()
     {
-        return $this->fare !== null;
+        return null !== $this->fare;
     }
 
     /**
@@ -157,9 +148,6 @@ class DistanceMatrixElement
         return $this->fare;
     }
 
-    /**
-     * @param Fare|null $fare
-     */
     public function setFare(Fare $fare = null)
     {
         $this->fare = $fare;

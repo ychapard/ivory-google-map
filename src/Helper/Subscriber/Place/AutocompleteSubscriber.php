@@ -27,10 +27,6 @@ class AutocompleteSubscriber extends AbstractSubscriber
      */
     private $autocompleteRenderer;
 
-    /**
-     * @param Formatter            $formatter
-     * @param AutocompleteRenderer $autocompleteRenderer
-     */
     public function __construct(Formatter $formatter, AutocompleteRenderer $autocompleteRenderer)
     {
         parent::__construct($formatter);
@@ -46,17 +42,11 @@ class AutocompleteSubscriber extends AbstractSubscriber
         return $this->autocompleteRenderer;
     }
 
-    /**
-     * @param AutocompleteRenderer $autocompleteRenderer
-     */
     public function setAutocompleteRenderer(AutocompleteRenderer $autocompleteRenderer)
     {
         $this->autocompleteRenderer = $autocompleteRenderer;
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     public function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $autocomplete = $event->getAutocomplete();

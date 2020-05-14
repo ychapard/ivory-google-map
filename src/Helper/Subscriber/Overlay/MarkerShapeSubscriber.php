@@ -33,11 +33,6 @@ class MarkerShapeSubscriber extends AbstractSubscriber
      */
     private $markerShapeRenderer;
 
-    /**
-     * @param Formatter            $formatter
-     * @param MarkerShapeCollector $markerShapeCollector
-     * @param MarkerShapeRenderer  $markerShapeRenderer
-     */
     public function __construct(
         Formatter $formatter,
         MarkerShapeCollector $markerShapeCollector,
@@ -57,9 +52,6 @@ class MarkerShapeSubscriber extends AbstractSubscriber
         return $this->markerShapeCollector;
     }
 
-    /**
-     * @param MarkerShapeCollector $markerShapeCollector
-     */
     public function setMarkerShapeCollector(MarkerShapeCollector $markerShapeCollector)
     {
         $this->markerShapeCollector = $markerShapeCollector;
@@ -73,17 +65,11 @@ class MarkerShapeSubscriber extends AbstractSubscriber
         return $this->markerShapeRenderer;
     }
 
-    /**
-     * @param MarkerShapeRenderer $markerShapeRenderer
-     */
     public function setMarkerShapeRenderer(MarkerShapeRenderer $markerShapeRenderer)
     {
         $this->markerShapeRenderer = $markerShapeRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

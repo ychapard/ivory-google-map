@@ -28,11 +28,6 @@ class MarkerClustererRenderer extends AbstractJsonRenderer
      */
     private $requirementRenderer;
 
-    /**
-     * @param Formatter           $formatter
-     * @param JsonBuilder         $jsonBuilder
-     * @param RequirementRenderer $requirementRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -51,18 +46,13 @@ class MarkerClustererRenderer extends AbstractJsonRenderer
         return $this->requirementRenderer;
     }
 
-    /**
-     * @param RequirementRenderer $requirementRenderer
-     */
     public function setRequirementRenderer(RequirementRenderer $requirementRenderer)
     {
         $this->requirementRenderer = $requirementRenderer;
     }
 
     /**
-     * @param MarkerCluster $markerCluster
-     * @param Map           $map
-     * @param string        $markers
+     * @param string $markers
      *
      * @return string
      */

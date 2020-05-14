@@ -17,11 +17,13 @@ use Ivory\GoogleMap\Layer\HeatmapLayer;
 use Ivory\GoogleMap\Layer\KmlLayer;
 use Ivory\GoogleMap\Layer\LayerManager;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class LayerManagerTest extends \PHPUnit_Framework_TestCase
+class LayerManagerTest extends TestCase
 {
     /**
      * @var LayerManager
@@ -29,19 +31,19 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     private $layerManager;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Map
+     * @var MockObject|Map
      */
     private $map;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @var MockObject|Bound
      */
     private $bound;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bound = $this->createBoundMock();
         $this->map = $this->createMapMock($this->bound);
@@ -389,9 +391,7 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Bound|null $bound
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|Map
+     * @return MockObject|Map
      */
     private function createMapMock(Bound $bound = null)
     {
@@ -405,7 +405,7 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {
@@ -413,7 +413,7 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|GeoJsonLayer
+     * @return MockObject|GeoJsonLayer
      */
     private function createGeoJsonLayerMock()
     {
@@ -421,7 +421,7 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|HeatmapLayer
+     * @return MockObject|HeatmapLayer
      */
     private function createHeatmapLayerMock()
     {
@@ -429,7 +429,7 @@ class LayerManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|KmlLayer
+     * @return MockObject|KmlLayer
      */
     private function createKmlLayerMock()
     {

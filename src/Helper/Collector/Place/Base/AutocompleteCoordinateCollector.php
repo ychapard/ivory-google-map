@@ -25,9 +25,6 @@ class AutocompleteCoordinateCollector extends AbstractCollector
      */
     private $boundCollector;
 
-    /**
-     * @param AutocompleteBoundCollector $boundCollector
-     */
     public function __construct(AutocompleteBoundCollector $boundCollector)
     {
         $this->setBoundCollector($boundCollector);
@@ -41,16 +38,12 @@ class AutocompleteCoordinateCollector extends AbstractCollector
         return $this->boundCollector;
     }
 
-    /**
-     * @param AutocompleteBoundCollector $boundCollector
-     */
     public function setBoundCollector(AutocompleteBoundCollector $boundCollector)
     {
         $this->boundCollector = $boundCollector;
     }
 
     /**
-     * @param Autocomplete $autocomplete
      * @param Coordinate[] $coordinates
      *
      * @return Coordinate[]

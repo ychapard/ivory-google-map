@@ -23,7 +23,6 @@ use Ivory\GoogleMap\Overlay\Polyline;
 class ExtendableCollector extends AbstractCollector
 {
     /**
-     * @param Map                   $map
      * @param ExtendableInterface[] $extendables
      *
      * @return ExtendableInterface[]

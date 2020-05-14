@@ -41,7 +41,7 @@ class Photo
      */
     public function hasReference()
     {
-        return $this->reference !== null;
+        return null !== $this->reference;
     }
 
     /**
@@ -65,7 +65,7 @@ class Photo
      */
     public function hasWidth()
     {
-        return $this->width !== null;
+        return null !== $this->width;
     }
 
     /**
@@ -89,7 +89,7 @@ class Photo
      */
     public function hasHeight()
     {
-        return $this->height !== null;
+        return null !== $this->height;
     }
 
     /**

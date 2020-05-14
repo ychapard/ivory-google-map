@@ -26,10 +26,6 @@ class MapBoundSubscriber extends AbstractSubscriber
      */
     private $mapBoundRenderer;
 
-    /**
-     * @param Formatter        $formatter
-     * @param MapBoundRenderer $mapBoundRenderer
-     */
     public function __construct(Formatter $formatter, MapBoundRenderer $mapBoundRenderer)
     {
         parent::__construct($formatter);
@@ -45,17 +41,11 @@ class MapBoundSubscriber extends AbstractSubscriber
         return $this->mapBoundRenderer;
     }
 
-    /**
-     * @param MapBoundRenderer $mapBoundRenderer
-     */
     public function setMapBoundRenderer(MapBoundRenderer $mapBoundRenderer)
     {
         $this->mapBoundRenderer = $mapBoundRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $map = $event->getMap();

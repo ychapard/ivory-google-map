@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRequestInterface;
 use Ivory\GoogleMap\Service\Place\Search\Response\PlaceSearchResponse;
 use Ivory\GoogleMap\Service\RequestInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PageTokenPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class PageTokenPlaceSearchRequestTest extends TestCase
 {
     /**
      * @var PageTokenPlaceSearchRequest
@@ -28,14 +30,14 @@ class PageTokenPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     private $request;
 
     /**
-     * @var PlaceSearchResponse|\PHPUnit_Framework_MockObject_MockObject
+     * @var PlaceSearchResponse|MockObject
      */
     private $response;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new PageTokenPlaceSearchRequest($this->response = $this->createResponseMock());
     }
@@ -85,7 +87,7 @@ class PageTokenPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceSearchResponse
+     * @return MockObject|PlaceSearchResponse
      */
     private function createResponseMock()
     {
@@ -93,7 +95,7 @@ class PageTokenPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceSearchRequestInterface
+     * @return MockObject|PlaceSearchRequestInterface
      */
     private function createRequestMock()
     {

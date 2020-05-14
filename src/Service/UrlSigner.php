@@ -26,11 +26,11 @@ class UrlSigner
      */
     public static function sign($url, $secret, $clientId = null, $channel = null)
     {
-        if ($clientId !== null) {
+        if (null !== $clientId) {
             $url .= '&client=gme-'.$clientId;
         }
 
-        if ($channel !== null) {
+        if (null !== $channel) {
             $url .= '&channel='.$channel;
         }
 

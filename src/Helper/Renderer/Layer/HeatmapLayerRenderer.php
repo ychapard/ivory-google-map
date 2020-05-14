@@ -21,9 +21,6 @@ use Ivory\GoogleMap\Map;
 class HeatmapLayerRenderer extends AbstractJsonRenderer
 {
     /**
-     * @param HeatmapLayer $heatmapLayer
-     * @param Map          $map
-     *
      * @return string
      */
     public function render(HeatmapLayer $heatmapLayer, Map $map)

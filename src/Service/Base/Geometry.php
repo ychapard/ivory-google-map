@@ -44,7 +44,7 @@ class Geometry
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -55,9 +55,6 @@ class Geometry
         return $this->location;
     }
 
-    /**
-     * @param Coordinate|null $location
-     */
     public function setLocation(Coordinate $location = null)
     {
         $this->location = $location;
@@ -68,7 +65,7 @@ class Geometry
      */
     public function hasLocationType()
     {
-        return $this->locationType !== null;
+        return null !== $this->locationType;
     }
 
     /**
@@ -92,7 +89,7 @@ class Geometry
      */
     public function hasViewport()
     {
-        return $this->viewport !== null;
+        return null !== $this->viewport;
     }
 
     /**
@@ -103,9 +100,6 @@ class Geometry
         return $this->viewport;
     }
 
-    /**
-     * @param Bound|null $viewport
-     */
     public function setViewport(Bound $viewport = null)
     {
         $this->viewport = $viewport;
@@ -116,7 +110,7 @@ class Geometry
      */
     public function hasBound()
     {
-        return $this->bound !== null;
+        return null !== $this->bound;
     }
 
     /**
@@ -127,9 +121,6 @@ class Geometry
         return $this->bound;
     }
 
-    /**
-     * @param Bound|null $bound
-     */
     public function setBound(Bound $bound = null)
     {
         $this->bound = $bound;

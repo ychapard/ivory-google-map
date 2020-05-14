@@ -16,21 +16,23 @@ use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderRequest;
 use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderReverseRequest;
 use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderAddressType;
 use Ivory\GoogleMap\Service\RequestInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeocoderReverseRequestTest extends \PHPUnit_Framework_TestCase
+class GeocoderReverseRequestTest extends TestCase
 {
     /**
-     * @var AbstractGeocoderReverseRequest|\PHPUnit_Framework_MockObject_MockObject
+     * @var AbstractGeocoderReverseRequest|MockObject
      */
     private $request;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = $this->createAbstractReverseRequestMock();
     }
@@ -154,7 +156,7 @@ class GeocoderReverseRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractGeocoderReverseRequest
+     * @return MockObject|AbstractGeocoderReverseRequest
      */
     private function createAbstractReverseRequestMock()
     {

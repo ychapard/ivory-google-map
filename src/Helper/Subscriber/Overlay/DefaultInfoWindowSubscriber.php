@@ -30,11 +30,6 @@ class DefaultInfoWindowSubscriber extends AbstractInfoWindowSubscriber
      */
     private $infoWindowRenderer;
 
-    /**
-     * @param Formatter                  $formatter
-     * @param DefaultInfoWindowCollector $infoWindowCollector
-     * @param DefaultInfoWindowRenderer  $infoWindowRenderer
-     */
     public function __construct(
         Formatter $formatter,
         DefaultInfoWindowCollector $infoWindowCollector,
@@ -53,17 +48,11 @@ class DefaultInfoWindowSubscriber extends AbstractInfoWindowSubscriber
         return $this->infoWindowRenderer;
     }
 
-    /**
-     * @param DefaultInfoWindowRenderer $infoWindowRenderer
-     */
     public function setInfoWindowRenderer(DefaultInfoWindowRenderer $infoWindowRenderer)
     {
         $this->infoWindowRenderer = $infoWindowRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $map = $event->getMap();
@@ -87,9 +76,7 @@ class DefaultInfoWindowSubscriber extends AbstractInfoWindowSubscriber
     }
 
     /**
-     * @param Map        $map
-     * @param InfoWindow $infoWindow
-     * @param bool       $position
+     * @param bool $position
      *
      * @return string
      */

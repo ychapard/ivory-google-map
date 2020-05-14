@@ -12,12 +12,14 @@
 namespace Ivory\Tests\GoogleMap\Helper\Event;
 
 use Ivory\GoogleMap\Helper\Event\AbstractEvent;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EventTest extends \PHPUnit_Framework_TestCase
+class EventTest extends TestCase
 {
     /**
      * @var AbstractEvent
@@ -27,7 +29,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->event = $this->createAbstractEventMock();
     }
@@ -62,7 +64,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractEvent
+     * @return MockObject|AbstractEvent
      */
     private function createAbstractEventMock()
     {

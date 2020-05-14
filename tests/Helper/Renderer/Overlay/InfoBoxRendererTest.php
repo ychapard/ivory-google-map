@@ -20,11 +20,13 @@ use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoBoxRendererTest extends \PHPUnit_Framework_TestCase
+class InfoBoxRendererTest extends TestCase
 {
     /**
      * @var InfoBoxRenderer
@@ -34,7 +36,7 @@ class InfoBoxRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infoBoxRenderer = new InfoBoxRenderer(
             $formatter = new Formatter(),
@@ -99,7 +101,7 @@ class InfoBoxRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|RequirementRenderer
+     * @return MockObject|RequirementRenderer
      */
     private function createRequirementRendererMock()
     {

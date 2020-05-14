@@ -142,9 +142,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->center;
     }
 
-    /**
-     * @param Coordinate $center
-     */
     public function setCenter(Coordinate $center)
     {
         $this->center = $center;
@@ -158,9 +155,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->bound;
     }
 
-    /**
-     * @param Bound $bound
-     */
     public function setBound(Bound $bound)
     {
         $this->bound = $bound;
@@ -174,9 +168,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->controlManager;
     }
 
-    /**
-     * @param ControlManager $controlManager
-     */
     public function setControlManager(ControlManager $controlManager)
     {
         $this->controlManager = $controlManager;
@@ -190,9 +181,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->eventManager;
     }
 
-    /**
-     * @param EventManager $eventManager
-     */
     public function setEventManager(EventManager $eventManager)
     {
         $this->eventManager = $eventManager;
@@ -206,9 +194,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->layerManager;
     }
 
-    /**
-     * @param LayerManager $layerManager
-     */
     public function setLayerManager(LayerManager $layerManager)
     {
         $this->layerManager = $layerManager;
@@ -226,9 +211,6 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
         return $this->overlayManager;
     }
 
-    /**
-     * @param OverlayManager $overlayManager
-     */
     public function setOverlayManager(OverlayManager $overlayManager)
     {
         $this->overlayManager = $overlayManager;

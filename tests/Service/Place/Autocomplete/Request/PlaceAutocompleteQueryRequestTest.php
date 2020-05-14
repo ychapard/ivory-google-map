@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Service\Place\Autocomplete\Request;
 
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\AbstractPlaceAutocompleteRequest;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\PlaceAutocompleteQueryRequest;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteQueryRequestTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteQueryRequestTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteQueryRequest
@@ -32,7 +33,7 @@ class PlaceAutocompleteQueryRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new PlaceAutocompleteQueryRequest($this->input = 'input');
     }

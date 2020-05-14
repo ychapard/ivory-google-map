@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Layer;
 
 use Ivory\GoogleMap\Layer\GeoJsonLayer;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeoJsonLayerTest extends \PHPUnit_Framework_TestCase
+class GeoJsonLayerTest extends TestCase
 {
     /**
      * @var GeoJsonLayer
@@ -32,7 +33,7 @@ class GeoJsonLayerTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->geoJsonLayer = new GeoJsonLayer($this->url = 'https://storage.googleapis.com/mapsdevsite/json/google.json');
     }

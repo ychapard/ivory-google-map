@@ -36,11 +36,6 @@ class EncodedPolylineSubscriber extends AbstractSubscriber
      */
     private $encodedPolylineRenderer;
 
-    /**
-     * @param Formatter                $formatter
-     * @param EncodedPolylineCollector $encodedPolylineCollector
-     * @param EncodedPolylineRenderer  $encodedPolylineRenderer
-     */
     public function __construct(
         Formatter $formatter,
         EncodedPolylineCollector $encodedPolylineCollector,
@@ -60,9 +55,6 @@ class EncodedPolylineSubscriber extends AbstractSubscriber
         return $this->encodedPolylineCollector;
     }
 
-    /**
-     * @param EncodedPolylineCollector $encodedPolylineCollector
-     */
     public function setEncodedPolylineCollector(EncodedPolylineCollector $encodedPolylineCollector)
     {
         $this->encodedPolylineCollector = $encodedPolylineCollector;
@@ -76,17 +68,11 @@ class EncodedPolylineSubscriber extends AbstractSubscriber
         return $this->encodedPolylineRenderer;
     }
 
-    /**
-     * @param EncodedPolylineRenderer $encodedPolylineRenderer
-     */
     public function setEncodedPolylineRenderer(EncodedPolylineRenderer $encodedPolylineRenderer)
     {
         $this->encodedPolylineRenderer = $encodedPolylineRenderer;
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     public function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Map::class) as $map) {
@@ -100,9 +86,6 @@ class EncodedPolylineSubscriber extends AbstractSubscriber
         }
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

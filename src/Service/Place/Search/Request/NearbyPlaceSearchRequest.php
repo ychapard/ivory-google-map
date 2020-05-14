@@ -24,7 +24,6 @@ class NearbyPlaceSearchRequest extends AbstractTextualPlaceSearchRequest
     private $rankBy;
 
     /**
-     * @param Coordinate $location
      * @param string     $rankBy
      * @param float|null $radius
      */

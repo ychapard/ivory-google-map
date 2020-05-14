@@ -21,8 +21,7 @@ use Ivory\GoogleMap\Place\Autocomplete;
 class AutocompleteBoundCollector extends AbstractCollector
 {
     /**
-     * @param Autocomplete $autocomplete
-     * @param Bound[]      $bounds
+     * @param Bound[] $bounds
      *
      * @return Bound[]
      */

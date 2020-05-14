@@ -17,11 +17,13 @@ use Ivory\GoogleMap\Place\Autocomplete;
 use Ivory\GoogleMap\Place\AutocompleteComponentType;
 use Ivory\GoogleMap\Place\AutocompleteType;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteTest extends \PHPUnit_Framework_TestCase
+class AutocompleteTest extends TestCase
 {
     /**
      * @var Autocomplete
@@ -31,7 +33,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->autocomplete = new Autocomplete();
     }
@@ -258,7 +260,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EventManager
+     * @return MockObject|EventManager
      */
     private function createEventManagerMock()
     {
@@ -266,7 +268,7 @@ class AutocompleteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {

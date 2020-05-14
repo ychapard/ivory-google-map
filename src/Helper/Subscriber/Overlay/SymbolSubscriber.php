@@ -33,11 +33,6 @@ class SymbolSubscriber extends AbstractSubscriber
      */
     private $symbolRenderer;
 
-    /**
-     * @param Formatter       $formatter
-     * @param SymbolCollector $symbolCollector
-     * @param SymbolRenderer  $symbolRenderer
-     */
     public function __construct(
         Formatter $formatter,
         SymbolCollector $symbolCollector,
@@ -57,9 +52,6 @@ class SymbolSubscriber extends AbstractSubscriber
         return $this->symbolCollector;
     }
 
-    /**
-     * @param SymbolCollector $symbolCollector
-     */
     public function setSymbolCollector(SymbolCollector $symbolCollector)
     {
         $this->symbolCollector = $symbolCollector;
@@ -73,17 +65,11 @@ class SymbolSubscriber extends AbstractSubscriber
         return $this->symbolRenderer;
     }
 
-    /**
-     * @param SymbolRenderer $symbolRenderer
-     */
     public function setSymbolRenderer(SymbolRenderer $symbolRenderer)
     {
         $this->symbolRenderer = $symbolRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

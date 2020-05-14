@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
 use Ivory\GoogleMap\MapTypeId;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapTypeIdRendererTest extends \PHPUnit_Framework_TestCase
+class MapTypeIdRendererTest extends TestCase
 {
     /**
      * @var MapTypeIdRenderer
@@ -28,7 +29,7 @@ class MapTypeIdRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapTypeIdRenderer = new MapTypeIdRenderer(new Formatter());
     }

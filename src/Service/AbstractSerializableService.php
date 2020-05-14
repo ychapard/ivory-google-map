@@ -38,10 +38,7 @@ abstract class AbstractSerializableService extends AbstractHttpService
     private $format = self::FORMAT_JSON;
 
     /**
-     * @param string                   $url
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
+     * @param string $url
      */
     public function __construct(
         $url,
@@ -62,9 +59,6 @@ abstract class AbstractSerializableService extends AbstractHttpService
         return $this->serializer;
     }
 
-    /**
-     * @param SerializerInterface $serializer
-     */
     public function setSerializer(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
@@ -95,9 +89,7 @@ abstract class AbstractSerializableService extends AbstractHttpService
     }
 
     /**
-     * @param ResponseInterface     $response
-     * @param string                $type
-     * @param ContextInterface|null $context
+     * @param string $type
      *
      * @return mixed
      */

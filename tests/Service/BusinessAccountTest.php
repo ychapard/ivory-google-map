@@ -12,11 +12,12 @@
 namespace Ivory\Tests\GoogleMap\Service;
 
 use Ivory\GoogleMap\Service\BusinessAccount;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class BusinessAccountTest extends \PHPUnit_Framework_TestCase
+class BusinessAccountTest extends TestCase
 {
     /**
      * @var BusinessAccount
@@ -36,7 +37,7 @@ class BusinessAccountTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->businessAccount = new BusinessAccount(
             $this->clientId = 'client_id',
@@ -103,7 +104,7 @@ class BusinessAccountTest extends \PHPUnit_Framework_TestCase
     public function testSignature($url, $signature, $channel = null)
     {
         $expected = $url.'&client=gme-client_id';
-        if ($channel !== null) {
+        if (null !== $channel) {
             $expected .= '&channel='.$channel;
         }
 

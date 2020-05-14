@@ -74,8 +74,6 @@ class EventManager
     }
 
     /**
-     * @param Event $domEvent
-     *
      * @return bool
      */
     public function hasDomEvent(Event $domEvent)
@@ -83,9 +81,6 @@ class EventManager
         return in_array($domEvent, $this->domEvents, true);
     }
 
-    /**
-     * @param Event $domEvent
-     */
     public function addDomEvent(Event $domEvent)
     {
         if (!$this->hasDomEvent($domEvent)) {
@@ -93,9 +88,6 @@ class EventManager
         }
     }
 
-    /**
-     * @param Event $domEvent
-     */
     public function removeDomEvent(Event $domEvent)
     {
         unset($this->domEvents[array_search($domEvent, $this->domEvents, true)]);
@@ -138,8 +130,6 @@ class EventManager
     }
 
     /**
-     * @param Event $domEventOnce
-     *
      * @return bool
      */
     public function hasDomEventOnce(Event $domEventOnce)
@@ -147,9 +137,6 @@ class EventManager
         return in_array($domEventOnce, $this->domEventsOnce, true);
     }
 
-    /**
-     * @param Event $domEventOnce
-     */
     public function addDomEventOnce(Event $domEventOnce)
     {
         if (!$this->hasDomEventOnce($domEventOnce)) {
@@ -157,9 +144,6 @@ class EventManager
         }
     }
 
-    /**
-     * @param Event $domEventOnce
-     */
     public function removeDomEventOnce(Event $domEventOnce)
     {
         unset($this->domEventsOnce[array_search($domEventOnce, $this->domEventsOnce, true)]);
@@ -202,8 +186,6 @@ class EventManager
     }
 
     /**
-     * @param Event $event
-     *
      * @return bool
      */
     public function hasEvent(Event $event)
@@ -211,9 +193,6 @@ class EventManager
         return in_array($event, $this->events, true);
     }
 
-    /**
-     * @param Event $event
-     */
     public function addEvent(Event $event)
     {
         if (!$this->hasEvent($event)) {
@@ -221,9 +200,6 @@ class EventManager
         }
     }
 
-    /**
-     * @param Event $event
-     */
     public function removeEvent(Event $event)
     {
         unset($this->events[array_search($event, $this->events, true)]);
@@ -266,8 +242,6 @@ class EventManager
     }
 
     /**
-     * @param Event $eventOnce
-     *
      * @return bool
      */
     public function hasEventOnce(Event $eventOnce)
@@ -275,17 +249,11 @@ class EventManager
         return in_array($eventOnce, $this->eventsOnce, true);
     }
 
-    /**
-     * @param Event $eventOnce
-     */
     public function addEventOnce(Event $eventOnce)
     {
         $this->eventsOnce[] = $eventOnce;
     }
 
-    /**
-     * @param Event $eventOnce
-     */
     public function removeEventOnce(Event $eventOnce)
     {
         unset($this->eventsOnce[array_search($eventOnce, $this->eventsOnce, true)]);

@@ -63,7 +63,7 @@ class DirectionTransitDetails
      */
     public function hasDepartureStop()
     {
-        return $this->departureStop !== null;
+        return null !== $this->departureStop;
     }
 
     /**
@@ -74,9 +74,6 @@ class DirectionTransitDetails
         return $this->departureStop;
     }
 
-    /**
-     * @param DirectionTransitStop|null $departureStop
-     */
     public function setDepartureStop(DirectionTransitStop $departureStop = null)
     {
         $this->departureStop = $departureStop;
@@ -87,7 +84,7 @@ class DirectionTransitDetails
      */
     public function hasArrivalStop()
     {
-        return $this->arrivalStop !== null;
+        return null !== $this->arrivalStop;
     }
 
     /**
@@ -98,9 +95,6 @@ class DirectionTransitDetails
         return $this->arrivalStop;
     }
 
-    /**
-     * @param DirectionTransitStop|null $arrivalStop
-     */
     public function setArrivalStop(DirectionTransitStop $arrivalStop = null)
     {
         $this->arrivalStop = $arrivalStop;
@@ -111,7 +105,7 @@ class DirectionTransitDetails
      */
     public function hasDepartureTime()
     {
-        return $this->departureTime !== null;
+        return null !== $this->departureTime;
     }
 
     /**
@@ -122,9 +116,6 @@ class DirectionTransitDetails
         return $this->departureTime;
     }
 
-    /**
-     * @param Time|null $departureTime
-     */
     public function setDepartureTime(Time $departureTime = null)
     {
         $this->departureTime = $departureTime;
@@ -135,7 +126,7 @@ class DirectionTransitDetails
      */
     public function hasArrivalTime()
     {
-        return $this->arrivalTime !== null;
+        return null !== $this->arrivalTime;
     }
 
     /**
@@ -146,9 +137,6 @@ class DirectionTransitDetails
         return $this->arrivalTime;
     }
 
-    /**
-     * @param Time|null $arrivalTime
-     */
     public function setArrivalTime(Time $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
@@ -159,7 +147,7 @@ class DirectionTransitDetails
      */
     public function hasHeadSign()
     {
-        return $this->headSign !== null;
+        return null !== $this->headSign;
     }
 
     /**
@@ -183,7 +171,7 @@ class DirectionTransitDetails
      */
     public function hasHeadWay()
     {
-        return $this->headWay !== null;
+        return null !== $this->headWay;
     }
 
     /**
@@ -207,7 +195,7 @@ class DirectionTransitDetails
      */
     public function hasLine()
     {
-        return $this->line !== null;
+        return null !== $this->line;
     }
 
     /**
@@ -218,9 +206,6 @@ class DirectionTransitDetails
         return $this->line;
     }
 
-    /**
-     * @param DirectionTransitLine|null $line
-     */
     public function setLine(DirectionTransitLine $line = null)
     {
         $this->line = $line;
@@ -231,7 +216,7 @@ class DirectionTransitDetails
      */
     public function hasNumStops()
     {
-        return $this->numStops !== null;
+        return null !== $this->numStops;
     }
 
     /**

@@ -30,10 +30,6 @@ class SymbolCollector extends AbstractCollector
      */
     private $iconSequenceCollector;
 
-    /**
-     * @param MarkerCollector       $markerCollector
-     * @param IconSequenceCollector $iconSequenceCollector
-     */
     public function __construct(MarkerCollector $markerCollector, IconSequenceCollector $iconSequenceCollector)
     {
         $this->setMarkerCollector($markerCollector);
@@ -48,9 +44,6 @@ class SymbolCollector extends AbstractCollector
         return $this->markerCollector;
     }
 
-    /**
-     * @param MarkerCollector $markerCollector
-     */
     public function setMarkerCollector(MarkerCollector $markerCollector)
     {
         $this->markerCollector = $markerCollector;
@@ -64,16 +57,12 @@ class SymbolCollector extends AbstractCollector
         return $this->iconSequenceCollector;
     }
 
-    /**
-     * @param IconSequenceCollector $iconSequenceCollector
-     */
     public function setIconSequenceCollector(IconSequenceCollector $iconSequenceCollector)
     {
         $this->iconSequenceCollector = $iconSequenceCollector;
     }
 
     /**
-     * @param Map      $map
      * @param Symbol[] $symbols
      *
      * @return Symbol[]

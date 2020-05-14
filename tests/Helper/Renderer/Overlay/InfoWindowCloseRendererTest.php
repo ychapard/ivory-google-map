@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowCloseRenderer;
 use Ivory\GoogleMap\Overlay\InfoWindow;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoWindowCloseRendererTest extends \PHPUnit_Framework_TestCase
+class InfoWindowCloseRendererTest extends TestCase
 {
     /**
      * @var InfoWindowCloseRenderer
@@ -29,7 +30,7 @@ class InfoWindowCloseRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infoWindowCloseRenderer = new InfoWindowCloseRenderer(new Formatter());
     }

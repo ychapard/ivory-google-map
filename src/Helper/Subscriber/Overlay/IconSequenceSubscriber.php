@@ -33,11 +33,6 @@ class IconSequenceSubscriber extends AbstractSubscriber
      */
     private $iconSequenceRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param IconSequenceCollector $iconSequenceCollector
-     * @param IconSequenceRenderer  $iconSequenceRenderer
-     */
     public function __construct(
         Formatter $formatter,
         IconSequenceCollector $iconSequenceCollector,
@@ -57,9 +52,6 @@ class IconSequenceSubscriber extends AbstractSubscriber
         return $this->iconSequenceCollector;
     }
 
-    /**
-     * @param IconSequenceCollector $iconSequenceCollector
-     */
     public function setIconSequenceCollector(IconSequenceCollector $iconSequenceCollector)
     {
         $this->iconSequenceCollector = $iconSequenceCollector;
@@ -73,17 +65,11 @@ class IconSequenceSubscriber extends AbstractSubscriber
         return $this->iconSequenceRenderer;
     }
 
-    /**
-     * @param IconSequenceRenderer $iconSequenceRenderer
-     */
     public function setIconSequenceRenderer(IconSequenceRenderer $iconSequenceRenderer)
     {
         $this->iconSequenceRenderer = $iconSequenceRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

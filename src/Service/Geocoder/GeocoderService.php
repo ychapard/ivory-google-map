@@ -25,11 +25,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class GeocoderService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -44,8 +39,6 @@ class GeocoderService extends AbstractSerializableService
     }
 
     /**
-     * @param GeocoderRequestInterface $request
-     *
      * @return GeocoderResponse
      */
     public function geocode(GeocoderRequestInterface $request)

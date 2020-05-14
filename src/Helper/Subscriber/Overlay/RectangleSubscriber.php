@@ -33,11 +33,6 @@ class RectangleSubscriber extends AbstractSubscriber
      */
     private $rectangleRenderer;
 
-    /**
-     * @param Formatter          $formatter
-     * @param RectangleCollector $rectangleCollector
-     * @param RectangleRenderer  $rectangleRenderer
-     */
     public function __construct(
         Formatter $formatter,
         RectangleCollector $rectangleCollector,
@@ -57,9 +52,6 @@ class RectangleSubscriber extends AbstractSubscriber
         return $this->rectangleCollector;
     }
 
-    /**
-     * @param RectangleCollector $rectangleCollector
-     */
     public function setRectangleCollector(RectangleCollector $rectangleCollector)
     {
         $this->rectangleCollector = $rectangleCollector;
@@ -73,17 +65,11 @@ class RectangleSubscriber extends AbstractSubscriber
         return $this->rectangleRenderer;
     }
 
-    /**
-     * @param RectangleRenderer $rectangleRenderer
-     */
     public function setRectangleRenderer(RectangleRenderer $rectangleRenderer)
     {
         $this->rectangleRenderer = $rectangleRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

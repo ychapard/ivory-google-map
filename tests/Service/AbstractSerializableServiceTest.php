@@ -98,8 +98,16 @@ abstract class AbstractSerializableServiceTest extends AbstractFunctionalService
 
         $this->assertInstanceOf(Coordinate::class, $coordinate);
 
-        $this->assertSame(round($options['lat'], 5), round($coordinate->getLatitude(), 5));
-        $this->assertSame(round($options['lng'], 5), round($coordinate->getLongitude(), 5));
+        $this->assertLessThan(
+            0.00002,
+            abs(round($options['lat'], 5) - round($coordinate->getLatitude(), 5)),
+            sprintf('Failed asserting that %s is almost identical to %s', $options['lat'], $coordinate->getLatitude())
+        );
+        $this->assertLessThan(
+            0.00002,
+            abs(round($options['lng'], 5) - round($coordinate->getLongitude(), 5)),
+            sprintf('Failed asserting that %s is almost identical to %s', $options['lng'], $coordinate->getLongitude())
+        );
     }
 
     /**

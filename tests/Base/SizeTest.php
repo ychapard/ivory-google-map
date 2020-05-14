@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Base;
 
 use Ivory\GoogleMap\Base\Size;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SizeTest extends \PHPUnit_Framework_TestCase
+class SizeTest extends TestCase
 {
     /**
      * @var Size
@@ -27,7 +28,7 @@ class SizeTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->size = new Size();
     }

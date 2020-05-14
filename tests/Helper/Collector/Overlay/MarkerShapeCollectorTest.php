@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
 use Ivory\GoogleMap\Overlay\MarkerShape;
 use Ivory\GoogleMap\Overlay\MarkerShapeType;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerShapeCollectorTest extends \PHPUnit_Framework_TestCase
+class MarkerShapeCollectorTest extends TestCase
 {
     /**
      * @var MarkerShapeCollector
@@ -32,7 +34,7 @@ class MarkerShapeCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerShapeCollector = new MarkerShapeCollector(new MarkerCollector());
     }
@@ -56,7 +58,7 @@ class MarkerShapeCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MarkerCollector
+     * @return MockObject|MarkerCollector
      */
     private function createMarkerCollectorMock()
     {

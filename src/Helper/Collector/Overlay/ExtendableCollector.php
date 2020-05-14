@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 class ExtendableCollector extends AbstractCollector
 {
     /**
-     * @param Map                   $map
      * @param ExtendableInterface[] $extendables
      *
      * @return ExtendableInterface[]

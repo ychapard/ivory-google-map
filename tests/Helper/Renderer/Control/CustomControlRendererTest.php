@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ControlPositionRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\CustomControlRenderer;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CustomControlRendererTest extends \PHPUnit_Framework_TestCase
+class CustomControlRendererTest extends TestCase
 {
     /**
      * @var CustomControlRenderer
@@ -32,7 +34,7 @@ class CustomControlRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->customControlRenderer = new CustomControlRenderer(
             $formatter = new Formatter(),
@@ -65,7 +67,7 @@ class CustomControlRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ControlPositionRenderer
+     * @return MockObject|ControlPositionRenderer
      */
     private function createControlPositionRendererMock()
     {

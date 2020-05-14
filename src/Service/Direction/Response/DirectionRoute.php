@@ -67,7 +67,7 @@ class DirectionRoute
      */
     public function hasBound()
     {
-        return $this->bound !== null;
+        return null !== $this->bound;
     }
 
     /**
@@ -78,9 +78,6 @@ class DirectionRoute
         return $this->bound;
     }
 
-    /**
-     * @param Bound|null $bound
-     */
     public function setBound(Bound $bound = null)
     {
         $this->bound = $bound;
@@ -91,7 +88,7 @@ class DirectionRoute
      */
     public function hasCopyrights()
     {
-        return $this->copyrights !== null;
+        return null !== $this->copyrights;
     }
 
     /**
@@ -146,8 +143,6 @@ class DirectionRoute
     }
 
     /**
-     * @param DirectionLeg $leg
-     *
      * @return bool
      */
     public function hasLeg(DirectionLeg $leg)
@@ -155,9 +150,6 @@ class DirectionRoute
         return in_array($leg, $this->legs, true);
     }
 
-    /**
-     * @param DirectionLeg $leg
-     */
     public function addLeg(DirectionLeg $leg)
     {
         if (!$this->hasLeg($leg)) {
@@ -165,9 +157,6 @@ class DirectionRoute
         }
     }
 
-    /**
-     * @param DirectionLeg $leg
-     */
     public function removeLeg(DirectionLeg $leg)
     {
         unset($this->legs[array_search($leg, $this->legs, true)]);
@@ -179,7 +168,7 @@ class DirectionRoute
      */
     public function hasOverviewPolyline()
     {
-        return $this->overviewPolyline !== null;
+        return null !== $this->overviewPolyline;
     }
 
     /**
@@ -190,9 +179,6 @@ class DirectionRoute
         return $this->overviewPolyline;
     }
 
-    /**
-     * @param EncodedPolyline|null $overviewPolyline
-     */
     public function setOverviewPolyline(EncodedPolyline $overviewPolyline = null)
     {
         $this->overviewPolyline = $overviewPolyline;
@@ -203,7 +189,7 @@ class DirectionRoute
      */
     public function hasSummary()
     {
-        return $this->summary !== null;
+        return null !== $this->summary;
     }
 
     /**
@@ -227,7 +213,7 @@ class DirectionRoute
      */
     public function hasFare()
     {
-        return $this->fare !== null;
+        return null !== $this->fare;
     }
 
     /**
@@ -238,9 +224,6 @@ class DirectionRoute
         return $this->fare;
     }
 
-    /**
-     * @param Fare|null $fare
-     */
     public function setFare(Fare $fare = null)
     {
         $this->fare = $fare;

@@ -37,13 +37,6 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
      */
     private $mapTypeControlStyleRenderer;
 
-    /**
-     * @param Formatter                   $formatter
-     * @param JsonBuilder                 $jsonBuilder
-     * @param MapTypeIdRenderer           $mapTypeIdRenderer
-     * @param ControlPositionRenderer     $controlPositionRenderer
-     * @param MapTypeControlStyleRenderer $mapTypeControlStyleRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -66,9 +59,6 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
         return $this->mapTypeIdRenderer;
     }
 
-    /**
-     * @param MapTypeIdRenderer $mapTypeIdRenderer
-     */
     public function setMapTypeIdRenderer(MapTypeIdRenderer $mapTypeIdRenderer)
     {
         $this->mapTypeIdRenderer = $mapTypeIdRenderer;
@@ -82,9 +72,6 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
@@ -98,9 +85,6 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
         return $this->mapTypeControlStyleRenderer;
     }
 
-    /**
-     * @param MapTypeControlStyleRenderer $mapTypeControlStyleRenderer
-     */
     public function setMapTypeControlStyleRenderer(MapTypeControlStyleRenderer $mapTypeControlStyleRenderer)
     {
         $this->mapTypeControlStyleRenderer = $mapTypeControlStyleRenderer;
@@ -112,11 +96,7 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
     public function render($control)
     {
         if (!$control instanceof MapTypeControl) {
-            throw new \InvalidArgumentException(sprintf(
-                'Expected a "%s", got "%s".',
-                MapTypeControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
-            ));
+            throw new \InvalidArgumentException(sprintf('Expected a "%s", got "%s".', MapTypeControl::class, is_object($control) ? get_class($control) : gettype($control)));
         }
 
         $jsonBuilder = $this->getJsonBuilder();

@@ -60,7 +60,7 @@ class PlacePhotoRequest implements PlacePhotoRequestInterface
      */
     public function hasMaxWidth()
     {
-        return $this->maxWidth !== null;
+        return null !== $this->maxWidth;
     }
 
     /**
@@ -84,7 +84,7 @@ class PlacePhotoRequest implements PlacePhotoRequestInterface
      */
     public function hasMaxHeight()
     {
-        return $this->maxHeight !== null;
+        return null !== $this->maxHeight;
     }
 
     /**

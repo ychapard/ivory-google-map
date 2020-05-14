@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Base\Point;
 use Ivory\GoogleMap\Base\Size;
 use Ivory\GoogleMap\Overlay\Icon;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class IconTest extends \PHPUnit_Framework_TestCase
+class IconTest extends TestCase
 {
     /**
      * @var Icon
@@ -29,7 +31,7 @@ class IconTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->icon = new Icon();
     }
@@ -147,7 +149,7 @@ class IconTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Point
+     * @return MockObject|Point
      */
     private function createPointMock()
     {
@@ -155,7 +157,7 @@ class IconTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Size
+     * @return MockObject|Size
      */
     private function createSizeMock()
     {

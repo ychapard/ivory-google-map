@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\GoogleMap\Service\Base\Fare;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionLeg;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionRoute;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionRouteTest extends \PHPUnit_Framework_TestCase
+class DirectionRouteTest extends TestCase
 {
     /**
      * @var DirectionRoute
@@ -30,7 +32,7 @@ class DirectionRouteTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->route = new DirectionRoute();
     }
@@ -236,7 +238,7 @@ class DirectionRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {
@@ -244,7 +246,7 @@ class DirectionRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DirectionLeg
+     * @return MockObject|DirectionLeg
      */
     private function createLegMock()
     {
@@ -252,7 +254,7 @@ class DirectionRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Fare
+     * @return MockObject|Fare
      */
     private function createFareMock()
     {
@@ -260,7 +262,7 @@ class DirectionRouteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EncodedPolyline
+     * @return MockObject|EncodedPolyline
      */
     private function createEncodedPolylineMock()
     {

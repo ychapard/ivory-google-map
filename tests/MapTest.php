@@ -20,11 +20,13 @@ use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\OverlayManager;
 use Ivory\GoogleMap\Utility\StaticOptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapTest extends \PHPUnit_Framework_TestCase
+class MapTest extends TestCase
 {
     /**
      * @var Map
@@ -34,7 +36,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->map = new Map();
     }
@@ -317,7 +319,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {
@@ -325,7 +327,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {
@@ -333,7 +335,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ControlManager
+     * @return MockObject|ControlManager
      */
     private function createControlManagerMock()
     {
@@ -341,7 +343,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EventManager
+     * @return MockObject|EventManager
      */
     private function createEventManagerMock()
     {
@@ -349,7 +351,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|LayerManager
+     * @return MockObject|LayerManager
      */
     private function createLayerManagerMock()
     {
@@ -357,7 +359,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|OverlayManager
+     * @return MockObject|OverlayManager
      */
     private function createOverlayManagerMock()
     {

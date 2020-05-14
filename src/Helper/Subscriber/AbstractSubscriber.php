@@ -24,9 +24,6 @@ abstract class AbstractSubscriber implements EventSubscriberInterface
      */
     private $formatter;
 
-    /**
-     * @param Formatter $formatter
-     */
     public function __construct(Formatter $formatter)
     {
         $this->setFormatter($formatter);
@@ -40,9 +37,6 @@ abstract class AbstractSubscriber implements EventSubscriberInterface
         return $this->formatter;
     }
 
-    /**
-     * @param Formatter $formatter
-     */
     public function setFormatter(Formatter $formatter)
     {
         $this->formatter = $formatter;

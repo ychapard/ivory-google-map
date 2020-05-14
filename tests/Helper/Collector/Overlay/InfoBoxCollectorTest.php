@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 use Ivory\GoogleMap\Helper\Collector\Overlay\InfoBoxCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\MarkerCollector;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoBoxCollectorTest extends \PHPUnit_Framework_TestCase
+class InfoBoxCollectorTest extends TestCase
 {
     /**
      * @var InfoBoxCollector
@@ -28,7 +29,7 @@ class InfoBoxCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infoBoxCollector = new InfoBoxCollector(new MarkerCollector());
     }

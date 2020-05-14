@@ -72,7 +72,7 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
      */
     public function hasOffset()
     {
-        return $this->offset !== null;
+        return null !== $this->offset;
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -107,9 +107,6 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
         return $this->location;
     }
 
-    /**
-     * @param Coordinate|null $location
-     */
     public function setLocation(Coordinate $location = null)
     {
         $this->location = $location;
@@ -120,7 +117,7 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
      */
     public function hasRadius()
     {
-        return $this->radius !== null;
+        return null !== $this->radius;
     }
 
     /**
@@ -144,7 +141,7 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**
@@ -190,8 +187,6 @@ abstract class AbstractPlaceAutocompleteRequest implements PlaceAutocompleteRequ
     }
 
     /**
-     * @param Coordinate $coordinate
-     *
      * @return string
      */
     private function buildCoordinate(Coordinate $coordinate)

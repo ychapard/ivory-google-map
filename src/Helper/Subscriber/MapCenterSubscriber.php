@@ -26,10 +26,6 @@ class MapCenterSubscriber extends AbstractSubscriber
      */
     private $mapCenterRenderer;
 
-    /**
-     * @param Formatter         $formatter
-     * @param MapCenterRenderer $mapCenterRenderer
-     */
     public function __construct(Formatter $formatter, MapCenterRenderer $mapCenterRenderer)
     {
         parent::__construct($formatter);
@@ -45,17 +41,11 @@ class MapCenterSubscriber extends AbstractSubscriber
         return $this->mapCenterRenderer;
     }
 
-    /**
-     * @param MapCenterRenderer $mapCenterRenderer
-     */
     public function setMapCenterRenderer(MapCenterRenderer $mapCenterRenderer)
     {
         $this->mapCenterRenderer = $mapCenterRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $map = $event->getMap();

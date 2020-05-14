@@ -69,7 +69,7 @@ class DirectionStep
      */
     public function hasDistance()
     {
-        return $this->distance !== null;
+        return null !== $this->distance;
     }
 
     /**
@@ -80,9 +80,6 @@ class DirectionStep
         return $this->distance;
     }
 
-    /**
-     * @param Distance|null $distance
-     */
     public function setDistance(Distance $distance = null)
     {
         $this->distance = $distance;
@@ -93,7 +90,7 @@ class DirectionStep
      */
     public function hasDuration()
     {
-        return $this->duration !== null;
+        return null !== $this->duration;
     }
 
     /**
@@ -104,9 +101,6 @@ class DirectionStep
         return $this->duration;
     }
 
-    /**
-     * @param Duration|null $duration
-     */
     public function setDuration(Duration $duration = null)
     {
         $this->duration = $duration;
@@ -117,7 +111,7 @@ class DirectionStep
      */
     public function hasEndLocation()
     {
-        return $this->endLocation !== null;
+        return null !== $this->endLocation;
     }
 
     /**
@@ -128,9 +122,6 @@ class DirectionStep
         return $this->endLocation;
     }
 
-    /**
-     * @param Coordinate|null $endLocation
-     */
     public function setEndLocation(Coordinate $endLocation = null)
     {
         $this->endLocation = $endLocation;
@@ -141,7 +132,7 @@ class DirectionStep
      */
     public function hasInstructions()
     {
-        return $this->instructions !== null;
+        return null !== $this->instructions;
     }
 
     /**
@@ -165,7 +156,7 @@ class DirectionStep
      */
     public function hasEncodedPolyline()
     {
-        return $this->encodedPolyline !== null;
+        return null !== $this->encodedPolyline;
     }
 
     /**
@@ -176,9 +167,6 @@ class DirectionStep
         return $this->encodedPolyline;
     }
 
-    /**
-     * @param EncodedPolyline|null $encodedPolyline
-     */
     public function setEncodedPolyline(EncodedPolyline $encodedPolyline = null)
     {
         $this->encodedPolyline = $encodedPolyline;
@@ -189,7 +177,7 @@ class DirectionStep
      */
     public function hasStartLocation()
     {
-        return $this->startLocation !== null;
+        return null !== $this->startLocation;
     }
 
     /**
@@ -200,9 +188,6 @@ class DirectionStep
         return $this->startLocation;
     }
 
-    /**
-     * @param Coordinate|null $startLocation
-     */
     public function setStartLocation(Coordinate $startLocation = null)
     {
         $this->startLocation = $startLocation;
@@ -213,7 +198,7 @@ class DirectionStep
      */
     public function hasTravelMode()
     {
-        return $this->travelMode !== null;
+        return null !== $this->travelMode;
     }
 
     /**
@@ -237,7 +222,7 @@ class DirectionStep
      */
     public function hasTransitDetails()
     {
-        return $this->transitDetails !== null;
+        return null !== $this->transitDetails;
     }
 
     /**
@@ -248,9 +233,6 @@ class DirectionStep
         return $this->transitDetails;
     }
 
-    /**
-     * @param DirectionTransitDetails|null $transitDetails
-     */
     public function setTransitDetails(DirectionTransitDetails $transitDetails = null)
     {
         $this->transitDetails = $transitDetails;

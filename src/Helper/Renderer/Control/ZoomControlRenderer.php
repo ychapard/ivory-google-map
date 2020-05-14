@@ -31,12 +31,6 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
      */
     private $zoomControlStyleRenderer;
 
-    /**
-     * @param Formatter                $formatter
-     * @param JsonBuilder              $jsonBuilder
-     * @param ControlPositionRenderer  $controlPositionRenderer
-     * @param ZoomControlStyleRenderer $zoomControlStyleRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -57,9 +51,6 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
@@ -73,9 +64,6 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
         return $this->zoomControlStyleRenderer;
     }
 
-    /**
-     * @param ZoomControlStyleRenderer $zoomControlStyleRenderer
-     */
     public function setZoomControlStyleRenderer(ZoomControlStyleRenderer $zoomControlStyleRenderer)
     {
         $this->zoomControlStyleRenderer = $zoomControlStyleRenderer;
@@ -87,11 +75,7 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
     public function render($control)
     {
         if (!$control instanceof ZoomControl) {
-            throw new \InvalidArgumentException(sprintf(
-                'Expected a "%s", got "%s".',
-                ZoomControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
-            ));
+            throw new \InvalidArgumentException(sprintf('Expected a "%s", got "%s".', ZoomControl::class, is_object($control) ? get_class($control) : gettype($control)));
         }
 
         return $this->getJsonBuilder()

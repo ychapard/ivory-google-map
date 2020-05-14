@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Map;
 class CustomControlCollector extends AbstractCollector
 {
     /**
-     * @param Map             $map
      * @param CustomControl[] $customControls
      *
      * @return CustomControl[]

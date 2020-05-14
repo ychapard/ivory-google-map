@@ -41,7 +41,7 @@ class DirectionTransitVehicle
      */
     public function hasName()
     {
-        return $this->name !== null;
+        return null !== $this->name;
     }
 
     /**
@@ -65,7 +65,7 @@ class DirectionTransitVehicle
      */
     public function hasIcon()
     {
-        return $this->icon !== null;
+        return null !== $this->icon;
     }
 
     /**
@@ -89,7 +89,7 @@ class DirectionTransitVehicle
      */
     public function hasType()
     {
-        return $this->type !== null;
+        return null !== $this->type;
     }
 
     /**
@@ -113,7 +113,7 @@ class DirectionTransitVehicle
      */
     public function hasLocalIcon()
     {
-        return $this->localIcon !== null;
+        return null !== $this->localIcon;
     }
 
     /**

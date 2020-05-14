@@ -13,12 +13,14 @@ namespace Ivory\Tests\GoogleMap\Helper\Event;
 
 use Ivory\GoogleMap\Helper\Event\StaticMapEvent;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StaticMapEventTest extends \PHPUnit_Framework_TestCase
+class StaticMapEventTest extends TestCase
 {
     /**
      * @var StaticMapEvent
@@ -26,14 +28,14 @@ class StaticMapEventTest extends \PHPUnit_Framework_TestCase
     private $staticMapEvent;
 
     /**
-     * @var Map|\PHPUnit_Framework_MockObject_MockObject
+     * @var Map|MockObject
      */
     private $map;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->map = $this->createMapMock();
         $this->staticMapEvent = new StaticMapEvent($this->map);
@@ -104,7 +106,7 @@ class StaticMapEventTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Map
+     * @return MockObject|Map
      */
     private function createMapMock()
     {

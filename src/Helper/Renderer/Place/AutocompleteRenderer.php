@@ -27,11 +27,6 @@ class AutocompleteRenderer extends AbstractJsonRenderer
      */
     private $requirementRenderer;
 
-    /**
-     * @param Formatter           $formatter
-     * @param JsonBuilder         $jsonBuilder
-     * @param RequirementRenderer $requirementRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -50,17 +45,12 @@ class AutocompleteRenderer extends AbstractJsonRenderer
         return $this->requirementRenderer;
     }
 
-    /**
-     * @param RequirementRenderer $requirementRenderer
-     */
     public function setRequirementRenderer(RequirementRenderer $requirementRenderer)
     {
         $this->requirementRenderer = $requirementRenderer;
     }
 
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     public function render(Autocomplete $autocomplete)

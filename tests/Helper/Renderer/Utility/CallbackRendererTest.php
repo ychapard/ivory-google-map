@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer\Utility;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\CallbackRenderer;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CallbackRendererTest extends \PHPUnit_Framework_TestCase
+class CallbackRendererTest extends TestCase
 {
     /**
      * @var CallbackRenderer
@@ -28,7 +29,7 @@ class CallbackRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->callbackRenderer = new CallbackRenderer(new Formatter());
     }

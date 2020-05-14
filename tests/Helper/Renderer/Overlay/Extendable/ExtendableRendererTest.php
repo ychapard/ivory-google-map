@@ -11,15 +11,18 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay\Extendable;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRendererInterface;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
+class ExtendableRendererTest extends TestCase
 {
     /**
      * @var ExtendableRenderer
@@ -29,7 +32,7 @@ class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->extendableRenderer = new ExtendableRenderer();
     }
@@ -102,17 +105,15 @@ class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($result, $this->extendableRenderer->render($extendable, $bound));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessageRegExp  /The extendable renderer for ".*" could not be found\./
-     */
     public function testRenderWithInvalidExtendable()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->extendableRenderer->render($this->createExtendableMock(), $this->createBoundMock());
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ExtendableRendererInterface
+     * @return MockObject|ExtendableRendererInterface
      */
     private function createExtendableRendererMock()
     {
@@ -120,7 +121,7 @@ class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ExtendableInterface
+     * @return MockObject|ExtendableInterface
      */
     private function createExtendableMock()
     {
@@ -128,7 +129,7 @@ class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {

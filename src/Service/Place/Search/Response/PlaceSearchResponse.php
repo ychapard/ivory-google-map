@@ -49,7 +49,7 @@ class PlaceSearchResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -73,7 +73,7 @@ class PlaceSearchResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -84,9 +84,6 @@ class PlaceSearchResponse
         return $this->request;
     }
 
-    /**
-     * @param PlaceSearchRequestInterface|null $request
-     */
     public function setRequest(PlaceSearchRequestInterface $request = null)
     {
         $this->request = $request;
@@ -128,8 +125,6 @@ class PlaceSearchResponse
     }
 
     /**
-     * @param Place $result
-     *
      * @return bool
      */
     public function hasResult(Place $result)
@@ -137,9 +132,6 @@ class PlaceSearchResponse
         return in_array($result, $this->results, true);
     }
 
-    /**
-     * @param Place $result
-     */
     public function addResult(Place $result)
     {
         if (!$this->hasResult($result)) {
@@ -147,9 +139,6 @@ class PlaceSearchResponse
         }
     }
 
-    /**
-     * @param Place $result
-     */
     public function removeResult(Place $result)
     {
         unset($this->results[array_search($result, $this->results, true)]);
@@ -225,7 +214,7 @@ class PlaceSearchResponse
      */
     public function hasNextPageToken()
     {
-        return $this->nextPageToken !== null;
+        return null !== $this->nextPageToken;
     }
 
     /**

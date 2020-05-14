@@ -13,11 +13,13 @@ namespace Ivory\Tests\GoogleMap\Helper\Formatter;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class FormatterTest extends \PHPUnit_Framework_TestCase
+class FormatterTest extends TestCase
 {
     /**
      * @var Formatter
@@ -27,7 +29,7 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formatter = new Formatter();
     }
@@ -115,13 +117,12 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string                 $expected
-     * @param VariableAwareInterface $object
-     * @param string                 $method
-     * @param string[]               $arguments
-     * @param bool                   $semicolon
-     * @param bool                   $newLine
-     * @param bool                   $debug
+     * @param string   $expected
+     * @param string   $method
+     * @param string[] $arguments
+     * @param bool     $semicolon
+     * @param bool     $newLine
+     * @param bool     $debug
      *
      * @dataProvider objectCallProvider
      */
@@ -205,12 +206,11 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string                 $expected
-     * @param VariableAwareInterface $object
-     * @param string                 $declaration
-     * @param bool                   $semicolon
-     * @param bool                   $newLine
-     * @param bool                   $debug
+     * @param string $expected
+     * @param string $declaration
+     * @param bool   $semicolon
+     * @param bool   $newLine
+     * @param bool   $debug
      *
      * @dataProvider objectAssignmentProvider
      */
@@ -233,14 +233,12 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string                      $expected
-     * @param VariableAwareInterface      $root
-     * @param string                      $declaration
-     * @param string|null                 $propertyPath
-     * @param VariableAwareInterface|null $object
-     * @param bool                        $semicolon
-     * @param bool                        $newLine
-     * @param bool                        $debug
+     * @param string      $expected
+     * @param string      $declaration
+     * @param string|null $propertyPath
+     * @param bool        $semicolon
+     * @param bool        $newLine
+     * @param bool        $debug
      *
      * @dataProvider  containerAssignmentProvider
      */
@@ -267,11 +265,9 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string                      $expected
-     * @param VariableAwareInterface      $root
-     * @param string|null                 $propertyPath
-     * @param VariableAwareInterface|null $object
-     * @param bool                        $debug
+     * @param string      $expected
+     * @param string|null $propertyPath
+     * @param bool        $debug
      *
      * @dataProvider containerVariableProvider
      */
@@ -761,7 +757,7 @@ class FormatterTest extends \PHPUnit_Framework_TestCase
     /**
      * @param string $variable
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|VariableAwareInterface
+     * @return MockObject|VariableAwareInterface
      */
     private function createVariableAwareMock($variable = 'variable')
     {

@@ -22,11 +22,13 @@ use Ivory\GoogleMap\Service\Direction\Request\DirectionRequest;
 use Ivory\GoogleMap\Service\Direction\Request\DirectionRequestInterface;
 use Ivory\GoogleMap\Service\Direction\Request\DirectionWaypoint;
 use Ivory\GoogleMap\Service\RequestInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <gelon.eric@gmail.com>
  */
-class DirectionRequestTest extends \PHPUnit_Framework_TestCase
+class DirectionRequestTest extends TestCase
 {
     /**
      * @var DirectionRequest
@@ -34,19 +36,19 @@ class DirectionRequestTest extends \PHPUnit_Framework_TestCase
     private $request;
 
     /**
-     * @var LocationInterface|\PHPUnit_Framework_MockObject_MockObject
+     * @var LocationInterface|MockObject
      */
     private $origin;
 
     /**
-     * @var LocationInterface|\PHPUnit_Framework_MockObject_MockObject
+     * @var LocationInterface|MockObject
      */
     private $destination;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new DirectionRequest(
             $this->origin = $this->createLocationMock('origin'),
@@ -517,7 +519,7 @@ class DirectionRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * @param string $value
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|LocationInterface
+     * @return MockObject|LocationInterface
      */
     private function createLocationMock($value = 'value')
     {
@@ -531,7 +533,7 @@ class DirectionRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DirectionWaypoint
+     * @return MockObject|DirectionWaypoint
      */
     private function createWaypointMock()
     {

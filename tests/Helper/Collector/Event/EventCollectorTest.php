@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Event;
 use Ivory\GoogleMap\Event\Event;
 use Ivory\GoogleMap\Helper\Collector\Event\EventCollector;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EventCollectorTest extends \PHPUnit_Framework_TestCase
+class EventCollectorTest extends TestCase
 {
     /**
      * @var EventCollector
@@ -28,7 +29,7 @@ class EventCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->eventCollector = new EventCollector();
     }

@@ -17,11 +17,12 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerShapeRenderer;
 use Ivory\GoogleMap\Overlay\MarkerShape;
 use Ivory\GoogleMap\Overlay\MarkerShapeType;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerShapeRendererTest extends \PHPUnit_Framework_TestCase
+class MarkerShapeRendererTest extends TestCase
 {
     /**
      * @var MarkerShapeRenderer
@@ -31,7 +32,7 @@ class MarkerShapeRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->markerShapeRenderer = new MarkerShapeRenderer(new Formatter(), new JsonBuilder());
     }

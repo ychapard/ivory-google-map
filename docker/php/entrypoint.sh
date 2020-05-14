@@ -2,6 +2,9 @@
 
 set -e
 
+# start apache
+/usr/sbin/apachectl -D FOREGROUND
+
 GROUP_ID=${GROUP_ID-1000}
 USER_ID=${USER_ID-1000}
 XDEBUG=${XDEBUG-0}

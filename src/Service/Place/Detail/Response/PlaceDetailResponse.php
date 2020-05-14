@@ -44,7 +44,7 @@ class PlaceDetailResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -68,7 +68,7 @@ class PlaceDetailResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -79,9 +79,6 @@ class PlaceDetailResponse
         return $this->request;
     }
 
-    /**
-     * @param PlaceDetailRequestInterface|null $request
-     */
     public function setRequest(PlaceDetailRequestInterface $request = null)
     {
         $this->request = $request;
@@ -92,7 +89,7 @@ class PlaceDetailResponse
      */
     public function hasResult()
     {
-        return $this->result !== null;
+        return null !== $this->result;
     }
 
     /**
@@ -103,9 +100,6 @@ class PlaceDetailResponse
         return $this->result;
     }
 
-    /**
-     * @param Place|null $result
-     */
     public function setResult(Place $result = null)
     {
         $this->result = $result;

@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineLocationRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineStyleRenderer;
-use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Polyline;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PolylineRendererTest extends \PHPUnit_Framework_TestCase
+class PolylineRendererTest extends TestCase
 {
     /**
      * @var PolylineRenderer
@@ -32,7 +32,7 @@ class PolylineRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->polylineRenderer = new PolylineRenderer(
             new PolylineStyleRenderer(),

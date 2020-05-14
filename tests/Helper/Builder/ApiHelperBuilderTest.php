@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Builder;
 use Ivory\GoogleMap\Helper\ApiHelper;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\ApiHelperBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ApiHelperBuilderTest extends \PHPUnit_Framework_TestCase
+class ApiHelperBuilderTest extends TestCase
 {
     /**
      * @var ApiHelperBuilder
@@ -28,7 +29,7 @@ class ApiHelperBuilderTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->apiHelperBuilder = ApiHelperBuilder::create();
     }

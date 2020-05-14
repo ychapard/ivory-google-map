@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -20,11 +21,13 @@ use Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlStyleRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
+class MapTypeControlRendererTest extends TestCase
 {
     /**
      * @var MapTypeControlRenderer
@@ -34,7 +37,7 @@ class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapTypeControlRenderer = new MapTypeControlRenderer(
             $formatter = new Formatter(),
@@ -86,17 +89,15 @@ class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Expected a "Ivory\GoogleMap\Control\MapTypeControl", got "string".
-     */
     public function testRenderWithInvalidControl()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $this->mapTypeControlRenderer->render('foo');
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MapTypeIdRenderer
+     * @return MockObject|MapTypeIdRenderer
      */
     private function createMapTypeIdRendererMock()
     {
@@ -104,7 +105,7 @@ class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ControlPositionRenderer
+     * @return MockObject|ControlPositionRenderer
      */
     private function createControlPositionRendererMock()
     {
@@ -112,7 +113,7 @@ class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MapTypeControlStyleRenderer
+     * @return MockObject|MapTypeControlStyleRenderer
      */
     private function createMapTypeControlStyleRendererMock()
     {

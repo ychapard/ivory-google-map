@@ -12,11 +12,12 @@
 namespace Ivory\Tests\GoogleMap\Service;
 
 use Ivory\GoogleMap\Service\UrlSigner;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class UrlSignerTest extends \PHPUnit_Framework_TestCase
+class UrlSignerTest extends TestCase
 {
     /**
      * @param string      $expected
@@ -31,11 +32,11 @@ class UrlSignerTest extends \PHPUnit_Framework_TestCase
     {
         $signedUrl = $url;
 
-        if ($clientId !== null) {
+        if (null !== $clientId) {
             $signedUrl .= '&client=gme-'.$clientId;
         }
 
-        if ($channel !== null) {
+        if (null !== $channel) {
             $signedUrl .= '&channel='.$channel;
         }
 

@@ -31,12 +31,6 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
      */
     private $scaleControlStyleRenderer;
 
-    /**
-     * @param Formatter                 $formatter
-     * @param JsonBuilder               $jsonBuilder
-     * @param ControlPositionRenderer   $controlPositionRenderer
-     * @param ScaleControlStyleRenderer $scaleControlStyleRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -57,9 +51,6 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
@@ -73,9 +64,6 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
         return $this->scaleControlStyleRenderer;
     }
 
-    /**
-     * @param ScaleControlStyleRenderer $scaleControlStyleRenderer
-     */
     public function setScaleControlStyleRenderer(ScaleControlStyleRenderer $scaleControlStyleRenderer)
     {
         $this->scaleControlStyleRenderer = $scaleControlStyleRenderer;
@@ -89,11 +77,7 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
     public function render($control)
     {
         if (!$control instanceof ScaleControl) {
-            throw new \InvalidArgumentException(sprintf(
-                'Expected a "%s", got "%s".',
-                ScaleControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
-            ));
+            throw new \InvalidArgumentException(sprintf('Expected a "%s", got "%s".', ScaleControl::class, is_object($control) ? get_class($control) : gettype($control)));
         }
 
         return $this->getJsonBuilder()

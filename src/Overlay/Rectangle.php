@@ -30,7 +30,6 @@ class Rectangle implements ExtendableInterface, OptionsAwareInterface
     private $bound;
 
     /**
-     * @param Bound   $bound
      * @param mixed[] $options
      */
     public function __construct(Bound $bound, array $options = [])
@@ -47,9 +46,6 @@ class Rectangle implements ExtendableInterface, OptionsAwareInterface
         return $this->bound;
     }
 
-    /**
-     * @param Bound $bound
-     */
     public function setBound(Bound $bound)
     {
         $this->bound = $bound;

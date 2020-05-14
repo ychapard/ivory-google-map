@@ -46,7 +46,7 @@ class PlaceAutocompletePrediction
      */
     public function hasPlaceId()
     {
-        return $this->placeId !== null;
+        return null !== $this->placeId;
     }
 
     /**
@@ -70,7 +70,7 @@ class PlaceAutocompletePrediction
      */
     public function hasDescription()
     {
-        return $this->description !== null;
+        return null !== $this->description;
     }
 
     /**
@@ -189,8 +189,6 @@ class PlaceAutocompletePrediction
     }
 
     /**
-     * @param PlaceAutocompleteTerm $term
-     *
      * @return bool
      */
     public function hasTerm(PlaceAutocompleteTerm $term)
@@ -198,9 +196,6 @@ class PlaceAutocompletePrediction
         return in_array($term, $this->terms, true);
     }
 
-    /**
-     * @param PlaceAutocompleteTerm $term
-     */
     public function addTerm(PlaceAutocompleteTerm $term)
     {
         if (!$this->hasTerm($term)) {
@@ -208,9 +203,6 @@ class PlaceAutocompletePrediction
         }
     }
 
-    /**
-     * @param PlaceAutocompleteTerm $term
-     */
     public function removeTerm(PlaceAutocompleteTerm $term)
     {
         unset($this->terms[array_search($term, $this->terms, true)]);
@@ -253,8 +245,6 @@ class PlaceAutocompletePrediction
     }
 
     /**
-     * @param PlaceAutocompleteMatch $match
-     *
      * @return bool
      */
     public function hasMatch(PlaceAutocompleteMatch $match)
@@ -262,9 +252,6 @@ class PlaceAutocompletePrediction
         return in_array($match, $this->matches, true);
     }
 
-    /**
-     * @param PlaceAutocompleteMatch $match
-     */
     public function addMatch(PlaceAutocompleteMatch $match)
     {
         if (!$this->hasMatch($match)) {
@@ -272,9 +259,6 @@ class PlaceAutocompletePrediction
         }
     }
 
-    /**
-     * @param PlaceAutocompleteMatch $match
-     */
     public function removeMatch(PlaceAutocompleteMatch $match)
     {
         unset($this->matches[array_search($match, $this->matches, true)]);

@@ -23,11 +23,13 @@ use Ivory\GoogleMap\Overlay\OverlayManager;
 use Ivory\GoogleMap\Overlay\Polygon;
 use Ivory\GoogleMap\Overlay\Polyline;
 use Ivory\GoogleMap\Overlay\Rectangle;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class OverlayManagerTest extends \PHPUnit_Framework_TestCase
+class OverlayManagerTest extends TestCase
 {
     /**
      * @var OverlayManager
@@ -35,19 +37,19 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     private $overlayManager;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Map
+     * @var MockObject|Map
      */
     private $map;
 
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @var MockObject|Bound
      */
     private $bound;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->bound = $this->createBoundMock();
         $this->map = $this->createMapMock($this->bound);
@@ -1099,9 +1101,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Bound|null $bound
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|Map
+     * @return MockObject|Map
      */
     private function createMapMock(Bound $bound = null)
     {
@@ -1115,7 +1115,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {
@@ -1123,7 +1123,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MarkerCluster
+     * @return MockObject|MarkerCluster
      */
     private function createMarkerClusterMock()
     {
@@ -1131,7 +1131,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Marker
+     * @return MockObject|Marker
      */
     private function createMarkerMock()
     {
@@ -1139,7 +1139,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|InfoWindow
+     * @return MockObject|InfoWindow
      */
     private function createInfoWindowMock()
     {
@@ -1147,7 +1147,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Polyline
+     * @return MockObject|Polyline
      */
     private function createPolylineMock()
     {
@@ -1155,7 +1155,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|EncodedPolyline
+     * @return MockObject|EncodedPolyline
      */
     private function createEncodedPolylineMock()
     {
@@ -1163,7 +1163,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Polygon
+     * @return MockObject|Polygon
      */
     private function createPolygonMock()
     {
@@ -1171,7 +1171,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Rectangle
+     * @return MockObject|Rectangle
      */
     private function createRectangleMock()
     {
@@ -1179,7 +1179,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Circle
+     * @return MockObject|Circle
      */
     private function createCircleMock()
     {
@@ -1187,7 +1187,7 @@ class OverlayManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|GroundOverlay
+     * @return MockObject|GroundOverlay
      */
     private function createGroundOverlayMock()
     {

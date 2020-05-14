@@ -24,10 +24,6 @@ class AbstractTagRenderer extends AbstractRenderer
      */
     private $tagRenderer;
 
-    /**
-     * @param Formatter   $formatter
-     * @param TagRenderer $tagRenderer
-     */
     public function __construct(Formatter $formatter, TagRenderer $tagRenderer)
     {
         parent::__construct($formatter);
@@ -43,9 +39,6 @@ class AbstractTagRenderer extends AbstractRenderer
         return $this->tagRenderer;
     }
 
-    /**
-     * @param TagRenderer $tagRenderer
-     */
     public function setTagRenderer(TagRenderer $tagRenderer)
     {
         $this->tagRenderer = $tagRenderer;

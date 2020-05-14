@@ -41,7 +41,7 @@ class DirectionGeocoded
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -65,7 +65,7 @@ class DirectionGeocoded
      */
     public function hasPartialMatch()
     {
-        return $this->partialMatch !== null;
+        return null !== $this->partialMatch;
     }
 
     /**
@@ -89,7 +89,7 @@ class DirectionGeocoded
      */
     public function hasPlaceId()
     {
-        return $this->placeId !== null;
+        return null !== $this->placeId;
     }
 
     /**

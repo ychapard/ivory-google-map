@@ -23,9 +23,6 @@ class CoordinateLocation implements LocationInterface
      */
     private $coordinate;
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function __construct(Coordinate $coordinate)
     {
         $this->setCoordinate($coordinate);
@@ -39,9 +36,6 @@ class CoordinateLocation implements LocationInterface
         return $this->coordinate;
     }
 
-    /**
-     * @param Coordinate $coordinate
-     */
     public function setCoordinate(Coordinate $coordinate)
     {
         $this->coordinate = $coordinate;

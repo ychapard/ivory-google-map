@@ -33,11 +33,6 @@ class PolylineSubscriber extends AbstractSubscriber
      */
     private $polylineRenderer;
 
-    /**
-     * @param Formatter         $formatter
-     * @param PolylineCollector $polylineCollector
-     * @param PolylineRenderer  $polylineRenderer
-     */
     public function __construct(
         Formatter $formatter,
         PolylineCollector $polylineCollector,
@@ -57,9 +52,6 @@ class PolylineSubscriber extends AbstractSubscriber
         return $this->polylineCollector;
     }
 
-    /**
-     * @param PolylineCollector $polylineCollector
-     */
     public function setPolylineCollector(PolylineCollector $polylineCollector)
     {
         $this->polylineCollector = $polylineCollector;
@@ -73,17 +65,11 @@ class PolylineSubscriber extends AbstractSubscriber
         return $this->polylineRenderer;
     }
 
-    /**
-     * @param PolylineRenderer $polylineRenderer
-     */
     public function setPolylineRenderer(PolylineRenderer $polylineRenderer)
     {
         $this->polylineRenderer = $polylineRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

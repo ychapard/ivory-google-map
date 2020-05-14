@@ -31,7 +31,7 @@ class OpenClosePeriod
      */
     public function hasDay()
     {
-        return $this->day !== null;
+        return null !== $this->day;
     }
 
     /**
@@ -55,7 +55,7 @@ class OpenClosePeriod
      */
     public function hasTime()
     {
-        return $this->time !== null;
+        return null !== $this->time;
     }
 
     /**

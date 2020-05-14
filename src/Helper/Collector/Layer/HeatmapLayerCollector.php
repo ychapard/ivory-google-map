@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Map;
 class HeatmapLayerCollector extends AbstractCollector
 {
     /**
-     * @param Map            $map
      * @param HeatmapLayer[] $heatmapLayers
      *
      * @return HeatmapLayer[]

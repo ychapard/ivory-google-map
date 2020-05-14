@@ -31,7 +31,7 @@ class PlaceAutocompleteMatch
      */
     public function hasLength()
     {
-        return $this->length !== null;
+        return null !== $this->length;
     }
 
     /**
@@ -55,7 +55,7 @@ class PlaceAutocompleteMatch
      */
     public function hasOffset()
     {
-        return $this->offset !== null;
+        return null !== $this->offset;
     }
 
     /**

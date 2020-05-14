@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Place\AutocompleteType;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteMatch;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompletePrediction;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteTerm;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompletePredictionTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompletePredictionTest extends TestCase
 {
     /**
      * @var PlaceAutocompletePrediction
@@ -29,7 +31,7 @@ class PlaceAutocompletePredictionTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->prediction = new PlaceAutocompletePrediction();
     }
@@ -179,7 +181,7 @@ class PlaceAutocompletePredictionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceAutocompleteTerm
+     * @return MockObject|PlaceAutocompleteTerm
      */
     private function createTermMock()
     {
@@ -187,7 +189,7 @@ class PlaceAutocompletePredictionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceAutocompleteMatch
+     * @return MockObject|PlaceAutocompleteMatch
      */
     private function createMatchMock()
     {

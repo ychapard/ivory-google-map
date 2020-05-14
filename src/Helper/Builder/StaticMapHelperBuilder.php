@@ -52,11 +52,6 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
     /**
      * @var string|null
      */
-    private $key;
-
-    /**
-     * @var string|null
-     */
     private $secret;
 
     /**
@@ -86,37 +81,9 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
     /**
      * @return bool
      */
-    public function hasKey()
-    {
-        return $this->key !== null;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getKey()
-    {
-        return $this->key;
-    }
-
-    /**
-     * @param string|null $key
-     *
-     * @return $this
-     */
-    public function setKey($key)
-    {
-        $this->key = $key;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
     public function hasSecret()
     {
-        return $this->secret !== null;
+        return null !== $this->secret;
     }
 
     /**
@@ -144,7 +111,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
      */
     public function hasClientId()
     {
-        return $this->clientId !== null;
+        return null !== $this->clientId;
     }
 
     /**
@@ -172,7 +139,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
      */
     public function hasChannel()
     {
-        return $this->channel !== null;
+        return null !== $this->channel;
     }
 
     /**

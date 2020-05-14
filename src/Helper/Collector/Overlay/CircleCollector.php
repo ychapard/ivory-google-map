@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\Circle;
 class CircleCollector extends AbstractCollector
 {
     /**
-     * @param Map      $map
      * @param Circle[] $circles
      *
      * @return Circle[]

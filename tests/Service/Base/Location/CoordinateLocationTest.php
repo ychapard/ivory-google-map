@@ -9,16 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Service\Base\Location;
+namespace Ivory\Tests\GoogleMap\Service\Base\Location;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Base\Location\CoordinateLocation;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CoordinateLocationTest extends \PHPUnit_Framework_TestCase
+class CoordinateLocationTest extends TestCase
 {
     /**
      * @var CoordinateLocation
@@ -26,14 +28,14 @@ class CoordinateLocationTest extends \PHPUnit_Framework_TestCase
     private $coordinateLocation;
 
     /**
-     * @var Coordinate|\PHPUnit_Framework_MockObject_MockObject
+     * @var Coordinate|MockObject
      */
     private $coordinate;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->coordinate = $this->createCoordinateMock();
         $this->coordinateLocation = new CoordinateLocation($this->coordinate);
@@ -72,7 +74,7 @@ class CoordinateLocationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

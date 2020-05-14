@@ -28,11 +28,6 @@ class EncodedPolylineRenderer extends AbstractJsonRenderer
      */
     private $encodingRenderer;
 
-    /**
-     * @param Formatter        $formatter
-     * @param JsonBuilder      $jsonBuilder
-     * @param EncodingRenderer $encodingRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -51,18 +46,12 @@ class EncodedPolylineRenderer extends AbstractJsonRenderer
         return $this->encodingRenderer;
     }
 
-    /**
-     * @param EncodingRenderer $encodingRenderer
-     */
     public function setEncodingRenderer(EncodingRenderer $encodingRenderer)
     {
         $this->encodingRenderer = $encodingRenderer;
     }
 
     /**
-     * @param EncodedPolyline $encodedPolyline
-     * @param Map             $map
-     *
      * @return string
      */
     public function render(EncodedPolyline $encodedPolyline, Map $map)

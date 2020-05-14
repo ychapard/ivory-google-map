@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Renderer\Geometry;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Geometry\EncodingRenderer;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EncodingRendererTest extends \PHPUnit_Framework_TestCase
+class EncodingRendererTest extends TestCase
 {
     /**
      * @var EncodingRenderer
@@ -28,7 +29,7 @@ class EncodingRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->encodingRenderer = new EncodingRenderer(new Formatter());
     }

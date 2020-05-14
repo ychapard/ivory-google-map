@@ -16,6 +16,7 @@ use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderRequest;
 use Ivory\GoogleMap\Service\Geocoder\Response\GeocoderResponse;
 use Ivory\Serializer\Context\Context;
 use Ivory\Tests\GoogleMap\Service\AbstractUnitServiceTest;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,7 +31,7 @@ class GeocoderServiceUnitTest extends AbstractUnitServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -105,7 +106,7 @@ class GeocoderServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractGeocoderRequest
+     * @return MockObject|AbstractGeocoderRequest
      */
     private function createGeocoderRequestMock()
     {
@@ -113,7 +114,7 @@ class GeocoderServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractGeocoderRequest
+     * @return MockObject|AbstractGeocoderRequest
      */
     private function createGeocoderResponseMock()
     {

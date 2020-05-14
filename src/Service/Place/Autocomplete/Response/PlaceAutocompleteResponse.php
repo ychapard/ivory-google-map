@@ -38,7 +38,7 @@ class PlaceAutocompleteResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -62,7 +62,7 @@ class PlaceAutocompleteResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -73,9 +73,6 @@ class PlaceAutocompleteResponse
         return $this->request;
     }
 
-    /**
-     * @param PlaceAutocompleteRequestInterface|null $request
-     */
     public function setRequest(PlaceAutocompleteRequestInterface $request = null)
     {
         $this->request = $request;
@@ -117,8 +114,6 @@ class PlaceAutocompleteResponse
     }
 
     /**
-     * @param PlaceAutocompletePrediction $prediction
-     *
      * @return bool
      */
     public function hasPrediction(PlaceAutocompletePrediction $prediction)
@@ -126,9 +121,6 @@ class PlaceAutocompleteResponse
         return in_array($prediction, $this->predictions, true);
     }
 
-    /**
-     * @param PlaceAutocompletePrediction $prediction
-     */
     public function addPrediction(PlaceAutocompletePrediction $prediction)
     {
         if (!$this->hasPrediction($prediction)) {
@@ -136,9 +128,6 @@ class PlaceAutocompleteResponse
         }
     }
 
-    /**
-     * @param PlaceAutocompletePrediction $prediction
-     */
     public function removePrediction(PlaceAutocompletePrediction $prediction)
     {
         unset($this->predictions[array_search($prediction, $this->predictions, true)]);

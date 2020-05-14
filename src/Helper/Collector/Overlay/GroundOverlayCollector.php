@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\GroundOverlay;
 class GroundOverlayCollector extends AbstractCollector
 {
     /**
-     * @param Map             $map
      * @param GroundOverlay[] $groundOverlays
      *
      * @return GroundOverlay[]

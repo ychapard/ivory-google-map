@@ -33,11 +33,6 @@ class CustomControlSubscriber extends AbstractSubscriber
      */
     private $customControlRenderer;
 
-    /**
-     * @param Formatter              $formatter
-     * @param CustomControlCollector $customControlCollector
-     * @param CustomControlRenderer  $customControlRenderer
-     */
     public function __construct(
         Formatter $formatter,
         CustomControlCollector $customControlCollector,
@@ -57,9 +52,6 @@ class CustomControlSubscriber extends AbstractSubscriber
         return $this->customControlCollector;
     }
 
-    /**
-     * @param CustomControlCollector $customControlCollector
-     */
     public function setCustomControlCollector(CustomControlCollector $customControlCollector)
     {
         $this->customControlCollector = $customControlCollector;
@@ -73,17 +65,11 @@ class CustomControlSubscriber extends AbstractSubscriber
         return $this->customControlRenderer;
     }
 
-    /**
-     * @param CustomControlRenderer $customControlRenderer
-     */
     public function setCustomControlRenderer(CustomControlRenderer $customControlRenderer)
     {
         $this->customControlRenderer = $customControlRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

@@ -21,9 +21,6 @@ use Ivory\GoogleMap\Overlay\Rectangle;
 class RectangleRenderer extends AbstractJsonRenderer
 {
     /**
-     * @param Rectangle $rectangle
-     * @param Map       $map
-     *
      * @return string
      */
     public function render(Rectangle $rectangle, Map $map)

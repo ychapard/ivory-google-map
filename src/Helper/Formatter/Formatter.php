@@ -78,7 +78,7 @@ class Formatter
      */
     public function renderClass($name = null, $namespace = null)
     {
-        if ($namespace === null) {
+        if (null === $namespace) {
             $namespace = $this->renderProperty('google', 'maps');
         }
 
@@ -141,11 +141,10 @@ class Formatter
     }
 
     /**
-     * @param VariableAwareInterface $object
-     * @param string                 $method
-     * @param string[]               $arguments
-     * @param bool                   $semicolon
-     * @param bool                   $newLine
+     * @param string   $method
+     * @param string[] $arguments
+     * @param bool     $semicolon
+     * @param bool     $newLine
      *
      * @return string
      */
@@ -199,7 +198,7 @@ class Formatter
     ) {
         $separator = $this->renderSeparator();
 
-        if ($name !== null) {
+        if (null !== $name) {
             $name = ' '.$name;
         }
 
@@ -211,10 +210,9 @@ class Formatter
     }
 
     /**
-     * @param VariableAwareInterface $object
-     * @param string                 $declaration
-     * @param bool                   $semicolon
-     * @param bool                   $newLine
+     * @param string $declaration
+     * @param bool   $semicolon
+     * @param bool   $newLine
      *
      * @return string
      */
@@ -228,12 +226,10 @@ class Formatter
     }
 
     /**
-     * @param VariableAwareInterface      $root
-     * @param string                      $declaration
-     * @param string|null                 $propertyPath
-     * @param VariableAwareInterface|null $object
-     * @param bool                        $semicolon
-     * @param bool                        $newLine
+     * @param string      $declaration
+     * @param string|null $propertyPath
+     * @param bool        $semicolon
+     * @param bool        $newLine
      *
      * @return string
      */
@@ -254,9 +250,7 @@ class Formatter
     }
 
     /**
-     * @param VariableAwareInterface      $root
-     * @param string|null                 $propertyPath
-     * @param VariableAwareInterface|null $object
+     * @param string|null $propertyPath
      *
      * @return string
      */
@@ -267,11 +261,11 @@ class Formatter
     ) {
         $variable = $root->getVariable().'_container';
 
-        if ($propertyPath !== null) {
+        if (null !== $propertyPath) {
             $variable = $this->renderProperty($variable, $propertyPath);
         }
 
-        if ($object !== null) {
+        if (null !== $object) {
             $variable = $this->renderProperty($variable, $object->getVariable());
         }
 

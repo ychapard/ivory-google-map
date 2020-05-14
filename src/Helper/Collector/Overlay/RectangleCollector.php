@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\Rectangle;
 class RectangleCollector extends AbstractCollector
 {
     /**
-     * @param Map         $map
      * @param Rectangle[] $rectangles
      *
      * @return Rectangle[]

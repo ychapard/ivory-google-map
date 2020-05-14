@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Service\Place\Search\Request;
 
 use Ivory\GoogleMap\Service\Place\Search\Request\AbstractPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\TextPlaceSearchRequest;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class TextPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class TextPlaceSearchRequestTest extends TestCase
 {
     /**
      * @var TextPlaceSearchRequest
@@ -32,7 +33,7 @@ class TextPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new TextPlaceSearchRequest($this->query = 'foo');
     }

@@ -33,11 +33,6 @@ class AutocompleteBoundSubscriber extends AbstractSubscriber
      */
     private $boundRenderer;
 
-    /**
-     * @param Formatter                  $formatter
-     * @param AutocompleteBoundCollector $boundCollector
-     * @param BoundRenderer              $boundRenderer
-     */
     public function __construct(
         Formatter $formatter,
         AutocompleteBoundCollector $boundCollector,
@@ -57,9 +52,6 @@ class AutocompleteBoundSubscriber extends AbstractSubscriber
         return $this->boundCollector;
     }
 
-    /**
-     * @param AutocompleteBoundCollector $boundCollector
-     */
     public function setBoundCollector(AutocompleteBoundCollector $boundCollector)
     {
         $this->boundCollector = $boundCollector;
@@ -73,17 +65,11 @@ class AutocompleteBoundSubscriber extends AbstractSubscriber
         return $this->boundRenderer;
     }
 
-    /**
-     * @param BoundRenderer $boundRenderer
-     */
     public function setBoundRenderer(BoundRenderer $boundRenderer)
     {
         $this->boundRenderer = $boundRenderer;
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     public function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $formatter = $this->getFormatter();

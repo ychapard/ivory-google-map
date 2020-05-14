@@ -53,7 +53,7 @@ class TimeZoneResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -77,7 +77,7 @@ class TimeZoneResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -88,9 +88,6 @@ class TimeZoneResponse
         return $this->request;
     }
 
-    /**
-     * @param TimeZoneRequestInterface|null $request
-     */
     public function setRequest(TimeZoneRequestInterface $request = null)
     {
         $this->request = $request;
@@ -101,7 +98,7 @@ class TimeZoneResponse
      */
     public function hasDstOffset()
     {
-        return $this->dstOffset !== null;
+        return null !== $this->dstOffset;
     }
 
     /**
@@ -125,7 +122,7 @@ class TimeZoneResponse
      */
     public function hasRawOffset()
     {
-        return $this->rawOffset !== null;
+        return null !== $this->rawOffset;
     }
 
     /**
@@ -149,7 +146,7 @@ class TimeZoneResponse
      */
     public function hasTimeZoneId()
     {
-        return $this->timeZoneId !== null;
+        return null !== $this->timeZoneId;
     }
 
     /**
@@ -173,7 +170,7 @@ class TimeZoneResponse
      */
     public function hasTimeZoneName()
     {
-        return $this->timeZoneName !== null;
+        return null !== $this->timeZoneName;
     }
 
     /**

@@ -38,7 +38,7 @@ class GeocoderResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -62,7 +62,7 @@ class GeocoderResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -73,9 +73,6 @@ class GeocoderResponse
         return $this->request;
     }
 
-    /**
-     * @param GeocoderRequestInterface|null $request
-     */
     public function setRequest(GeocoderRequestInterface $request = null)
     {
         $this->request = $request;
@@ -117,8 +114,6 @@ class GeocoderResponse
     }
 
     /**
-     * @param GeocoderResult $result
-     *
      * @return bool
      */
     public function hasResult(GeocoderResult $result)
@@ -126,9 +121,6 @@ class GeocoderResponse
         return in_array($result, $this->results, true);
     }
 
-    /**
-     * @param GeocoderResult $result
-     */
     public function addResult(GeocoderResult $result)
     {
         if (!$this->hasResult($result)) {
@@ -136,9 +128,6 @@ class GeocoderResponse
         }
     }
 
-    /**
-     * @param GeocoderResult $result
-     */
     public function removeResult(GeocoderResult $result)
     {
         unset($this->results[array_search($result, $this->results, true)]);

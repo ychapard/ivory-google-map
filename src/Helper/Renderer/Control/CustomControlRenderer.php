@@ -26,10 +26,6 @@ class CustomControlRenderer extends AbstractRenderer
      */
     private $controlPositionRenderer;
 
-    /**
-     * @param Formatter               $formatter
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function __construct(Formatter $formatter, ControlPositionRenderer $controlPositionRenderer)
     {
         parent::__construct($formatter);
@@ -45,18 +41,12 @@ class CustomControlRenderer extends AbstractRenderer
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
     }
 
     /**
-     * @param CustomControl $customControl
-     * @param Map           $map
-     *
      * @return string
      */
     public function render(CustomControl $customControl, Map $map)

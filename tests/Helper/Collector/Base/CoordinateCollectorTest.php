@@ -32,11 +32,13 @@ use Ivory\GoogleMap\Overlay\Marker;
 use Ivory\GoogleMap\Overlay\Polygon;
 use Ivory\GoogleMap\Overlay\Polyline;
 use Ivory\GoogleMap\Overlay\Rectangle;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
+class CoordinateCollectorTest extends TestCase
 {
     /**
      * @var CoordinateCollector
@@ -46,7 +48,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->coordinateCollector = new CoordinateCollector(
             new BoundCollector(new GroundOverlayCollector(), new RectangleCollector()),
@@ -189,7 +191,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|BoundCollector
+     * @return MockObject|BoundCollector
      */
     private function createBoundCollectorMock()
     {
@@ -197,7 +199,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|CircleCollector
+     * @return MockObject|CircleCollector
      */
     private function createCircleCollectorMock()
     {
@@ -205,7 +207,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|InfoWindowCollector
+     * @return MockObject|InfoWindowCollector
      */
     private function createInfoWindowCollectorMock()
     {
@@ -213,7 +215,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MarkerCollector
+     * @return MockObject|MarkerCollector
      */
     private function createMarkerCollectorMock()
     {
@@ -221,7 +223,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PolygonCollector
+     * @return MockObject|PolygonCollector
      */
     private function createPolygonCollectorMock()
     {
@@ -229,7 +231,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PolylineCollector
+     * @return MockObject|PolylineCollector
      */
     private function createPolylineCollectorMock()
     {
@@ -237,7 +239,7 @@ class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|HeatmapLayerCollector
+     * @return MockObject|HeatmapLayerCollector
      */
     private function createHeatmapLayerCollector()
     {

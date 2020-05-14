@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Service\DistanceMatrix\Request\DistanceMatrixRequestInterfac
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixResponse;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixRow;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixStatus;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DistanceMatrixResponseTest extends \PHPUnit_Framework_TestCase
+class DistanceMatrixResponseTest extends TestCase
 {
     /**
      * @var DistanceMatrixResponse
@@ -29,7 +31,7 @@ class DistanceMatrixResponseTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->response = new DistanceMatrixResponse();
     }
@@ -188,7 +190,7 @@ class DistanceMatrixResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DistanceMatrixRequestInterface
+     * @return MockObject|DistanceMatrixRequestInterface
      */
     private function createRequestMock()
     {
@@ -196,7 +198,7 @@ class DistanceMatrixResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|DistanceMatrixRow
+     * @return MockObject|DistanceMatrixRow
      */
     private function createRowMock()
     {

@@ -13,11 +13,13 @@ namespace Ivory\Tests\GoogleMap\Service\Direction\Response\Transit;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Direction\Response\Transit\DirectionTransitStop;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionTransitStopTest extends \PHPUnit_Framework_TestCase
+class DirectionTransitStopTest extends TestCase
 {
     /**
      * @var DirectionTransitStop
@@ -27,7 +29,7 @@ class DirectionTransitStopTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->transitStop = new DirectionTransitStop();
     }
@@ -57,7 +59,7 @@ class DirectionTransitStopTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

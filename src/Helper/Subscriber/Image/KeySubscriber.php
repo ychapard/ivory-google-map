@@ -33,12 +33,9 @@ class KeySubscriber implements EventSubscriberInterface
         $this->key = $key;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
-        if ($this->key !== null) {
+        if (null !== $this->key) {
             $event->setParameter('key', $this->key);
         }
     }

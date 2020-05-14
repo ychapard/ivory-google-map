@@ -32,7 +32,6 @@ class IconSequence implements OptionsAwareInterface, VariableAwareInterface
     private $symbol;
 
     /**
-     * @param Symbol  $symbol
      * @param mixed[] $options
      */
     public function __construct(Symbol $symbol, array $options = [])
@@ -49,9 +48,6 @@ class IconSequence implements OptionsAwareInterface, VariableAwareInterface
         return $this->symbol;
     }
 
-    /**
-     * @param Symbol $symbol
-     */
     public function setSymbol(Symbol $symbol)
     {
         $this->symbol = $symbol;

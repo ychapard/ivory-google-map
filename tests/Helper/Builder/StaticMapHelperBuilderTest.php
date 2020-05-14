@@ -14,34 +14,27 @@ namespace Ivory\Tests\GoogleMap\Helper\Builder;
 use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\StaticMapHelperBuilder;
 use Ivory\GoogleMap\Helper\StaticMapHelper;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StaticMapHelperBuilderTest extends \PHPUnit_Framework_TestCase
+class StaticMapHelperBuilderTest extends TestCase
 {
-    /**
-     * @var StaticMapHelperBuilder
-     */
+    /** @var StaticMapHelperBuilder */
     private $staticMapHelperBuilder;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->staticMapHelperBuilder = StaticMapHelperBuilder::create();
+        $this->staticMapHelperBuilder = StaticMapHelperBuilder::create($_SERVER['API_KEY'] ?? null);
     }
 
     public function testInheritance()
     {
         $this->assertInstanceOf(AbstractHelperBuilder::class, $this->staticMapHelperBuilder);
-    }
-
-    public function testDefaultState()
-    {
-        $this->assertFalse($this->staticMapHelperBuilder->hasKey());
-        $this->assertNull($this->staticMapHelperBuilder->getKey());
     }
 
     public function testKey()

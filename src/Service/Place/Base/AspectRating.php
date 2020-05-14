@@ -31,7 +31,7 @@ class AspectRating
      */
     public function hasType()
     {
-        return $this->type !== null;
+        return null !== $this->type;
     }
 
     /**
@@ -55,7 +55,7 @@ class AspectRating
      */
     public function hasRating()
     {
-        return $this->rating !== null;
+        return null !== $this->rating;
     }
 
     /**

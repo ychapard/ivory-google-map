@@ -80,7 +80,7 @@ class BusinessAccount
      */
     public function hasChannel()
     {
-        return $this->channel !== null;
+        return null !== $this->channel;
     }
 
     /**

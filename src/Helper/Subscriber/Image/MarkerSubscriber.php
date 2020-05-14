@@ -32,19 +32,12 @@ class MarkerSubscriber implements EventSubscriberInterface
      */
     private $markerRenderer;
 
-    /**
-     * @param MarkerCollector $markerCollector
-     * @param MarkerRenderer  $markerRenderer
-     */
     public function __construct(MarkerCollector $markerCollector, MarkerRenderer $markerRenderer)
     {
         $this->markerCollector = $markerCollector;
         $this->markerRenderer = $markerRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $result = [];

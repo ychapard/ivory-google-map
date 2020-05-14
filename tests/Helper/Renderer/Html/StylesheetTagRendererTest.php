@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Helper\Renderer\Html\AbstractTagRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\StylesheetRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\StylesheetTagRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StylesheetTagRendererTest extends \PHPUnit_Framework_TestCase
+class StylesheetTagRendererTest extends TestCase
 {
     /**
      * @var StylesheetTagRenderer
@@ -30,7 +32,7 @@ class StylesheetTagRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->stylesheetTagRenderer = new StylesheetTagRenderer(
             $formatter = new Formatter(),
@@ -98,7 +100,7 @@ class StylesheetTagRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|StylesheetRenderer
+     * @return MockObject|StylesheetRenderer
      */
     private function createStylesheetRendererMock()
     {

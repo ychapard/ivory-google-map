@@ -29,10 +29,6 @@ abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
      */
     private $jsonBuilder;
 
-    /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     */
     public function __construct(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
     {
         $this->setFormatter($formatter ?: new Formatter());
@@ -48,8 +44,6 @@ abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
     }
 
     /**
-     * @param Formatter $formatter
-     *
      * @return $this
      */
     public function setFormatter(Formatter $formatter)
@@ -68,8 +62,6 @@ abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
     }
 
     /**
-     * @param JsonBuilder $jsonBuilder
-     *
      * @return $this
      */
     public function setJsonBuilder(JsonBuilder $jsonBuilder)

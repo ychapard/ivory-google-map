@@ -22,10 +22,7 @@ use Ivory\Serializer\SerializerInterface;
 abstract class AbstractPlaceSerializableService extends AbstractSerializableService
 {
     /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     * @param string|null              $context
+     * @param string|null $context
      */
     public function __construct(
         HttpClient $client,
@@ -33,7 +30,7 @@ abstract class AbstractPlaceSerializableService extends AbstractSerializableServ
         SerializerInterface $serializer = null,
         $context = null
     ) {
-        if ($context !== null) {
+        if (null !== $context) {
             $context = '/'.$context;
         }
 

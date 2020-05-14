@@ -14,11 +14,13 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 use Ivory\GoogleMap\Helper\Collector\Overlay\ExtendableCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ExtendableCollectorTest extends \PHPUnit_Framework_TestCase
+class ExtendableCollectorTest extends TestCase
 {
     /**
      * @var ExtendableCollector
@@ -28,7 +30,7 @@ class ExtendableCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->extendableCollector = new ExtendableCollector();
     }
@@ -42,7 +44,7 @@ class ExtendableCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ExtendableInterface
+     * @return MockObject|ExtendableInterface
      */
     private function createExtendableMock()
     {

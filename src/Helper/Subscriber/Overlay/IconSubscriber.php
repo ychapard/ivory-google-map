@@ -33,11 +33,6 @@ class IconSubscriber extends AbstractSubscriber
      */
     private $iconRenderer;
 
-    /**
-     * @param Formatter     $formatter
-     * @param IconCollector $iconCollector
-     * @param IconRenderer  $iconRenderer
-     */
     public function __construct(
         Formatter $formatter,
         IconCollector $iconCollector,
@@ -57,9 +52,6 @@ class IconSubscriber extends AbstractSubscriber
         return $this->iconCollector;
     }
 
-    /**
-     * @param IconCollector $iconCollector
-     */
     public function setIconCollector(IconCollector $iconCollector)
     {
         $this->iconCollector = $iconCollector;
@@ -73,17 +65,11 @@ class IconSubscriber extends AbstractSubscriber
         return $this->iconRenderer;
     }
 
-    /**
-     * @param IconRenderer $iconRenderer
-     */
     public function setIconRenderer(IconRenderer $iconRenderer)
     {
         $this->iconRenderer = $iconRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

@@ -26,11 +26,6 @@ class RotateControlRenderer extends AbstractJsonRenderer implements ControlRende
      */
     private $controlPositionRenderer;
 
-    /**
-     * @param Formatter               $formatter
-     * @param JsonBuilder             $jsonBuilder
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function __construct(
         Formatter $formatter,
         JsonBuilder $jsonBuilder,
@@ -49,9 +44,6 @@ class RotateControlRenderer extends AbstractJsonRenderer implements ControlRende
         return $this->controlPositionRenderer;
     }
 
-    /**
-     * @param ControlPositionRenderer $controlPositionRenderer
-     */
     public function setControlPositionRenderer(ControlPositionRenderer $controlPositionRenderer)
     {
         $this->controlPositionRenderer = $controlPositionRenderer;
@@ -63,11 +55,7 @@ class RotateControlRenderer extends AbstractJsonRenderer implements ControlRende
     public function render($control)
     {
         if (!$control instanceof RotateControl) {
-            throw new \InvalidArgumentException(sprintf(
-                'Expected a "%s", got "%s".',
-                RotateControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
-            ));
+            throw new \InvalidArgumentException(sprintf('Expected a "%s", got "%s".', RotateControl::class, is_object($control) ? get_class($control) : gettype($control)));
         }
 
         return $this->getJsonBuilder()

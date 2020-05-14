@@ -32,11 +32,6 @@ class InfoBoxSubscriber extends AbstractInfoWindowSubscriber
      */
     private $infoBoxRenderer;
 
-    /**
-     * @param Formatter        $formatter
-     * @param InfoBoxCollector $infoBoxCollector
-     * @param InfoBoxRenderer  $infoBoxRenderer
-     */
     public function __construct(
         Formatter $formatter,
         InfoBoxCollector $infoBoxCollector,
@@ -55,17 +50,11 @@ class InfoBoxSubscriber extends AbstractInfoWindowSubscriber
         return $this->infoBoxRenderer;
     }
 
-    /**
-     * @param InfoBoxRenderer $infoBoxRenderer
-     */
     public function setInfoBoxRenderer(InfoBoxRenderer $infoBoxRenderer)
     {
         $this->infoBoxRenderer = $infoBoxRenderer;
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     public function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Map::class) as $map) {
@@ -80,9 +69,6 @@ class InfoBoxSubscriber extends AbstractInfoWindowSubscriber
         }
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $map = $event->getMap();
@@ -109,9 +95,7 @@ class InfoBoxSubscriber extends AbstractInfoWindowSubscriber
     }
 
     /**
-     * @param Map        $map
-     * @param InfoWindow $infoWindow
-     * @param bool       $position
+     * @param bool $position
      *
      * @return string
      */

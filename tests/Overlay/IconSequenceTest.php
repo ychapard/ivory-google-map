@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Overlay\IconSequence;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class IconSequenceTest extends \PHPUnit_Framework_TestCase
+class IconSequenceTest extends TestCase
 {
     /**
      * @var IconSequence
@@ -27,14 +29,14 @@ class IconSequenceTest extends \PHPUnit_Framework_TestCase
     private $iconSequence;
 
     /**
-     * @var Symbol|\PHPUnit_Framework_MockObject_MockObject
+     * @var Symbol|MockObject
      */
     private $symbol;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->iconSequence = new IconSequence($this->symbol = $this->createSymbolMock());
     }
@@ -69,7 +71,7 @@ class IconSequenceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Symbol
+     * @return MockObject|Symbol
      */
     private function createSymbolMock()
     {

@@ -24,8 +24,6 @@ use Ivory\Serializer\Naming\SnakeCaseNamingStrategy;
 class PlaceSearchService extends AbstractPlaceSerializableService
 {
     /**
-     * @param PlaceSearchRequestInterface $request
-     *
      * @return PlaceSearchResponseIterator
      */
     public function process(PlaceSearchRequestInterface $request)

@@ -21,11 +21,13 @@ use Ivory\GoogleMap\Service\Place\Base\PlaceScope;
 use Ivory\GoogleMap\Service\Place\Base\PlaceType;
 use Ivory\GoogleMap\Service\Place\Base\PriceLevel;
 use Ivory\GoogleMap\Service\Place\Base\Review;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceTest extends \PHPUnit_Framework_TestCase
+class PlaceTest extends TestCase
 {
     /**
      * @var Place
@@ -35,7 +37,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->result = new Place();
     }
@@ -444,7 +446,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AddressComponent
+     * @return MockObject|AddressComponent
      */
     private function createAddressComponentMock()
     {
@@ -452,7 +454,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Geometry
+     * @return MockObject|Geometry
      */
     private function createGeometryMock()
     {
@@ -460,7 +462,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|OpeningHours
+     * @return MockObject|OpeningHours
      */
     private function createOpeningHoursMock()
     {
@@ -468,7 +470,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Photo
+     * @return MockObject|Photo
      */
     private function createPhotoMock()
     {
@@ -476,7 +478,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AlternatePlaceId
+     * @return MockObject|AlternatePlaceId
      */
     private function createAlternatePlaceIdMock()
     {
@@ -484,7 +486,7 @@ class PlaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Review
+     * @return MockObject|Review
      */
     private function createReviewMock()
     {

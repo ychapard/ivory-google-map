@@ -20,21 +20,23 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowRendererInterface;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoWindowRendererTest extends \PHPUnit_Framework_TestCase
+class InfoWindowRendererTest extends TestCase
 {
     /**
-     * @var AbstractInfoWindowRenderer|\PHPUnit_Framework_MockObject_MockObject
+     * @var AbstractInfoWindowRenderer|MockObject
      */
     private $infoWindowRenderer;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->infoWindowRenderer = $this->createAbstractInfoWindowRendererMock();
     }
@@ -76,7 +78,7 @@ class InfoWindowRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractInfoWindowRenderer
+     * @return MockObject|AbstractInfoWindowRenderer
      */
     private function createAbstractInfoWindowRendererMock()
     {

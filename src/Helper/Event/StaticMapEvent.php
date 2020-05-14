@@ -30,7 +30,6 @@ class StaticMapEvent extends Event
     private $parameters = [];
 
     /**
-     * @param Map     $map
      * @param mixed[] $parameters
      */
     public function __construct(Map $map, array $parameters = [])

@@ -33,11 +33,6 @@ class BoundSubscriber extends AbstractSubscriber
      */
     private $boundRenderer;
 
-    /**
-     * @param Formatter      $formatter
-     * @param BoundCollector $boundCollector
-     * @param BoundRenderer  $boundRenderer
-     */
     public function __construct(
         Formatter $formatter,
         BoundCollector $boundCollector,
@@ -57,9 +52,6 @@ class BoundSubscriber extends AbstractSubscriber
         return $this->boundCollector;
     }
 
-    /**
-     * @param BoundCollector $boundCollector
-     */
     public function setBoundCollector(BoundCollector $boundCollector)
     {
         $this->boundCollector = $boundCollector;
@@ -73,17 +65,11 @@ class BoundSubscriber extends AbstractSubscriber
         return $this->boundRenderer;
     }
 
-    /**
-     * @param BoundRenderer $boundRenderer
-     */
     public function setBoundRenderer(BoundRenderer $boundRenderer)
     {
         $this->boundRenderer = $boundRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

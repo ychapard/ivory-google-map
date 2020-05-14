@@ -32,9 +32,8 @@ class Time
     private $text;
 
     /**
-     * @param \DateTime $value
-     * @param string    $timeZone
-     * @param string    $text
+     * @param string $timeZone
+     * @param string $text
      */
     public function __construct(\DateTime $value, $timeZone, $text)
     {
@@ -51,9 +50,6 @@ class Time
         return $this->value;
     }
 
-    /**
-     * @param \DateTime $value
-     */
     public function setValue(\DateTime $value)
     {
         $this->value = $value;

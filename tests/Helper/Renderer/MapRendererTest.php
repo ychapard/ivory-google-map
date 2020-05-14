@@ -20,11 +20,13 @@ use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\MapTypeId;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapRendererTest extends \PHPUnit_Framework_TestCase
+class MapRendererTest extends TestCase
 {
     /**
      * @var MapRenderer
@@ -34,7 +36,7 @@ class MapRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapRenderer = new MapRenderer(
             $formatter = new Formatter(),
@@ -126,7 +128,7 @@ class MapRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MapTypeIdRenderer
+     * @return MockObject|MapTypeIdRenderer
      */
     private function createMapTypeIdRendererMock()
     {
@@ -134,7 +136,7 @@ class MapRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ControlManagerRenderer
+     * @return MockObject|ControlManagerRenderer
      */
     private function createControlManagerRendererMock()
     {
@@ -142,7 +144,7 @@ class MapRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|RequirementRenderer
+     * @return MockObject|RequirementRenderer
      */
     private function createRequirementRendererMock()
     {

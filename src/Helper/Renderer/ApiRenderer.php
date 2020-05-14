@@ -40,13 +40,6 @@ class ApiRenderer extends AbstractRenderer
      */
     private $sourceRenderer;
 
-    /**
-     * @param Formatter                 $formatter
-     * @param ApiInitRenderer           $apiInitRenderer
-     * @param LoaderRenderer            $loaderRenderer
-     * @param RequirementLoaderRenderer $requirementLoaderRenderer
-     * @param SourceRenderer            $sourceRenderer
-     */
     public function __construct(
         Formatter $formatter,
         ApiInitRenderer $apiInitRenderer,
@@ -70,9 +63,6 @@ class ApiRenderer extends AbstractRenderer
         return $this->apiInitRenderer;
     }
 
-    /**
-     * @param ApiInitRenderer $apiInitRenderer
-     */
     public function setApiInitRenderer(ApiInitRenderer $apiInitRenderer)
     {
         $this->apiInitRenderer = $apiInitRenderer;
@@ -86,9 +76,6 @@ class ApiRenderer extends AbstractRenderer
         return $this->loaderRenderer;
     }
 
-    /**
-     * @param LoaderRenderer $loaderRenderer
-     */
     public function setLoaderRenderer(LoaderRenderer $loaderRenderer)
     {
         $this->loaderRenderer = $loaderRenderer;
@@ -102,9 +89,6 @@ class ApiRenderer extends AbstractRenderer
         return $this->requirementLoaderRenderer;
     }
 
-    /**
-     * @param RequirementLoaderRenderer $requirementLoaderRenderer
-     */
     public function setRequirementLoaderRenderer(RequirementLoaderRenderer $requirementLoaderRenderer)
     {
         $this->requirementLoaderRenderer = $requirementLoaderRenderer;
@@ -118,19 +102,14 @@ class ApiRenderer extends AbstractRenderer
         return $this->sourceRenderer;
     }
 
-    /**
-     * @param SourceRenderer $sourceRenderer
-     */
     public function setSourceRenderer(SourceRenderer $sourceRenderer)
     {
         $this->sourceRenderer = $sourceRenderer;
     }
 
     /**
-     * @param \SplObjectStorage $callbacks
-     * @param \SplObjectStorage $requirements
-     * @param string[]          $sources
-     * @param string[]          $libraries
+     * @param string[] $sources
+     * @param string[] $libraries
      *
      * @return string
      */
@@ -161,7 +140,7 @@ class ApiRenderer extends AbstractRenderer
                 false
             ),
             $formatter->renderCall($initSourceCallback, [
-                $formatter->renderEscape($this->loaderRenderer->renderSource($loadCallback)),
+                $formatter->renderEscape($this->loaderRenderer->renderSource($initCallback)),
             ], true),
         ], true, false);
     }

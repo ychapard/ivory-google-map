@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Image;
 use Ivory\GoogleMap\Helper\Collector\Image\PolylineCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Polyline;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PolylineCollectorTest extends \PHPUnit_Framework_TestCase
+class PolylineCollectorTest extends TestCase
 {
     /**
      * @var PolylineCollector
@@ -28,7 +29,7 @@ class PolylineCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->polylineCollector = new PolylineCollector();
     }

@@ -15,11 +15,12 @@ use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Helper\Collector\Overlay\GroundOverlayCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\GroundOverlay;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GroundOverlayCollectorTest extends \PHPUnit_Framework_TestCase
+class GroundOverlayCollectorTest extends TestCase
 {
     /**
      * @var GroundOverlayCollector
@@ -29,7 +30,7 @@ class GroundOverlayCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->groundOverlayCollector = new GroundOverlayCollector();
     }

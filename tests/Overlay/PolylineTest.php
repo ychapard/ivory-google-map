@@ -18,11 +18,13 @@ use Ivory\GoogleMap\Overlay\Polyline;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\StaticOptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PolylineTest extends \PHPUnit_Framework_TestCase
+class PolylineTest extends TestCase
 {
     /**
      * @var Polyline
@@ -32,7 +34,7 @@ class PolylineTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->polyline = new Polyline();
     }
@@ -148,7 +150,7 @@ class PolylineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {
@@ -156,7 +158,7 @@ class PolylineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|IconSequence
+     * @return MockObject|IconSequence
      */
     private function createIconSequenceMock()
     {

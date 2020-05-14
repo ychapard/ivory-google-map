@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Detail;
 
+use Http\Client\Common\Exception\ClientErrorException;
 use Ivory\GoogleMap\Service\Place\Detail\PlaceDetailService;
 use Ivory\GoogleMap\Service\Place\Detail\Request\PlaceDetailRequest;
 use Ivory\GoogleMap\Service\Place\Detail\Request\PlaceDetailRequestInterface;
@@ -31,7 +32,7 @@ class PlaceDetailServiceTest extends AbstractPlaceSerializableServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         if (!isset($_SERVER['API_KEY'])) {
             $this->markTestSkipped();
@@ -78,12 +79,11 @@ class PlaceDetailServiceTest extends AbstractPlaceSerializableServiceTest
      * @param string $format
      *
      * @dataProvider formatProvider
-     *
-     * @expectedException \Http\Client\Common\Exception\ClientErrorException
-     * @expectedExceptionMessage REQUEST_DENIED
      */
     public function testErrorRequest($format)
     {
+        $this->expectException(ClientErrorException::class);
+
         $this->service->setFormat($format);
         $this->service->setKey('invalid');
 

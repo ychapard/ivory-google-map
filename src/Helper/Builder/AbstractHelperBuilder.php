@@ -20,17 +20,15 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 abstract class AbstractHelperBuilder
 {
-    /**
-     * @var EventSubscriberInterface[]
-     */
+    /** @var EventSubscriberInterface[] */
     private $subscribers = [];
 
-    /**
-     * @return static
-     */
-    public static function create()
+    /** @var string|null */
+    protected $key;
+
+    public static function create(?string $key = null): AbstractHelperBuilder
     {
-        return new static();
+        return (new static())->setKey($key);
     }
 
     /**
@@ -77,8 +75,6 @@ abstract class AbstractHelperBuilder
     }
 
     /**
-     * @param EventSubscriberInterface $subscriber
-     *
      * @return bool
      */
     public function hasSubscriber(EventSubscriberInterface $subscriber)
@@ -87,8 +83,6 @@ abstract class AbstractHelperBuilder
     }
 
     /**
-     * @param EventSubscriberInterface $subscriber
-     *
      * @return $this
      */
     public function addSubscriber(EventSubscriberInterface $subscriber)
@@ -101,8 +95,6 @@ abstract class AbstractHelperBuilder
     }
 
     /**
-     * @param EventSubscriberInterface $subscriber
-     *
      * @return $this
      */
     public function removeSubscriber(EventSubscriberInterface $subscriber)
@@ -133,5 +125,22 @@ abstract class AbstractHelperBuilder
     protected function createSubscribers()
     {
         return $this->subscribers;
+    }
+
+    public function hasKey(): bool
+    {
+        return null !== $this->key;
+    }
+
+    public function getKey(): ?string
+    {
+        return $this->key;
+    }
+
+    public function setKey(?string $key): self
+    {
+        $this->key = $key;
+
+        return $this;
     }
 }

@@ -43,12 +43,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
      */
     private $javascriptTagRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param MapRenderer           $mapRenderer
-     * @param CallbackRenderer      $callbackRenderer
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function __construct(
         Formatter $formatter,
         MapRenderer $mapRenderer,
@@ -70,9 +64,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->mapRenderer;
     }
 
-    /**
-     * @param MapRenderer $mapRenderer
-     */
     public function setMapRenderer(MapRenderer $mapRenderer)
     {
         $this->mapRenderer = $mapRenderer;
@@ -86,9 +77,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->callbackRenderer;
     }
 
-    /**
-     * @param CallbackRenderer $callbackRenderer
-     */
     public function setCallbackRenderer(CallbackRenderer $callbackRenderer)
     {
         $this->callbackRenderer = $callbackRenderer;
@@ -102,9 +90,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->javascriptTagRenderer;
     }
 
-    /**
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function setJavascriptTagRenderer(JavascriptTagRenderer $javascriptTagRenderer)
     {
         $this->javascriptTagRenderer = $javascriptTagRenderer;
@@ -144,9 +129,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
         ];
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     private function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Map::class) as $map) {
@@ -156,9 +138,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
         }
     }
 
-    /**
-     * @param MapEvent $event
-     */
     private function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();
@@ -171,8 +150,6 @@ class MapJavascriptSubscriber extends AbstractDelegateSubscriber
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     private function renderCallback(Map $map)

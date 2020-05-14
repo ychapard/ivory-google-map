@@ -32,10 +32,6 @@ class MarkerClustererSubscriber extends AbstractSubscriber
      */
     private $markerClustererRenderer;
 
-    /**
-     * @param Formatter               $formatter
-     * @param MarkerClustererRenderer $markerClustererRenderer
-     */
     public function __construct(Formatter $formatter, MarkerClustererRenderer $markerClustererRenderer)
     {
         parent::__construct($formatter);
@@ -51,21 +47,15 @@ class MarkerClustererSubscriber extends AbstractSubscriber
         return $this->markerClustererRenderer;
     }
 
-    /**
-     * @param MarkerClustererRenderer $markerClustererRenderer
-     */
     public function setMarkerClustererRenderer(MarkerClustererRenderer $markerClustererRenderer)
     {
         $this->markerClustererRenderer = $markerClustererRenderer;
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     public function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Map::class) as $map) {
-            if (($markerCluster = $this->getMarkerCluster($map)) !== null) {
+            if (null !== ($markerCluster = $this->getMarkerCluster($map))) {
                 $event->addSource($this->markerClustererRenderer->renderSource());
                 $event->addRequirement($map, $this->markerClustererRenderer->renderRequirement());
 
@@ -74,15 +64,12 @@ class MarkerClustererSubscriber extends AbstractSubscriber
         }
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();
         $map = $event->getMap();
 
-        if (($markerCluster = $this->getMarkerCluster($map)) !== null) {
+        if (null !== ($markerCluster = $this->getMarkerCluster($map))) {
             $event->addCode($formatter->renderContainerAssignment(
                 $map,
                 $this->markerClustererRenderer->render($markerCluster, $map, $formatter->renderCall(
@@ -106,15 +93,13 @@ class MarkerClustererSubscriber extends AbstractSubscriber
     }
 
     /**
-     * @param Map $map
-     *
      * @return MarkerCluster|null
      */
     private function getMarkerCluster(Map $map)
     {
         $markerCluster = $map->getOverlayManager()->getMarkerCluster();
 
-        if ($markerCluster->getType() === MarkerClusterType::MARKER_CLUSTERER) {
+        if (MarkerClusterType::MARKER_CLUSTERER === $markerCluster->getType()) {
             return $markerCluster;
         }
     }

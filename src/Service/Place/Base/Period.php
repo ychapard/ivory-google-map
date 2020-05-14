@@ -31,7 +31,7 @@ class Period
      */
     public function hasOpen()
     {
-        return $this->open !== null;
+        return null !== $this->open;
     }
 
     /**
@@ -42,9 +42,6 @@ class Period
         return $this->open;
     }
 
-    /**
-     * @param OpenClosePeriod|null $open
-     */
     public function setOpen(OpenClosePeriod $open = null)
     {
         $this->open = $open;
@@ -55,7 +52,7 @@ class Period
      */
     public function hasClose()
     {
-        return $this->close !== null;
+        return null !== $this->close;
     }
 
     /**
@@ -66,9 +63,6 @@ class Period
         return $this->close;
     }
 
-    /**
-     * @param OpenClosePeriod|null $close
-     */
     public function setClose(OpenClosePeriod $close = null)
     {
         $this->close = $close;

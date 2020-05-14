@@ -26,17 +26,11 @@ class StyleSubscriber implements EventSubscriberInterface
      */
     private $styleRenderer;
 
-    /**
-     * @param StyleRenderer $styleRenderer
-     */
     public function __construct(StyleRenderer $styleRenderer)
     {
         $this->styleRenderer = $styleRenderer;
     }
 
-    /**
-     * @param StaticMapEvent $event
-     */
     public function handleMap(StaticMapEvent $event)
     {
         $map = $event->getMap();

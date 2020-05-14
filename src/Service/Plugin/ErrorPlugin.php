@@ -37,31 +37,34 @@ class ErrorPlugin implements Plugin
         'UNKNOWN_ERROR'           => ServerErrorException::class,
     ];
 
-    /**
-     * @var string[]
-     */
     private static $placeholders = [
         '"status" : "%s"',
         '<status>%s</status>',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
     public function handleRequest(RequestInterface $request, callable $next, callable $first)
     {
         return $next($request)->then(function (ResponseInterface $response) use ($request) {
-            $body = (string) $response->getBody();
+            return $this->transformResponseToException($request, $response);
+        });
+    }
 
-            foreach (self::$errors as $error => $exception) {
-                foreach (self::$placeholders as $placeholder) {
-                    if (strpos($body, sprintf($placeholder, $error)) !== false) {
-                        throw new $exception($error, $request, $response);
-                    }
+    protected function transformResponseToException(RequestInterface $request, ResponseInterface $response): ResponseInterface
+    {
+        $bodyStream = $response->getBody();
+        $body = $bodyStream->__toString();
+        if ($bodyStream->isSeekable()) {
+            $bodyStream->rewind();
+        }
+
+        foreach (self::$errors as $error => $exception) {
+            foreach (self::$placeholders as $placeholder) {
+                if (false !== strpos($body, sprintf($placeholder, $error))) {
+                    throw new $exception($error, $request, $response);
                 }
             }
+        }
 
-            return $response;
-        });
+        return $response;
     }
 }

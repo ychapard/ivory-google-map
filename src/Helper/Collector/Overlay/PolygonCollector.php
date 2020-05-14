@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\Polygon;
 class PolygonCollector extends AbstractCollector
 {
     /**
-     * @param Map       $map
      * @param Polygon[] $polygons
      *
      * @return Polygon[]

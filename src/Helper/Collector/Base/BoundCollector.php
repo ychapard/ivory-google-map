@@ -32,10 +32,6 @@ class BoundCollector extends AbstractCollector
      */
     private $rectangleCollector;
 
-    /**
-     * @param GroundOverlayCollector $groundOverlayCollector
-     * @param RectangleCollector     $rectangleCollector
-     */
     public function __construct(GroundOverlayCollector $groundOverlayCollector, RectangleCollector $rectangleCollector)
     {
         $this->setGroundOverlayCollector($groundOverlayCollector);
@@ -50,9 +46,6 @@ class BoundCollector extends AbstractCollector
         return $this->groundOverlayCollector;
     }
 
-    /**
-     * @param GroundOverlayCollector $groundOverlayCollector
-     */
     public function setGroundOverlayCollector(GroundOverlayCollector $groundOverlayCollector)
     {
         $this->groundOverlayCollector = $groundOverlayCollector;
@@ -66,16 +59,12 @@ class BoundCollector extends AbstractCollector
         return $this->rectangleCollector;
     }
 
-    /**
-     * @param RectangleCollector $rectangleCollector
-     */
     public function setRectangleCollector(RectangleCollector $rectangleCollector)
     {
         $this->rectangleCollector = $rectangleCollector;
     }
 
     /**
-     * @param Map     $map
      * @param Bound[] $bounds
      *
      * @return Bound[]

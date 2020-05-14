@@ -28,11 +28,6 @@ class MarkerSubscriber extends AbstractMarkerSubscriber
      */
     private $markerRenderer;
 
-    /**
-     * @param Formatter       $formatter
-     * @param MarkerCollector $markerCollector
-     * @param MarkerRenderer  $markerRenderer
-     */
     public function __construct(
         Formatter $formatter,
         MarkerCollector $markerCollector,
@@ -51,24 +46,18 @@ class MarkerSubscriber extends AbstractMarkerSubscriber
         return $this->markerRenderer;
     }
 
-    /**
-     * @param MarkerRenderer $markerRenderer
-     */
     public function setMarkerRenderer(MarkerRenderer $markerRenderer)
     {
         $this->markerRenderer = $markerRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();
         $map = $event->getMap();
         $markerMap = null;
 
-        if ($map->getOverlayManager()->getMarkerCluster()->getType() === MarkerClusterType::DEFAULT_) {
+        if (MarkerClusterType::DEFAULT_ === $map->getOverlayManager()->getMarkerCluster()->getType()) {
             $markerMap = $map;
         }
 

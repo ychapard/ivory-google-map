@@ -38,10 +38,9 @@ class StaticMapHelper extends AbstractHelper
     private $channel;
 
     /**
-     * @param EventDispatcherInterface $eventDispatcher
-     * @param string|null              $secret
-     * @param string|null              $clientId
-     * @param string|null              $channel
+     * @param string|null $secret
+     * @param string|null $clientId
+     * @param string|null $channel
      */
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
@@ -61,7 +60,7 @@ class StaticMapHelper extends AbstractHelper
      */
     public function hasSecret()
     {
-        return $this->secret !== null;
+        return null !== $this->secret;
     }
 
     /**
@@ -85,7 +84,7 @@ class StaticMapHelper extends AbstractHelper
      */
     public function hasClientId()
     {
-        return $this->clientId !== null;
+        return null !== $this->clientId;
     }
 
     /**
@@ -109,7 +108,7 @@ class StaticMapHelper extends AbstractHelper
      */
     public function hasChannel()
     {
-        return $this->channel !== null;
+        return null !== $this->channel;
     }
 
     /**
@@ -129,8 +128,6 @@ class StaticMapHelper extends AbstractHelper
     }
 
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function render(Map $map)

@@ -18,11 +18,12 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\IconRenderer;
 use Ivory\GoogleMap\Overlay\Icon;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class IconRendererTest extends \PHPUnit_Framework_TestCase
+class IconRendererTest extends TestCase
 {
     /**
      * @var IconRenderer
@@ -32,7 +33,7 @@ class IconRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->iconRenderer = new IconRenderer(new Formatter(), new JsonBuilder());
     }

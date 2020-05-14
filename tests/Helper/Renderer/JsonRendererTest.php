@@ -15,31 +15,33 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class JsonRendererTest extends \PHPUnit_Framework_TestCase
+class JsonRendererTest extends TestCase
 {
     /**
-     * @var AbstractJsonRenderer|\PHPUnit_Framework_MockObject_MockObject
+     * @var AbstractJsonRenderer|MockObject
      */
     private $jsonRenderer;
 
     /**
-     * @var JsonBuilder|\PHPUnit_Framework_MockObject_MockObject
+     * @var JsonBuilder|MockObject
      */
     private $jsonBuilder;
 
     /**
-     * @var Formatter|\PHPUnit_Framework_MockObject_MockObject
+     * @var Formatter|MockObject
      */
     private $formatter;
 
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formatter = $this->createFormatterMock();
         $this->jsonBuilder = $this->createJsonBuilderMock();
@@ -68,10 +70,7 @@ class JsonRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     *
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractJsonRenderer
+     * @return MockObject|AbstractJsonRenderer
      */
     private function createAbstractJsonRendererMock(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
     {
@@ -84,7 +83,7 @@ class JsonRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Formatter
+     * @return MockObject|Formatter
      */
     private function createFormatterMock()
     {
@@ -92,7 +91,7 @@ class JsonRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|JsonBuilder
+     * @return MockObject|JsonBuilder
      */
     private function createJsonBuilderMock()
     {

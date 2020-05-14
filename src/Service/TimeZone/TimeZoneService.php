@@ -25,11 +25,6 @@ use Ivory\Serializer\SerializerInterface;
  */
 class TimeZoneService extends AbstractSerializableService
 {
-    /**
-     * @param HttpClient               $client
-     * @param MessageFactory           $messageFactory
-     * @param SerializerInterface|null $serializer
-     */
     public function __construct(
         HttpClient $client,
         MessageFactory $messageFactory,
@@ -39,8 +34,6 @@ class TimeZoneService extends AbstractSerializableService
     }
 
     /**
-     * @param TimeZoneRequestInterface $request
-     *
      * @return TimeZoneResponse
      */
     public function process(TimeZoneRequestInterface $request)
@@ -50,7 +43,7 @@ class TimeZoneService extends AbstractSerializableService
 
         $context = new Context();
 
-        if ($this->getFormat() === self::FORMAT_XML) {
+        if (self::FORMAT_XML === $this->getFormat()) {
             $context->setNamingStrategy(new SnakeCaseNamingStrategy());
         }
 

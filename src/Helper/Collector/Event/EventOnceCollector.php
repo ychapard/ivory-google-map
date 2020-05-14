@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Map;
 class EventOnceCollector extends AbstractCollector
 {
     /**
-     * @param Map     $map
      * @param Event[] $eventsOnce
      *
      * @return Event[]

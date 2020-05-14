@@ -31,9 +31,7 @@ abstract class AbstractHttpService extends AbstractService
     private $messageFactory;
 
     /**
-     * @param string         $url
-     * @param HttpClient     $client
-     * @param MessageFactory $messageFactory
+     * @param string $url
      */
     public function __construct($url, HttpClient $client, MessageFactory $messageFactory)
     {
@@ -51,9 +49,6 @@ abstract class AbstractHttpService extends AbstractService
         return $this->client;
     }
 
-    /**
-     * @param HttpClient $client
-     */
     public function setClient(HttpClient $client)
     {
         $this->client = $client;
@@ -67,17 +62,12 @@ abstract class AbstractHttpService extends AbstractService
         return $this->messageFactory;
     }
 
-    /**
-     * @param MessageFactory $messageFactory
-     */
     public function setMessageFactory(MessageFactory $messageFactory)
     {
         $this->messageFactory = $messageFactory;
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return PsrRequestInterface
      */
     protected function createRequest(RequestInterface $request)

@@ -48,7 +48,7 @@ class DirectionResponse
      */
     public function hasStatus()
     {
-        return $this->status !== null;
+        return null !== $this->status;
     }
 
     /**
@@ -72,7 +72,7 @@ class DirectionResponse
      */
     public function hasRequest()
     {
-        return $this->request !== null;
+        return null !== $this->request;
     }
 
     /**
@@ -83,9 +83,6 @@ class DirectionResponse
         return $this->request;
     }
 
-    /**
-     * @param DirectionRequestInterface|null $request
-     */
     public function setRequest(DirectionRequestInterface $request = null)
     {
         $this->request = $request;
@@ -127,8 +124,6 @@ class DirectionResponse
     }
 
     /**
-     * @param DirectionRoute $route
-     *
      * @return bool
      */
     public function hasRoute(DirectionRoute $route)
@@ -136,9 +131,6 @@ class DirectionResponse
         return in_array($route, $this->routes, true);
     }
 
-    /**
-     * @param DirectionRoute $route
-     */
     public function addRoute(DirectionRoute $route)
     {
         if (!$this->hasRoute($route)) {
@@ -146,9 +138,6 @@ class DirectionResponse
         }
     }
 
-    /**
-     * @param DirectionRoute $route
-     */
     public function removeRoute(DirectionRoute $route)
     {
         unset($this->routes[array_search($route, $this->routes, true)]);
@@ -191,8 +180,6 @@ class DirectionResponse
     }
 
     /**
-     * @param DirectionGeocoded $geocodedWaypoint
-     *
      * @return bool
      */
     public function hasGeocodedWaypoint(DirectionGeocoded $geocodedWaypoint)
@@ -200,9 +187,6 @@ class DirectionResponse
         return in_array($geocodedWaypoint, $this->geocodedWaypoints, true);
     }
 
-    /**
-     * @param DirectionGeocoded $geocodedWaypoint
-     */
     public function addGeocodedWaypoint(DirectionGeocoded $geocodedWaypoint)
     {
         if (!$this->hasGeocodedWaypoint($geocodedWaypoint)) {
@@ -210,9 +194,6 @@ class DirectionResponse
         }
     }
 
-    /**
-     * @param DirectionGeocoded $geocodedWaypoint
-     */
     public function removeGeocodedWaypoint(DirectionGeocoded $geocodedWaypoint)
     {
         unset($this->geocodedWaypoints[array_search($geocodedWaypoint, $this->geocodedWaypoints, true)]);

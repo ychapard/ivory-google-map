@@ -58,7 +58,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasLocation()
     {
-        return $this->location !== null;
+        return null !== $this->location;
     }
 
     /**
@@ -69,9 +69,6 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
         return $this->location;
     }
 
-    /**
-     * @param Coordinate|null $location
-     */
     public function setLocation(Coordinate $location = null)
     {
         $this->location = $location;
@@ -82,7 +79,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasRadius()
     {
-        return $this->radius !== null;
+        return null !== $this->radius;
     }
 
     /**
@@ -106,7 +103,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasMinPrice()
     {
-        return $this->minPrice !== null;
+        return null !== $this->minPrice;
     }
 
     /**
@@ -130,7 +127,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasMaxPrice()
     {
-        return $this->maxPrice !== null;
+        return null !== $this->maxPrice;
     }
 
     /**
@@ -154,7 +151,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasOpenNow()
     {
-        return $this->openNow !== null;
+        return null !== $this->openNow;
     }
 
     /**
@@ -178,7 +175,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasType()
     {
-        return $this->type !== null;
+        return null !== $this->type;
     }
 
     /**
@@ -202,7 +199,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**
@@ -260,8 +257,6 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
     }
 
     /**
-     * @param Coordinate $place
-     *
      * @return string
      */
     private function buildCoordinate(Coordinate $place)

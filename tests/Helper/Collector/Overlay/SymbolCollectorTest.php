@@ -22,11 +22,13 @@ use Ivory\GoogleMap\Overlay\Marker;
 use Ivory\GoogleMap\Overlay\Polyline;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SymbolCollectorTest extends \PHPUnit_Framework_TestCase
+class SymbolCollectorTest extends TestCase
 {
     /**
      * @var SymbolCollector
@@ -36,7 +38,7 @@ class SymbolCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->symbolCollector = new SymbolCollector(
             new MarkerCollector(),
@@ -77,7 +79,7 @@ class SymbolCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MarkerCollector
+     * @return MockObject|MarkerCollector
      */
     private function createMarkerCollectorMock()
     {
@@ -85,7 +87,7 @@ class SymbolCollectorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|IconSequenceCollector
+     * @return MockObject|IconSequenceCollector
      */
     private function createIconSequenceCollectorMock()
     {

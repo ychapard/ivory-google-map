@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Collector\Layer;
 use Ivory\GoogleMap\Helper\Collector\Layer\HeatmapLayerCollector;
 use Ivory\GoogleMap\Layer\HeatmapLayer;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HeatmapLayerCollectorTest extends \PHPUnit_Framework_TestCase
+class HeatmapLayerCollectorTest extends TestCase
 {
     /**
      * @var HeatmapLayerCollector
@@ -28,7 +29,7 @@ class HeatmapLayerCollectorTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->heatmapLayerCollector = new HeatmapLayerCollector();
     }

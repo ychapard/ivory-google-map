@@ -61,7 +61,7 @@ class GeocoderResult
      */
     public function hasPlaceId()
     {
-        return $this->placeId !== null;
+        return null !== $this->placeId;
     }
 
     /**
@@ -99,7 +99,7 @@ class GeocoderResult
      */
     public function getAddressComponents($type = null)
     {
-        if ($type === null) {
+        if (null === $type) {
             return $this->addressComponents;
         }
 
@@ -134,8 +134,6 @@ class GeocoderResult
     }
 
     /**
-     * @param AddressComponent $addressComponent
-     *
      * @return bool
      */
     public function hasAddressComponent(AddressComponent $addressComponent)
@@ -143,9 +141,6 @@ class GeocoderResult
         return in_array($addressComponent, $this->addressComponents, true);
     }
 
-    /**
-     * @param AddressComponent $addressComponent
-     */
     public function addAddressComponent(AddressComponent $addressComponent)
     {
         if (!$this->hasAddressComponent($addressComponent)) {
@@ -153,9 +148,6 @@ class GeocoderResult
         }
     }
 
-    /**
-     * @param AddressComponent $addressComponent
-     */
     public function removeAddressComponent(AddressComponent $addressComponent)
     {
         unset($this->addressComponents[array_search($addressComponent, $this->addressComponents, true)]);
@@ -255,7 +247,7 @@ class GeocoderResult
      */
     public function hasGeometry()
     {
-        return $this->geometry !== null;
+        return null !== $this->geometry;
     }
 
     /**
@@ -266,9 +258,6 @@ class GeocoderResult
         return $this->geometry;
     }
 
-    /**
-     * @param Geometry|null $geometry
-     */
     public function setGeometry(Geometry $geometry = null)
     {
         $this->geometry = $geometry;
@@ -279,7 +268,7 @@ class GeocoderResult
      */
     public function hasPartialMatch()
     {
-        return $this->partialMatch !== null;
+        return null !== $this->partialMatch;
     }
 
     /**

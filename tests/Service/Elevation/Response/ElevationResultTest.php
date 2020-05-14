@@ -13,11 +13,13 @@ namespace Ivory\Tests\GoogleMap\Service\Elevation\Response;
 
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResult;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ElevationResultTest extends \PHPUnit_Framework_TestCase
+class ElevationResultTest extends TestCase
 {
     /**
      * @var ElevationResult
@@ -27,7 +29,7 @@ class ElevationResultTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->result = new ElevationResult();
     }
@@ -94,7 +96,7 @@ class ElevationResultTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

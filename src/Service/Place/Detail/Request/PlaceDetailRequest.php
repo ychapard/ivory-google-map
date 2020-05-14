@@ -55,7 +55,7 @@ class PlaceDetailRequest implements PlaceDetailRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**

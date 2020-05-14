@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
 class EncodedPolylineValueRenderer
 {
     /**
-     * @param EncodedPolyline $encodedPolyline
-     *
      * @return string
      */
     public function render(EncodedPolyline $encodedPolyline)

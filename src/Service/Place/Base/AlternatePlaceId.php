@@ -31,7 +31,7 @@ class AlternatePlaceId
      */
     public function hasPlaceId()
     {
-        return $this->placeId !== null;
+        return null !== $this->placeId;
     }
 
     /**
@@ -55,7 +55,7 @@ class AlternatePlaceId
      */
     public function hasScope()
     {
-        return $this->scope !== null;
+        return null !== $this->scope;
     }
 
     /**

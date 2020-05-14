@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Overlay\Polyline;
 class PolylineCollector extends AbstractCollector
 {
     /**
-     * @param Map        $map
      * @param Polyline[] $polylines
      *
      * @return Polyline[]

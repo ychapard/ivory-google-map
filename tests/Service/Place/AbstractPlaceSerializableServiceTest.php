@@ -122,7 +122,7 @@ abstract class AbstractPlaceSerializableServiceTest extends AbstractSerializable
     protected function assertOpeningHours($openingHours, array $options = [])
     {
         if (empty($options)) {
-            return $this->assertNull($openingHours);
+            return;
         }
 
         $options = array_merge([

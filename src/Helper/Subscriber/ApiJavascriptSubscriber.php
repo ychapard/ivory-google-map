@@ -34,11 +34,6 @@ class ApiJavascriptSubscriber extends AbstractDelegateSubscriber
      */
     private $javascriptTagRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param ApiRenderer           $apiRenderer
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function __construct(
         Formatter $formatter,
         ApiRenderer $apiRenderer,
@@ -58,9 +53,6 @@ class ApiJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->apiRenderer;
     }
 
-    /**
-     * @param ApiRenderer $apiRenderer
-     */
     public function setApiRenderer(ApiRenderer $apiRenderer)
     {
         $this->apiRenderer = $apiRenderer;
@@ -74,9 +66,6 @@ class ApiJavascriptSubscriber extends AbstractDelegateSubscriber
         return $this->javascriptTagRenderer;
     }
 
-    /**
-     * @param JavascriptTagRenderer $javascriptTagRenderer
-     */
     public function setJavascriptTagRenderer(JavascriptTagRenderer $javascriptTagRenderer)
     {
         $this->javascriptTagRenderer = $javascriptTagRenderer;
@@ -107,9 +96,6 @@ class ApiJavascriptSubscriber extends AbstractDelegateSubscriber
         ];
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     private function handleApi(ApiEvent $event)
     {
         $event->setCode($this->getJavascriptTagRenderer()->render($this->getApiRenderer()->render(

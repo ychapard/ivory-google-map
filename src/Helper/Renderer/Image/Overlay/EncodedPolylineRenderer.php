@@ -28,10 +28,6 @@ class EncodedPolylineRenderer
      */
     private $encodedPolylineValueRenderer;
 
-    /**
-     * @param EncodedPolylineStyleRenderer $encodedPolylineStyleRenderer
-     * @param EncodedPolylineValueRenderer $encodedPolylineValueRenderer
-     */
     public function __construct(
         EncodedPolylineStyleRenderer $encodedPolylineStyleRenderer,
         EncodedPolylineValueRenderer $encodedPolylineValueRenderer
@@ -41,8 +37,6 @@ class EncodedPolylineRenderer
     }
 
     /**
-     * @param EncodedPolyline $encodedPolyline
-     *
      * @return string
      */
     public function render(EncodedPolyline $encodedPolyline)

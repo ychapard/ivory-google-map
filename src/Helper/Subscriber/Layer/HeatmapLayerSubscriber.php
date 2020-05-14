@@ -36,11 +36,6 @@ class HeatmapLayerSubscriber extends AbstractSubscriber
      */
     private $heatmapLayerRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param HeatmapLayerCollector $heatmapLayerCollector
-     * @param HeatmapLayerRenderer  $heatmapLayerRenderer
-     */
     public function __construct(
         Formatter $formatter,
         HeatmapLayerCollector $heatmapLayerCollector,
@@ -60,9 +55,6 @@ class HeatmapLayerSubscriber extends AbstractSubscriber
         return $this->heatmapLayerCollector;
     }
 
-    /**
-     * @param HeatmapLayerCollector $heatmapLayerCollector
-     */
     public function setHeatmapLayerCollector(HeatmapLayerCollector $heatmapLayerCollector)
     {
         $this->heatmapLayerCollector = $heatmapLayerCollector;
@@ -76,17 +68,11 @@ class HeatmapLayerSubscriber extends AbstractSubscriber
         return $this->heatmapLayerRenderer;
     }
 
-    /**
-     * @param HeatmapLayerRenderer $heatmapLayerRenderer
-     */
     public function setHeatmapLayerRenderer(HeatmapLayerRenderer $heatmapLayerRenderer)
     {
         $this->heatmapLayerRenderer = $heatmapLayerRenderer;
     }
 
-    /**
-     * @param ApiEvent $event
-     */
     public function handleApi(ApiEvent $event)
     {
         foreach ($event->getObjects(Map::class) as $map) {
@@ -100,9 +86,6 @@ class HeatmapLayerSubscriber extends AbstractSubscriber
         }
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Service\Geocoder\Request;
 
 use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderReverseRequest;
 use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderPlaceIdRequest;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeocoderPlaceIdRequestTest extends \PHPUnit_Framework_TestCase
+class GeocoderPlaceIdRequestTest extends TestCase
 {
     /**
      * @var GeocoderPlaceIdRequest
@@ -32,7 +33,7 @@ class GeocoderPlaceIdRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new GeocoderPlaceIdRequest($this->placeId = 'ChIJLU7jZClu5kcR4PcOOO6p3I0');
     }

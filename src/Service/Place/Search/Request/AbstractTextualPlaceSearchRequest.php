@@ -26,7 +26,7 @@ abstract class AbstractTextualPlaceSearchRequest extends AbstractPlaceSearchRequ
      */
     public function hasKeyword()
     {
-        return $this->keyword !== null;
+        return null !== $this->keyword;
     }
 
     /**

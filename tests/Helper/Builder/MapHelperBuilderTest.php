@@ -14,11 +14,12 @@ namespace Ivory\Tests\GoogleMap\Helper\Builder;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\MapHelperBuilder;
 use Ivory\GoogleMap\Helper\MapHelper;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapHelperBuilderTest extends \PHPUnit_Framework_TestCase
+class MapHelperBuilderTest extends TestCase
 {
     /**
      * @var MapHelperBuilder
@@ -28,9 +29,9 @@ class MapHelperBuilderTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->mapHelperBuilder = MapHelperBuilder::create();
+        $this->mapHelperBuilder = MapHelperBuilder::create($_SERVER['API_KEY'] ?? null);
     }
 
     public function testInheritance()

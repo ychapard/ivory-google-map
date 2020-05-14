@@ -16,11 +16,13 @@ use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SymbolTest extends \PHPUnit_Framework_TestCase
+class SymbolTest extends TestCase
 {
     /**
      * @var Symbol
@@ -35,7 +37,7 @@ class SymbolTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->symbol = new Symbol($this->path = SymbolPath::CIRCLE);
     }
@@ -113,7 +115,7 @@ class SymbolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Point
+     * @return MockObject|Point
      */
     private function createPointMock()
     {

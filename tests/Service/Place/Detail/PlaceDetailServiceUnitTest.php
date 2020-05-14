@@ -16,6 +16,7 @@ use Ivory\GoogleMap\Service\Place\Detail\Request\PlaceDetailRequestInterface;
 use Ivory\GoogleMap\Service\Place\Detail\Response\PlaceDetailResponse;
 use Ivory\Serializer\Context\Context;
 use Ivory\Tests\GoogleMap\Service\AbstractUnitServiceTest;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,7 +31,7 @@ class PlaceDetailServiceUnitTest extends AbstractUnitServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -105,7 +106,7 @@ class PlaceDetailServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceDetailRequestInterface
+     * @return MockObject|PlaceDetailRequestInterface
      */
     private function createPlaceDetailRequestMock()
     {
@@ -113,7 +114,7 @@ class PlaceDetailServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|PlaceDetailResponse
+     * @return MockObject|PlaceDetailResponse
      */
     private function createPlaceDetailResponseMock()
     {

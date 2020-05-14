@@ -38,7 +38,6 @@ class GroundOverlay implements ExtendableInterface, OptionsAwareInterface
 
     /**
      * @param string  $url
-     * @param Bound   $bound
      * @param mixed[] $options
      */
     public function __construct($url, Bound $bound, array $options = [])
@@ -72,9 +71,6 @@ class GroundOverlay implements ExtendableInterface, OptionsAwareInterface
         return $this->bound;
     }
 
-    /**
-     * @param Bound $bound
-     */
     public function setBound(Bound $bound)
     {
         $this->bound = $bound;

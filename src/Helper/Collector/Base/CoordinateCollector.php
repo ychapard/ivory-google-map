@@ -61,15 +61,6 @@ class CoordinateCollector extends AbstractCollector
      */
     private $heatmapLayerCollector;
 
-    /**
-     * @param BoundCollector        $boundCollector
-     * @param CircleCollector       $circleCollector
-     * @param InfoWindowCollector   $infoWindowCollector
-     * @param MarkerCollector       $markerCollector
-     * @param PolygonCollector      $polygonCollector
-     * @param PolylineCollector     $polylineCollector
-     * @param HeatmapLayerCollector $heatmapLayerCollector
-     */
     public function __construct(
         BoundCollector $boundCollector,
         CircleCollector $circleCollector,
@@ -96,9 +87,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->boundCollector;
     }
 
-    /**
-     * @param BoundCollector $boundCollector
-     */
     public function setBoundCollector(BoundCollector $boundCollector)
     {
         $this->boundCollector = $boundCollector;
@@ -112,9 +100,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->circleCollector;
     }
 
-    /**
-     * @param CircleCollector $circleCollector
-     */
     public function setCircleCollector(CircleCollector $circleCollector)
     {
         $this->circleCollector = $circleCollector;
@@ -128,9 +113,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->infoWindowCollector;
     }
 
-    /**
-     * @param InfoWindowCollector $infoWindowCollector
-     */
     public function setInfoWindowCollector(InfoWindowCollector $infoWindowCollector)
     {
         $this->infoWindowCollector = $infoWindowCollector;
@@ -144,9 +126,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->markerCollector;
     }
 
-    /**
-     * @param MarkerCollector $markerCollector
-     */
     public function setMarkerCollector(MarkerCollector $markerCollector)
     {
         $this->markerCollector = $markerCollector;
@@ -160,9 +139,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->polygonCollector;
     }
 
-    /**
-     * @param PolygonCollector $polygonCollector
-     */
     public function setPolygonCollector(PolygonCollector $polygonCollector)
     {
         $this->polygonCollector = $polygonCollector;
@@ -176,9 +152,6 @@ class CoordinateCollector extends AbstractCollector
         return $this->polylineCollector;
     }
 
-    /**
-     * @param PolylineCollector $polylineCollector
-     */
     public function setPolylineCollector(PolylineCollector $polylineCollector)
     {
         $this->polylineCollector = $polylineCollector;
@@ -192,16 +165,12 @@ class CoordinateCollector extends AbstractCollector
         return $this->heatmapLayerCollector;
     }
 
-    /**
-     * @param HeatmapLayerCollector $heatmapLayerCollector
-     */
     public function setHeatmapLayerCollector(HeatmapLayerCollector $heatmapLayerCollector)
     {
         $this->heatmapLayerCollector = $heatmapLayerCollector;
     }
 
     /**
-     * @param Map          $map
      * @param Coordinate[] $coordinates
      *
      * @return Coordinate[]

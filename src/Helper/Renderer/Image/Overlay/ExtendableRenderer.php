@@ -36,11 +36,6 @@ class ExtendableRenderer
      */
     private $polylineLocationRenderer;
 
-    /**
-     * @param CoordinateRenderer       $coordinateRenderer
-     * @param MarkerLocationRenderer   $markerLocationRenderer
-     * @param PolylineLocationRenderer $polylineLocationRenderer
-     */
     public function __construct(
         CoordinateRenderer $coordinateRenderer,
         MarkerLocationRenderer $markerLocationRenderer,

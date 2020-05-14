@@ -17,11 +17,13 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\BoundsExtendableRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRendererInterface;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class BoundsExtendableRendererTest extends \PHPUnit_Framework_TestCase
+class BoundsExtendableRendererTest extends TestCase
 {
     /**
      * @var BoundsExtendableRenderer
@@ -31,7 +33,7 @@ class BoundsExtendableRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->boundsExtendableRenderer = new BoundsExtendableRenderer(new Formatter());
     }
@@ -63,7 +65,7 @@ class BoundsExtendableRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ExtendableInterface
+     * @return MockObject|ExtendableInterface
      */
     private function createExtendableMock()
     {
@@ -71,7 +73,7 @@ class BoundsExtendableRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Bound
+     * @return MockObject|Bound
      */
     private function createBoundMock()
     {

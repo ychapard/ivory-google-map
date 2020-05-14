@@ -2,7 +2,8 @@ FROM php:latest
 
 # APT packages
 RUN apt-get update && apt-get install -y \
-    zlib1g-dev \
+    libzip-dev \
+    apache2 \
     git \
     && rm -rf /var/lib/apt/lists/*
 

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction;
 
+use Http\Client\Common\Exception\ClientErrorException;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\GoogleMap\Service\Base\Avoid;
@@ -50,11 +51,16 @@ class DirectionServiceTest extends AbstractSerializableServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
+        if (!isset($_SERVER['API_KEY'])) {
+            $this->markTestSkipped();
+        }
+
         parent::setUp();
 
         $this->service = new DirectionService($this->client, $this->messageFactory);
+        $this->service->setKey($_SERVER['API_KEY']);
     }
 
     /**
@@ -327,12 +333,11 @@ class DirectionServiceTest extends AbstractSerializableServiceTest
      * @param string $format
      *
      * @dataProvider formatProvider
-     *
-     * @expectedException \Http\Client\Common\Exception\ClientErrorException
-     * @expectedExceptionMessage REQUEST_DENIED
      */
     public function testErrorRequest($format)
     {
+        $this->expectException(ClientErrorException::class);
+
         $this->service->setFormat($format);
         $this->service->setKey('invalid');
 
@@ -682,7 +687,7 @@ class DirectionServiceTest extends AbstractSerializableServiceTest
      */
     private function getDepartureTime()
     {
-        return $this->getDateTime('departure', '+1 hour');
+        return $this->getDateTime('departure', '+12 hours');
     }
 
     /**
@@ -690,6 +695,6 @@ class DirectionServiceTest extends AbstractSerializableServiceTest
      */
     private function getArrivalTime()
     {
-        return $this->getDateTime('arrival', '+4 hours');
+        return $this->getDateTime('arrival', '+15 hours');
     }
 }

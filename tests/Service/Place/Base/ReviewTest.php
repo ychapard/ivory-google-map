@@ -13,11 +13,13 @@ namespace Ivory\Tests\GoogleMap\Service\Place\Base;
 
 use Ivory\GoogleMap\Service\Place\Base\AspectRating;
 use Ivory\GoogleMap\Service\Place\Base\Review;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ReviewTest extends \PHPUnit_Framework_TestCase
+class ReviewTest extends TestCase
 {
     /**
      * @var Review
@@ -27,7 +29,7 @@ class ReviewTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->review = new Review();
     }
@@ -137,7 +139,7 @@ class ReviewTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AspectRating
+     * @return MockObject|AspectRating
      */
     private function createAspectRatingMock()
     {

@@ -20,8 +20,6 @@ use Ivory\GoogleMap\Place\Autocomplete;
 class AutocompleteHtmlRenderer extends AbstractTagRenderer
 {
     /**
-     * @param Autocomplete $autocomplete
-     *
      * @return string
      */
     public function render(Autocomplete $autocomplete)

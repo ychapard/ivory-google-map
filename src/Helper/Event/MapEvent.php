@@ -23,9 +23,6 @@ class MapEvent extends AbstractEvent
      */
     private $map;
 
-    /**
-     * @param Map $map
-     */
     public function __construct(Map $map)
     {
         $this->map = $map;

@@ -37,9 +37,8 @@ class Circle implements ExtendableInterface, OptionsAwareInterface
     private $radius;
 
     /**
-     * @param Coordinate $center
-     * @param float      $radius
-     * @param mixed[]    $options
+     * @param float   $radius
+     * @param mixed[] $options
      */
     public function __construct(Coordinate $center, $radius = 1.0, array $options = [])
     {
@@ -56,9 +55,6 @@ class Circle implements ExtendableInterface, OptionsAwareInterface
         return $this->center;
     }
 
-    /**
-     * @param Coordinate $center
-     */
     public function setCenter(Coordinate $center)
     {
         $this->center = $center;

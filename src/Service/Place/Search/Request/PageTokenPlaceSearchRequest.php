@@ -23,9 +23,6 @@ class PageTokenPlaceSearchRequest implements PlaceSearchRequestInterface
      */
     private $response;
 
-    /**
-     * @param PlaceSearchResponse $response
-     */
     public function __construct(PlaceSearchResponse $response)
     {
         $this->setResponse($response);
@@ -39,9 +36,6 @@ class PageTokenPlaceSearchRequest implements PlaceSearchRequestInterface
         return $this->response;
     }
 
-    /**
-     * @param PlaceSearchResponse $response
-     */
     public function setResponse(PlaceSearchResponse $response)
     {
         $this->response = $response;

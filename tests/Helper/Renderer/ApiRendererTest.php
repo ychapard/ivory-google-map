@@ -19,11 +19,13 @@ use Ivory\GoogleMap\Helper\Renderer\LoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ApiRendererTest extends \PHPUnit_Framework_TestCase
+class ApiRendererTest extends TestCase
 {
     /**
      * @var ApiRenderer
@@ -33,7 +35,7 @@ class ApiRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->apiRenderer = new ApiRenderer(
             $formatter = new Formatter(),
@@ -81,7 +83,7 @@ class ApiRendererTest extends \PHPUnit_Framework_TestCase
     public function testRender()
     {
         $this->assertSame(
-            'function ivory_google_map_load(){google.load("maps","3",{"other_params":"language=en&libraries=library1,library2","callback":ivory_google_map_init})};function ivory_google_map_init_source(src){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src=src;document.getElementsByTagName("head")[0].appendChild(script);};function ivory_google_map_init_requirement(c,r){if(r()){c();}else{var i=setInterval(function(){if(r()){clearInterval(i);c();}},100);}};function ivory_google_map_init(){ivory_google_map_init_source("source1");ivory_google_map_init_source("source2");ivory_google_map_init_requirement(main_callback,function(){return requirement1&&requirement2;});};ivory_google_map_init_source("https://www.google.com/jsapi?callback=ivory_google_map_load");',
+            'function ivory_google_map_load(){google.load("maps","3",{"other_params":"language=en&libraries=library1,library2","callback":ivory_google_map_init})};function ivory_google_map_init_source(src){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src=src;document.getElementsByTagName("head")[0].appendChild(script);};function ivory_google_map_init_requirement(c,r){if(r()){c();}else{var i=setInterval(function(){if(r()){clearInterval(i);c();}},100);}};function ivory_google_map_init(){ivory_google_map_init_source("source1");ivory_google_map_init_source("source2");ivory_google_map_init_requirement(main_callback,function(){return requirement1&&requirement2;});};ivory_google_map_init_source("https://maps.googleapis.com/maps/api/js?callback=ivory_google_map_init");',
             $this->apiRenderer->render(
                 $this->createCallbacks($object = new \stdClass()),
                 $this->createRequirements($object),
@@ -128,7 +130,7 @@ function ivory_google_map_init () {
         return requirement1 && requirement2;
     });
 };
-ivory_google_map_init_source("https://www.google.com/jsapi?callback=ivory_google_map_load");
+ivory_google_map_init_source("https://maps.googleapis.com/maps/api/js?callback=ivory_google_map_init");
 EOF;
 
         $this->assertSame($expected, $this->apiRenderer->render(
@@ -166,7 +168,7 @@ EOF;
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ApiInitRenderer
+     * @return MockObject|ApiInitRenderer
      */
     private function createApiInitRendererMock()
     {
@@ -174,7 +176,7 @@ EOF;
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|LoaderRenderer
+     * @return MockObject|LoaderRenderer
      */
     private function createLoaderRendererMock()
     {
@@ -182,7 +184,7 @@ EOF;
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|RequirementLoaderRenderer
+     * @return MockObject|RequirementLoaderRenderer
      */
     private function createRequirementLoaderRendererMock()
     {
@@ -190,7 +192,7 @@ EOF;
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|SourceRenderer
+     * @return MockObject|SourceRenderer
      */
     private function createSourceRendererMock()
     {

@@ -19,11 +19,13 @@ use Ivory\GoogleMap\Control\RotateControl;
 use Ivory\GoogleMap\Control\ScaleControl;
 use Ivory\GoogleMap\Control\StreetViewControl;
 use Ivory\GoogleMap\Control\ZoomControl;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ControlManagerTest extends \PHPUnit_Framework_TestCase
+class ControlManagerTest extends TestCase
 {
     /**
      * @var ControlManager
@@ -33,7 +35,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->controlManager = new ControlManager();
     }
@@ -200,7 +202,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|FullscreenControl
+     * @return MockObject|FullscreenControl
      */
     private function createFullscreenControlMock()
     {
@@ -208,7 +210,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|MapTypeControl
+     * @return MockObject|MapTypeControl
      */
     private function createMapTypeControlMock()
     {
@@ -216,7 +218,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|RotateControl
+     * @return MockObject|RotateControl
      */
     private function createRotateControlMock()
     {
@@ -224,7 +226,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ScaleControl
+     * @return MockObject|ScaleControl
      */
     private function createScaleControlMock()
     {
@@ -232,7 +234,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|StreetViewControl
+     * @return MockObject|StreetViewControl
      */
     private function createStreetViewControlMock()
     {
@@ -240,7 +242,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|ZoomControl
+     * @return MockObject|ZoomControl
      */
     private function createZoomControlMock()
     {
@@ -248,7 +250,7 @@ class ControlManagerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|CustomControl
+     * @return MockObject|CustomControl
      */
     private function createCustomControlMock()
     {

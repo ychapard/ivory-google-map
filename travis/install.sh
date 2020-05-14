@@ -32,4 +32,4 @@ if [ "$COMPOSER_PREFER_LOWEST" = true ]; then
     composer update --prefer-source
 fi
 
-composer update --prefer-source `if [ "$COMPOSER_PREFER_LOWEST" = true ]; then echo "--prefer-lowest --prefer-stable"; fi`
+composer update --prefer-source "if [ \"$COMPOSER_PREFER_LOWEST\" = true ]; then echo \"--prefer-lowest --prefer-stable\"; fi"

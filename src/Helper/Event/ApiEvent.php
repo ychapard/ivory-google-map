@@ -70,7 +70,7 @@ class ApiEvent extends AbstractEvent
      */
     public function getObjects($class = null)
     {
-        if ($class === null) {
+        if (null === $class) {
             return $this->objects;
         }
 
@@ -238,7 +238,7 @@ class ApiEvent extends AbstractEvent
     public function hasCallback($callback, $object = null)
     {
         foreach ($this->callbacks as $rawObject) {
-            if ($this->callbacks[$rawObject] === $callback && ($object === null || $object === $rawObject)) {
+            if ($this->callbacks[$rawObject] === $callback && (null === $object || $object === $rawObject)) {
                 return true;
             }
         }
@@ -254,7 +254,7 @@ class ApiEvent extends AbstractEvent
      */
     public function hasCallbackObject($object, $callback = null)
     {
-        return isset($this->callbacks[$object]) && ($callback === null || $this->callbacks[$object] === $callback);
+        return isset($this->callbacks[$object]) && (null === $callback || $this->callbacks[$object] === $callback);
     }
 
     /**
@@ -317,7 +317,7 @@ class ApiEvent extends AbstractEvent
      */
     public function hasRequirements($object = null)
     {
-        if ($object === null) {
+        if (null === $object) {
             return count($this->requirements) > 0;
         }
 
@@ -374,7 +374,7 @@ class ApiEvent extends AbstractEvent
     public function hasRequirement($object, $requirement = null)
     {
         return isset($this->requirements[$object])
-            && ($requirement === null || in_array($requirement, $this->requirements[$object], true));
+            && (null === $requirement || in_array($requirement, $this->requirements[$object], true));
     }
 
     /**
@@ -401,7 +401,7 @@ class ApiEvent extends AbstractEvent
      */
     public function removeRequirement($object, $requirement = null)
     {
-        if ($requirement === null) {
+        if (null === $requirement) {
             unset($this->requirements[$object]);
 
             return;

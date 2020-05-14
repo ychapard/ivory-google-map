@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Control;
 
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\RotateControl;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class RotateControlTest extends \PHPUnit_Framework_TestCase
+class RotateControlTest extends TestCase
 {
     /**
      * @var RotateControl
@@ -27,7 +28,7 @@ class RotateControlTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->rotateControl = new RotateControl();
     }

@@ -19,11 +19,12 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolRenderer;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
 use Ivory\JsonBuilder\JsonBuilder;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SymbolRendererTest extends \PHPUnit_Framework_TestCase
+class SymbolRendererTest extends TestCase
 {
     /**
      * @var SymbolRenderer
@@ -33,7 +34,7 @@ class SymbolRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->symbolRenderer = new SymbolRenderer(
             $formatter = new Formatter(),

@@ -26,10 +26,6 @@ class MapContainerSubscriber extends AbstractSubscriber
      */
     private $containerRenderer;
 
-    /**
-     * @param Formatter            $formatter
-     * @param MapContainerRenderer $containerRenderer
-     */
     public function __construct(Formatter $formatter, MapContainerRenderer $containerRenderer)
     {
         parent::__construct($formatter);
@@ -45,17 +41,11 @@ class MapContainerSubscriber extends AbstractSubscriber
         return $this->containerRenderer;
     }
 
-    /**
-     * @param MapContainerRenderer $containerRenderer
-     */
     public function setContainerRenderer(MapContainerRenderer $containerRenderer)
     {
         $this->containerRenderer = $containerRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

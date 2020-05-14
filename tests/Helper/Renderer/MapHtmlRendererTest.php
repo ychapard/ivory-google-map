@@ -17,11 +17,13 @@ use Ivory\GoogleMap\Helper\Renderer\Html\StylesheetRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapHtmlRenderer;
 use Ivory\GoogleMap\Map;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapHtmlRendererTest extends \PHPUnit_Framework_TestCase
+class MapHtmlRendererTest extends TestCase
 {
     /**
      * @var MapHtmlRenderer
@@ -31,7 +33,7 @@ class MapHtmlRendererTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->mapHtmlRenderer = new MapHtmlRenderer(
             $formatter = new Formatter(),
@@ -94,7 +96,7 @@ class MapHtmlRendererTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|StylesheetRenderer
+     * @return MockObject|StylesheetRenderer
      */
     private function createStylesheetRendererMock()
     {

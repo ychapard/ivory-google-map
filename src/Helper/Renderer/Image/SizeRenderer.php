@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Map;
 class SizeRenderer
 {
     /**
-     * @param Map $map
-     *
      * @return string
      */
     public function render(Map $map)
@@ -29,7 +27,6 @@ class SizeRenderer
     }
 
     /**
-     * @param Map    $map
      * @param string $side
      *
      * @return string

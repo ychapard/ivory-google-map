@@ -16,6 +16,7 @@ use Ivory\GoogleMap\Service\TimeZone\Response\TimeZoneResponse;
 use Ivory\GoogleMap\Service\TimeZone\TimeZoneService;
 use Ivory\Serializer\Context\Context;
 use Ivory\Tests\GoogleMap\Service\AbstractUnitServiceTest;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,7 +31,7 @@ class TimeZoneServiceUnitTest extends AbstractUnitServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -105,7 +106,7 @@ class TimeZoneServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|TimeZoneRequest
+     * @return MockObject|TimeZoneRequest
      */
     private function createTimeZoneRequestMock()
     {
@@ -113,7 +114,7 @@ class TimeZoneServiceUnitTest extends AbstractUnitServiceTest
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|TimeZoneResponse
+     * @return MockObject|TimeZoneResponse
      */
     private function createTimeZoneResponseMock()
     {

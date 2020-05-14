@@ -40,7 +40,7 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -63,10 +63,6 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
         $this->render($autocomplete, $map);
     }
 
-    /**
-     * @param Autocomplete $autocomplete
-     * @param Map          $map
-     */
     private function render(Autocomplete $autocomplete, Map $map)
     {
         $this->renderHtml(implode('', [
@@ -96,7 +92,7 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
      */
     protected function createPlaceAutocompleteHelper()
     {
-        return PlaceAutocompleteHelperBuilder::create()->build();
+        return PlaceAutocompleteHelperBuilder::create($_SERVER['API_KEY'] ?? null)->build();
     }
 
     /**
@@ -104,6 +100,6 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
      */
     protected function createMapHelper()
     {
-        return MapHelperBuilder::create()->build();
+        return MapHelperBuilder::create($_SERVER['API_KEY'] ?? null)->build();
     }
 }

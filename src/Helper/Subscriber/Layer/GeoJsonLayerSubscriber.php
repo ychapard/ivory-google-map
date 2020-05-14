@@ -33,11 +33,6 @@ class GeoJsonLayerSubscriber extends AbstractSubscriber
      */
     private $geoJsonLayerRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param GeoJsonLayerCollector $geoJsonLayerCollector
-     * @param GeoJsonLayerRenderer  $geoJsonLayerRenderer
-     */
     public function __construct(
         Formatter $formatter,
         GeoJsonLayerCollector $geoJsonLayerCollector,
@@ -57,9 +52,6 @@ class GeoJsonLayerSubscriber extends AbstractSubscriber
         return $this->geoJsonLayerCollector;
     }
 
-    /**
-     * @param GeoJsonLayerCollector $geoJsonLayerCollector
-     */
     public function setGeoJsonLayerCollector(GeoJsonLayerCollector $geoJsonLayerCollector)
     {
         $this->geoJsonLayerCollector = $geoJsonLayerCollector;
@@ -73,17 +65,11 @@ class GeoJsonLayerSubscriber extends AbstractSubscriber
         return $this->geoJsonLayerRenderer;
     }
 
-    /**
-     * @param GeoJsonLayerRenderer $geoJsonLayerRenderer
-     */
     public function setGeoJsonLayerRenderer(GeoJsonLayerRenderer $geoJsonLayerRenderer)
     {
         $this->geoJsonLayerRenderer = $geoJsonLayerRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

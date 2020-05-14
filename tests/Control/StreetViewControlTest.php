@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Control;
 
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\StreetViewControl;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StreetViewControlTest extends \PHPUnit_Framework_TestCase
+class StreetViewControlTest extends TestCase
 {
     /**
      * @var StreetViewControl
@@ -27,7 +28,7 @@ class StreetViewControlTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->streetViewControl = new StreetViewControl();
     }

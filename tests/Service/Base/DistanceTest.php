@@ -12,11 +12,12 @@
 namespace Ivory\Tests\GoogleMap\Service\Base;
 
 use Ivory\GoogleMap\Service\Base\Distance;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DistanceTest extends \PHPUnit_Framework_TestCase
+class DistanceTest extends TestCase
 {
     /**
      * @var Distance
@@ -36,7 +37,7 @@ class DistanceTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->distance = new Distance($this->value = 2.3, $this->text = 'foo');
     }

@@ -26,16 +26,12 @@ class MarkerCollector extends AbstractCollector
      */
     private $markerStyleRenderer;
 
-    /**
-     * @param MarkerStyleRenderer $markerStyleRenderer
-     */
     public function __construct(MarkerStyleRenderer $markerStyleRenderer)
     {
         $this->markerStyleRenderer = $markerStyleRenderer;
     }
 
     /**
-     * @param Map      $map
      * @param Marker[] $markers
      *
      * @return Marker[][]

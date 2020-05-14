@@ -56,7 +56,7 @@ class ControlManager
      */
     public function hasFullscreenControl()
     {
-        return $this->fullscreenControl !== null;
+        return null !== $this->fullscreenControl;
     }
 
     /**
@@ -67,9 +67,6 @@ class ControlManager
         return $this->fullscreenControl;
     }
 
-    /**
-     * @param FullscreenControl|null $fullscreenControl
-     */
     public function setFullscreenControl(FullscreenControl $fullscreenControl = null)
     {
         $this->fullscreenControl = $fullscreenControl;
@@ -80,7 +77,7 @@ class ControlManager
      */
     public function hasMapTypeControl()
     {
-        return $this->mapTypeControl !== null;
+        return null !== $this->mapTypeControl;
     }
 
     /**
@@ -91,9 +88,6 @@ class ControlManager
         return $this->mapTypeControl;
     }
 
-    /**
-     * @param MapTypeControl|null $mapTypeControl
-     */
     public function setMapTypeControl(MapTypeControl $mapTypeControl = null)
     {
         $this->mapTypeControl = $mapTypeControl;
@@ -104,7 +98,7 @@ class ControlManager
      */
     public function hasRotateControl()
     {
-        return $this->rotateControl !== null;
+        return null !== $this->rotateControl;
     }
 
     /**
@@ -115,9 +109,6 @@ class ControlManager
         return $this->rotateControl;
     }
 
-    /**
-     * @param RotateControl|null $rotateControl
-     */
     public function setRotateControl(RotateControl $rotateControl = null)
     {
         $this->rotateControl = $rotateControl;
@@ -128,7 +119,7 @@ class ControlManager
      */
     public function hasScaleControl()
     {
-        return $this->scaleControl !== null;
+        return null !== $this->scaleControl;
     }
 
     /**
@@ -139,9 +130,6 @@ class ControlManager
         return $this->scaleControl;
     }
 
-    /**
-     * @param ScaleControl|null $scaleControl
-     */
     public function setScaleControl(ScaleControl $scaleControl = null)
     {
         $this->scaleControl = $scaleControl;
@@ -152,7 +140,7 @@ class ControlManager
      */
     public function hasStreetViewControl()
     {
-        return $this->streetViewControl !== null;
+        return null !== $this->streetViewControl;
     }
 
     /**
@@ -163,9 +151,6 @@ class ControlManager
         return $this->streetViewControl;
     }
 
-    /**
-     * @param StreetViewControl|null $streetViewControl
-     */
     public function setStreetViewControl(StreetViewControl $streetViewControl = null)
     {
         $this->streetViewControl = $streetViewControl;
@@ -176,7 +161,7 @@ class ControlManager
      */
     public function hasZoomControl()
     {
-        return $this->zoomControl !== null;
+        return null !== $this->zoomControl;
     }
 
     /**
@@ -187,9 +172,6 @@ class ControlManager
         return $this->zoomControl;
     }
 
-    /**
-     * @param ZoomControl|null $zoomControl
-     */
     public function setZoomControl(ZoomControl $zoomControl = null)
     {
         $this->zoomControl = $zoomControl;
@@ -231,8 +213,6 @@ class ControlManager
     }
 
     /**
-     * @param CustomControl $customControl
-     *
      * @return bool
      */
     public function hasCustomControl(CustomControl $customControl)
@@ -240,9 +220,6 @@ class ControlManager
         return in_array($customControl, $this->customControls, true);
     }
 
-    /**
-     * @param CustomControl $customControl
-     */
     public function addCustomControl(CustomControl $customControl)
     {
         if (!$this->hasCustomControl($customControl)) {
@@ -250,9 +227,6 @@ class ControlManager
         }
     }
 
-    /**
-     * @param CustomControl $customControl
-     */
     public function removeCustomControl(CustomControl $customControl)
     {
         unset($this->customControls[array_search($customControl, $this->customControls, true)]);

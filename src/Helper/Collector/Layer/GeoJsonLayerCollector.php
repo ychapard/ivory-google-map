@@ -21,7 +21,6 @@ use Ivory\GoogleMap\Map;
 class GeoJsonLayerCollector extends AbstractCollector
 {
     /**
-     * @param Map            $map
      * @param GeoJsonLayer[] $geoJsonLayers
      *
      * @return GeoJsonLayer[]

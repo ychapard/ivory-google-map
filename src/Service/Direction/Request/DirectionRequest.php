@@ -95,10 +95,6 @@ class DirectionRequest implements DirectionRequestInterface
      */
     private $language;
 
-    /**
-     * @param LocationInterface $origin
-     * @param LocationInterface $destination
-     */
     public function __construct(LocationInterface $origin, LocationInterface $destination)
     {
         $this->setOrigin($origin);
@@ -113,9 +109,6 @@ class DirectionRequest implements DirectionRequestInterface
         return $this->origin;
     }
 
-    /**
-     * @param LocationInterface $origin
-     */
     public function setOrigin(LocationInterface $origin)
     {
         $this->origin = $origin;
@@ -129,9 +122,6 @@ class DirectionRequest implements DirectionRequestInterface
         return $this->destination;
     }
 
-    /**
-     * @param LocationInterface $destination
-     */
     public function setDestination(LocationInterface $destination)
     {
         $this->destination = $destination;
@@ -142,7 +132,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasDepartureTime()
     {
-        return $this->departureTime !== null;
+        return null !== $this->departureTime;
     }
 
     /**
@@ -153,9 +143,6 @@ class DirectionRequest implements DirectionRequestInterface
         return $this->departureTime;
     }
 
-    /**
-     * @param \DateTime|null $departureTime
-     */
     public function setDepartureTime(\DateTime $departureTime = null)
     {
         $this->departureTime = $departureTime;
@@ -166,7 +153,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasArrivalTime()
     {
-        return $this->arrivalTime !== null;
+        return null !== $this->arrivalTime;
     }
 
     /**
@@ -177,9 +164,6 @@ class DirectionRequest implements DirectionRequestInterface
         return $this->arrivalTime;
     }
 
-    /**
-     * @param \DateTime|null $arrivalTime
-     */
     public function setArrivalTime(\DateTime $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
@@ -221,8 +205,6 @@ class DirectionRequest implements DirectionRequestInterface
     }
 
     /**
-     * @param DirectionWaypoint $waypoint
-     *
      * @return bool
      */
     public function hasWaypoint(DirectionWaypoint $waypoint)
@@ -230,9 +212,6 @@ class DirectionRequest implements DirectionRequestInterface
         return in_array($waypoint, $this->waypoints, true);
     }
 
-    /**
-     * @param DirectionWaypoint $waypoint
-     */
     public function addWaypoint(DirectionWaypoint $waypoint)
     {
         if (!$this->hasWaypoint($waypoint)) {
@@ -240,9 +219,6 @@ class DirectionRequest implements DirectionRequestInterface
         }
     }
 
-    /**
-     * @param DirectionWaypoint $waypoint
-     */
     public function removeWaypoint(DirectionWaypoint $waypoint)
     {
         unset($this->waypoints[array_search($waypoint, $this->waypoints, true)]);
@@ -254,7 +230,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasOptimizeWaypoints()
     {
-        return $this->optimizeWaypoints !== null;
+        return null !== $this->optimizeWaypoints;
     }
 
     /**
@@ -278,7 +254,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasTravelMode()
     {
-        return $this->travelMode !== null;
+        return null !== $this->travelMode;
     }
 
     /**
@@ -302,7 +278,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasAvoid()
     {
-        return $this->avoid !== null;
+        return null !== $this->avoid;
     }
 
     /**
@@ -326,7 +302,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasProvideRouteAlternatives()
     {
-        return $this->provideRouteAlternatives !== null;
+        return null !== $this->provideRouteAlternatives;
     }
 
     /**
@@ -350,7 +326,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasTrafficModel()
     {
-        return $this->trafficModel !== null;
+        return null !== $this->trafficModel;
     }
 
     /**
@@ -438,7 +414,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasTransitRoutingPreference()
     {
-        return $this->transitRoutingPreference !== null;
+        return null !== $this->transitRoutingPreference;
     }
 
     /**
@@ -462,7 +438,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasRegion()
     {
-        return $this->region !== null;
+        return null !== $this->region;
     }
 
     /**
@@ -486,7 +462,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasUnitSystem()
     {
-        return $this->unitSystem !== null;
+        return null !== $this->unitSystem;
     }
 
     /**
@@ -510,7 +486,7 @@ class DirectionRequest implements DirectionRequestInterface
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**

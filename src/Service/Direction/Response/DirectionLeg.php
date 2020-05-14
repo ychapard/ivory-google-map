@@ -83,7 +83,7 @@ class DirectionLeg
      */
     public function hasDistance()
     {
-        return $this->distance !== null;
+        return null !== $this->distance;
     }
 
     /**
@@ -94,9 +94,6 @@ class DirectionLeg
         return $this->distance;
     }
 
-    /**
-     * @param Distance|null $distance
-     */
     public function setDistance(Distance $distance = null)
     {
         $this->distance = $distance;
@@ -107,7 +104,7 @@ class DirectionLeg
      */
     public function hasDuration()
     {
-        return $this->duration !== null;
+        return null !== $this->duration;
     }
 
     /**
@@ -118,9 +115,6 @@ class DirectionLeg
         return $this->duration;
     }
 
-    /**
-     * @param Duration|null $duration
-     */
     public function setDuration(Duration $duration = null)
     {
         $this->duration = $duration;
@@ -131,7 +125,7 @@ class DirectionLeg
      */
     public function hasDurationInTraffic()
     {
-        return $this->durationInTraffic !== null;
+        return null !== $this->durationInTraffic;
     }
 
     /**
@@ -142,9 +136,6 @@ class DirectionLeg
         return $this->durationInTraffic;
     }
 
-    /**
-     * @param Duration|null $durationInTraffic
-     */
     public function setDurationInTraffic(Duration $durationInTraffic = null)
     {
         $this->durationInTraffic = $durationInTraffic;
@@ -155,7 +146,7 @@ class DirectionLeg
      */
     public function hasArrivalTime()
     {
-        return $this->arrivalTime !== null;
+        return null !== $this->arrivalTime;
     }
 
     /**
@@ -166,9 +157,6 @@ class DirectionLeg
         return $this->arrivalTime;
     }
 
-    /**
-     * @param Time|null $arrivalTime
-     */
     public function setArrivalTime(Time $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
@@ -179,7 +167,7 @@ class DirectionLeg
      */
     public function hasDepartureTime()
     {
-        return $this->departureTime !== null;
+        return null !== $this->departureTime;
     }
 
     /**
@@ -190,9 +178,6 @@ class DirectionLeg
         return $this->departureTime;
     }
 
-    /**
-     * @param Time|null $departureTime
-     */
     public function setDepartureTime(Time $departureTime = null)
     {
         $this->departureTime = $departureTime;
@@ -203,7 +188,7 @@ class DirectionLeg
      */
     public function hasEndAddress()
     {
-        return $this->endAddress !== null;
+        return null !== $this->endAddress;
     }
 
     /**
@@ -227,7 +212,7 @@ class DirectionLeg
      */
     public function hasEndLocation()
     {
-        return $this->endLocation !== null;
+        return null !== $this->endLocation;
     }
 
     /**
@@ -238,9 +223,6 @@ class DirectionLeg
         return $this->endLocation;
     }
 
-    /**
-     * @param Coordinate|null $endLocation
-     */
     public function setEndLocation(Coordinate $endLocation = null)
     {
         $this->endLocation = $endLocation;
@@ -251,7 +233,7 @@ class DirectionLeg
      */
     public function hasStartAddress()
     {
-        return $this->startAddress !== null;
+        return null !== $this->startAddress;
     }
 
     /**
@@ -275,7 +257,7 @@ class DirectionLeg
      */
     public function hasStartLocation()
     {
-        return $this->startLocation !== null;
+        return null !== $this->startLocation;
     }
 
     /**
@@ -286,9 +268,6 @@ class DirectionLeg
         return $this->startLocation;
     }
 
-    /**
-     * @param Coordinate|null $startLocation
-     */
     public function setStartLocation(Coordinate $startLocation = null)
     {
         $this->startLocation = $startLocation;
@@ -330,8 +309,6 @@ class DirectionLeg
     }
 
     /**
-     * @param DirectionStep $step
-     *
      * @return bool
      */
     public function hasStep(DirectionStep $step)
@@ -339,9 +316,6 @@ class DirectionLeg
         return in_array($step, $this->steps, true);
     }
 
-    /**
-     * @param DirectionStep $step
-     */
     public function addStep(DirectionStep $step)
     {
         if (!$this->hasStep($step)) {
@@ -349,9 +323,6 @@ class DirectionLeg
         }
     }
 
-    /**
-     * @param DirectionStep $step
-     */
     public function removeStep(DirectionStep $step)
     {
         unset($this->steps[array_search($step, $this->steps, true)]);
@@ -394,8 +365,6 @@ class DirectionLeg
     }
 
     /**
-     * @param DirectionWaypoint $viaWaypoint
-     *
      * @return bool
      */
     public function hasViaWaypoint(DirectionWaypoint $viaWaypoint)
@@ -403,9 +372,6 @@ class DirectionLeg
         return in_array($viaWaypoint, $this->viaWaypoints, true);
     }
 
-    /**
-     * @param DirectionWaypoint $viaWaypoint
-     */
     public function addViaWaypoint(DirectionWaypoint $viaWaypoint)
     {
         if (!$this->hasViaWaypoint($viaWaypoint)) {
@@ -413,9 +379,6 @@ class DirectionLeg
         }
     }
 
-    /**
-     * @param DirectionWaypoint $viaWaypoint
-     */
     public function removeViaWaypoint(DirectionWaypoint $viaWaypoint)
     {
         unset($this->viaWaypoints[array_search($viaWaypoint, $this->viaWaypoints, true)]);

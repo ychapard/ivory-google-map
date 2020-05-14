@@ -33,11 +33,6 @@ class AutocompleteSimpleEventSubscriber extends AbstractSubscriber
      */
     private $eventRenderer;
 
-    /**
-     * @param Formatter                  $formatter
-     * @param AutocompleteEventCollector $eventCollector
-     * @param EventRenderer              $eventRenderer
-     */
     public function __construct(
         Formatter $formatter,
         AutocompleteEventCollector $eventCollector,
@@ -57,9 +52,6 @@ class AutocompleteSimpleEventSubscriber extends AbstractSubscriber
         return $this->eventCollector;
     }
 
-    /**
-     * @param AutocompleteEventCollector $eventCollector
-     */
     public function setEventCollector(AutocompleteEventCollector $eventCollector)
     {
         $this->eventCollector = $eventCollector;
@@ -73,17 +65,11 @@ class AutocompleteSimpleEventSubscriber extends AbstractSubscriber
         return $this->eventRenderer;
     }
 
-    /**
-     * @param EventRenderer $eventRenderer
-     */
     public function setEventRenderer(EventRenderer $eventRenderer)
     {
         $this->eventRenderer = $eventRenderer;
     }
 
-    /**
-     * @param PlaceAutocompleteEvent $event
-     */
     public function handleAutocomplete(PlaceAutocompleteEvent $event)
     {
         $formatter = $this->getFormatter();

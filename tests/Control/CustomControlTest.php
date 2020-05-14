@@ -13,11 +13,12 @@ namespace Ivory\Tests\GoogleMap\Control;
 
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\CustomControl;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CustomControlTest extends \PHPUnit_Framework_TestCase
+class CustomControlTest extends TestCase
 {
     /**
      * @var CustomControl
@@ -37,7 +38,7 @@ class CustomControlTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->customControl = new CustomControl(
             $this->position = ControlPosition::TOP_CENTER,

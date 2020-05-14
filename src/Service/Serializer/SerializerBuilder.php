@@ -27,15 +27,13 @@ use Psr\Cache\CacheItemPoolInterface;
 class SerializerBuilder
 {
     /**
-     * @param CacheItemPoolInterface|null $pool
-     *
      * @return Serializer
      */
     public static function create(CacheItemPoolInterface $pool = null)
     {
         $classMetadataFactory = new ClassMetadataFactory(new DirectoryClassMetadataLoader(__DIR__));
 
-        if ($pool !== null) {
+        if (null !== $pool) {
             $classMetadataFactory = new CacheClassMetadataFactory($classMetadataFactory, $pool);
         }
 

@@ -33,11 +33,6 @@ class GroundOverlaySubscriber extends AbstractSubscriber
      */
     private $groundOverlayRenderer;
 
-    /**
-     * @param Formatter              $formatter
-     * @param GroundOverlayCollector $groundOverlayCollector
-     * @param GroundOverlayRenderer  $groundOverlayRenderer
-     */
     public function __construct(
         Formatter $formatter,
         GroundOverlayCollector $groundOverlayCollector,
@@ -57,9 +52,6 @@ class GroundOverlaySubscriber extends AbstractSubscriber
         return $this->groundOverlayCollector;
     }
 
-    /**
-     * @param GroundOverlayCollector $groundOverlayCollector
-     */
     public function setGroundOverlayCollector(GroundOverlayCollector $groundOverlayCollector)
     {
         $this->groundOverlayCollector = $groundOverlayCollector;
@@ -73,17 +65,11 @@ class GroundOverlaySubscriber extends AbstractSubscriber
         return $this->groundOverlayRenderer;
     }
 
-    /**
-     * @param GroundOverlayRenderer $groundOverlayRenderer
-     */
     public function setGroundOverlayRenderer(GroundOverlayRenderer $groundOverlayRenderer)
     {
         $this->groundOverlayRenderer = $groundOverlayRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

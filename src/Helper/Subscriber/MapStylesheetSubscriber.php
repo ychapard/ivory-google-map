@@ -26,10 +26,6 @@ class MapStylesheetSubscriber extends AbstractSubscriber
      */
     private $stylesheetTagRenderer;
 
-    /**
-     * @param Formatter             $formatter
-     * @param StylesheetTagRenderer $stylesheetTagRenderer
-     */
     public function __construct(Formatter $formatter, StylesheetTagRenderer $stylesheetTagRenderer)
     {
         parent::__construct($formatter);
@@ -45,17 +41,11 @@ class MapStylesheetSubscriber extends AbstractSubscriber
         return $this->stylesheetTagRenderer;
     }
 
-    /**
-     * @param StylesheetTagRenderer $stylesheetTagRenderer
-     */
     public function setStylesheetTagRenderer(StylesheetTagRenderer $stylesheetTagRenderer)
     {
         $this->stylesheetTagRenderer = $stylesheetTagRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $map = $event->getMap();

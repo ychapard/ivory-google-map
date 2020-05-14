@@ -19,8 +19,7 @@ use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 abstract class AbstractPolylineStyleRenderer extends AbstractStyleRenderer
 {
     /**
-     * @param mixed[]               $styles
-     * @param OptionsAwareInterface $polyline
+     * @param mixed[] $styles
      *
      * @return string
      */

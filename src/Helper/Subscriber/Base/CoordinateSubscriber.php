@@ -33,11 +33,6 @@ class CoordinateSubscriber extends AbstractSubscriber
      */
     private $coordinateRenderer;
 
-    /**
-     * @param Formatter           $formatter
-     * @param CoordinateCollector $coordinateCollector
-     * @param CoordinateRenderer  $coordinateRenderer
-     */
     public function __construct(
         Formatter $formatter,
         CoordinateCollector $coordinateCollector,
@@ -57,9 +52,6 @@ class CoordinateSubscriber extends AbstractSubscriber
         return $this->coordinateCollector;
     }
 
-    /**
-     * @param CoordinateCollector $coordinateCollector
-     */
     public function setCoordinateCollector(CoordinateCollector $coordinateCollector)
     {
         $this->coordinateCollector = $coordinateCollector;
@@ -73,17 +65,11 @@ class CoordinateSubscriber extends AbstractSubscriber
         return $this->coordinateRenderer;
     }
 
-    /**
-     * @param CoordinateRenderer $coordinateRenderer
-     */
     public function setCoordinateRenderer(CoordinateRenderer $coordinateRenderer)
     {
         $this->coordinateRenderer = $coordinateRenderer;
     }
 
-    /**
-     * @param MapEvent $event
-     */
     public function handleMap(MapEvent $event)
     {
         $formatter = $this->getFormatter();

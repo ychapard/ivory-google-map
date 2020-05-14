@@ -21,8 +21,7 @@ use Ivory\GoogleMap\Place\Autocomplete;
 class AutocompleteDomEventOnceCollector extends AbstractCollector
 {
     /**
-     * @param Autocomplete $autocomplete
-     * @param Event[]      $domEventsOnce
+     * @param Event[] $domEventsOnce
      *
      * @return Event[]
      */

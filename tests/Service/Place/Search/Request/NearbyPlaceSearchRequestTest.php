@@ -15,11 +15,13 @@ use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Place\Search\Request\AbstractTextualPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\NearbyPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRankBy;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class NearbyPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class NearbyPlaceSearchRequestTest extends TestCase
 {
     /**
      * @var NearbyPlaceSearchRequest
@@ -27,7 +29,7 @@ class NearbyPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     private $request;
 
     /**
-     * @var Coordinate|\PHPUnit_Framework_MockObject_MockObject
+     * @var Coordinate|MockObject
      */
     private $location;
 
@@ -39,7 +41,7 @@ class NearbyPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->request = new NearbyPlaceSearchRequest(
             $this->location = $this->createCoordinateMock(),
@@ -90,7 +92,7 @@ class NearbyPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Coordinate
+     * @return MockObject|Coordinate
      */
     private function createCoordinateMock()
     {

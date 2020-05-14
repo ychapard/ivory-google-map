@@ -56,7 +56,7 @@ class Review
      */
     public function hasAuthorName()
     {
-        return $this->authorName !== null;
+        return null !== $this->authorName;
     }
 
     /**
@@ -80,7 +80,7 @@ class Review
      */
     public function hasAuthorUrl()
     {
-        return $this->authorUrl !== null;
+        return null !== $this->authorUrl;
     }
 
     /**
@@ -104,7 +104,7 @@ class Review
      */
     public function hasText()
     {
-        return $this->text !== null;
+        return null !== $this->text;
     }
 
     /**
@@ -128,7 +128,7 @@ class Review
      */
     public function hasRating()
     {
-        return $this->rating !== null;
+        return null !== $this->rating;
     }
 
     /**
@@ -152,7 +152,7 @@ class Review
      */
     public function hasTime()
     {
-        return $this->time !== null;
+        return null !== $this->time;
     }
 
     /**
@@ -163,9 +163,6 @@ class Review
         return $this->time;
     }
 
-    /**
-     * @param \DateTime|null $time
-     */
     public function setTime(\DateTime $time = null)
     {
         $this->time = $time;
@@ -176,7 +173,7 @@ class Review
      */
     public function hasLanguage()
     {
-        return $this->language !== null;
+        return null !== $this->language;
     }
 
     /**
@@ -231,8 +228,6 @@ class Review
     }
 
     /**
-     * @param AspectRating $aspect
-     *
      * @return bool
      */
     public function hasAspect(AspectRating $aspect)
@@ -240,9 +235,6 @@ class Review
         return in_array($aspect, $this->aspects, true);
     }
 
-    /**
-     * @param AspectRating $aspect
-     */
     public function addAspect(AspectRating $aspect)
     {
         if (!$this->hasAspect($aspect)) {
@@ -250,9 +242,6 @@ class Review
         }
     }
 
-    /**
-     * @param AspectRating $aspect
-     */
     public function removeAspect(AspectRating $aspect)
     {
         unset($this->aspects[array_search($aspect, $this->aspects, true)]);
