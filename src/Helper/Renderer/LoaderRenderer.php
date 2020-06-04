@@ -120,14 +120,19 @@ class LoaderRenderer extends AbstractJsonRenderer
     }
 
     /**
-     * @param string $callback
+     * @param string     $callback
+     * @param array|null $libraries
      *
      * @return string
      */
-    public function renderSource($callback)
+    public function renderSource($callback, $libraries)
     {
         if ($this->hasKey()) {
             $arguments['key'] = $this->key;
+        }
+
+        if ($libraries) {
+            $arguments['libraries'] = implode(',', $libraries);
         }
 
         $arguments['callback'] = $callback;
