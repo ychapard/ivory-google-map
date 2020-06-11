@@ -41,7 +41,7 @@ class NearbyPlaceSearchRequestTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->request = new NearbyPlaceSearchRequest(
             $this->location = $this->createCoordinateMock(),

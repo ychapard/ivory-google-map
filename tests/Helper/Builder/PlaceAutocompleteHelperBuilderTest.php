@@ -29,7 +29,7 @@ class PlaceAutocompleteHelperBuilderTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->placeAutocompleteHelperBuilder = PlaceAutocompleteHelperBuilder::create($_SERVER['API_KEY'] ?? null);
     }

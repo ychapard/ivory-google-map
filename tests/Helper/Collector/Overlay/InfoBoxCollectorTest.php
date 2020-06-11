@@ -29,7 +29,7 @@ class InfoBoxCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->infoBoxCollector = new InfoBoxCollector(new MarkerCollector());
     }

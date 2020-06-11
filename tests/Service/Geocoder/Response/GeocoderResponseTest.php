@@ -31,7 +31,7 @@ class GeocoderResponseTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->response = new GeocoderResponse();
     }

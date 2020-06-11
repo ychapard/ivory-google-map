@@ -44,7 +44,7 @@ abstract class AbstractUnitServiceTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->client = $this->createHttpClientMock();
         $this->messageFactory = $this->createMessageFactoryMock();

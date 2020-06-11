@@ -28,7 +28,7 @@ class StaticOptionsAwareTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->staticOptionsAware = new StaticOptionsAwareMock();
     }

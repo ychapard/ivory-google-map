@@ -30,7 +30,7 @@ class TimeZoneResponseTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->response = new TimeZoneResponse();
     }

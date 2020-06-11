@@ -29,7 +29,7 @@ class SourceRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->sourceRenderer = new SourceRenderer(new Formatter());
     }

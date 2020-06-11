@@ -30,7 +30,7 @@ class SizeRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->sizeRenderer = new SizeRenderer(new Formatter());
     }

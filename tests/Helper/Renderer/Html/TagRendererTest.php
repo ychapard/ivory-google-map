@@ -29,7 +29,7 @@ class TagRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->tagRenderer = new TagRenderer(new Formatter());
     }

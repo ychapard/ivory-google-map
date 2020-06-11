@@ -33,7 +33,7 @@ class GroundOverlayRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->groundOverlayRenderer = new GroundOverlayRenderer(new Formatter(), new JsonBuilder());
     }

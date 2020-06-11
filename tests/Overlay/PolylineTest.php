@@ -34,7 +34,7 @@ class PolylineTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->polyline = new Polyline();
     }

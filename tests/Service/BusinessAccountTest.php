@@ -37,7 +37,7 @@ class BusinessAccountTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->businessAccount = new BusinessAccount(
             $this->clientId = 'client_id',

@@ -36,7 +36,7 @@ class InfoWindowRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->infoWindowRenderer = $this->createAbstractInfoWindowRendererMock();
     }

@@ -31,7 +31,7 @@ class DirectionTransitDetailsTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->transitDetails = new DirectionTransitDetails();
     }

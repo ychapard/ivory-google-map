@@ -29,7 +29,7 @@ class EncodingRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->encodingRenderer = new EncodingRenderer(new Formatter());
     }

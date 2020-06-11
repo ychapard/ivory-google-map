@@ -28,7 +28,7 @@ class RotateControlTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->rotateControl = new RotateControl();
     }

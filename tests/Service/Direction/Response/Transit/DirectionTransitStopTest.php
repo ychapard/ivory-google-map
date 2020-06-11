@@ -29,7 +29,7 @@ class DirectionTransitStopTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->transitStop = new DirectionTransitStop();
     }

@@ -32,7 +32,7 @@ class AutocompleteCoordinateCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->autocompleteCoordinateCollector = new AutocompleteCoordinateCollector(new AutocompleteBoundCollector());
     }

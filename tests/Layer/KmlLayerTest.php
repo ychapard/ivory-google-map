@@ -34,7 +34,7 @@ class KmlLayerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->kmlLayer = new KmlLayer($this->url = 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml');
     }

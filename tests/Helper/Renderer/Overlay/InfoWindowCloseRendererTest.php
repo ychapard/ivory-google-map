@@ -30,7 +30,7 @@ class InfoWindowCloseRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->infoWindowCloseRenderer = new InfoWindowCloseRenderer(new Formatter());
     }

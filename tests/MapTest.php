@@ -36,7 +36,7 @@ class MapTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->map = new Map();
     }

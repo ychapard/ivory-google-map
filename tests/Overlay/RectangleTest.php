@@ -37,7 +37,7 @@ class RectangleTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->rectangle = new Rectangle($this->bound = $this->createBoundMock());
     }

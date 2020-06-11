@@ -35,7 +35,7 @@ class GeocoderCoordinateRequestTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->request = new GeocoderCoordinateRequest($this->coordinate = $this->createCoordinateMock());
     }

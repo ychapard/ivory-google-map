@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### 3.0.0 (2020-06-11)
+
+ * Forked from egeloen/ivory-google-map due to end of maintenance
+ * Fixed js api bug related to changes at google
+ * Updated dependencies, supporting php ^7.0
+ * Built a new development environment
+ * Fixed all unit tests
+
 ### 2.0.2 (2017-05-27)
 
  * 96adf7b - Minor static map improvements + Fix tests

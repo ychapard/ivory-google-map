@@ -29,7 +29,7 @@ class RequirementLoaderRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->requirementLoaderRenderer = new RequirementLoaderRenderer(new Formatter());
     }

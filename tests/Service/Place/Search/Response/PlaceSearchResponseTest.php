@@ -31,7 +31,7 @@ class PlaceSearchResponseTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->response = new PlaceSearchResponse();
     }

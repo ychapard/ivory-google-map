@@ -12,5 +12,4 @@ fi
 if [ "$DOCKER_BUILD" = true ]; then
     docker-compose up -d
     docker-compose run --rm php vendor/bin/phpunit
-    docker-compose run --rm hhvm vendor/bin/phpunit
 fi

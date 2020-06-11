@@ -31,7 +31,7 @@ class HeatmapLayerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->heatmapLayer = new HeatmapLayer();
     }

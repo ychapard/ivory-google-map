@@ -33,7 +33,7 @@ class CircleRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->circleRenderer = new CircleRenderer(new Formatter(), new JsonBuilder());
     }

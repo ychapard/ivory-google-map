@@ -41,7 +41,7 @@ class MarkerRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->markerRenderer = new MarkerRenderer(
             $formatter = new Formatter(),

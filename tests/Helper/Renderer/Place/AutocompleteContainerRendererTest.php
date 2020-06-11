@@ -30,7 +30,7 @@ class AutocompleteContainerRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->autocompleteContainerRenderer = new AutocompleteContainerRenderer(new Formatter(), new JsonBuilder());
     }

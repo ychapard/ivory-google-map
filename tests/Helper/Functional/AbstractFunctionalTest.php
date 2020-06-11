@@ -11,12 +11,10 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Functional;
 
-use PHPUnit\Extensions\Selenium2TestCase;
-
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-abstract class AbstractFunctionalTest extends Selenium2TestCase
+abstract class AbstractFunctionalTest extends \PHPUnit_Extensions_Selenium2TestCase
 {
     /**
      * @var string
@@ -31,7 +29,7 @@ abstract class AbstractFunctionalTest extends Selenium2TestCase
     /**
      * {@inheritdoc}
      */
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
         self::$directory = sys_get_temp_dir().'/ivory-google-map';
         self::$hasDirectory = is_dir(self::$directory);
@@ -44,7 +42,7 @@ abstract class AbstractFunctionalTest extends Selenium2TestCase
     /**
      * {@inheritdoc}
      */
-    public static function tearDownAfterClass(): void
+    public static function tearDownAfterClass()
     {
         if (!self::$hasDirectory) {
             rmdir(self::$directory);
@@ -54,7 +52,7 @@ abstract class AbstractFunctionalTest extends Selenium2TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         if (isset($_SERVER['SELENIUM_HOST'])) {
             $this->setHost($_SERVER['SELENIUM_HOST']);

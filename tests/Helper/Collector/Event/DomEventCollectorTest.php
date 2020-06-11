@@ -29,7 +29,7 @@ class DomEventCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->domEventCollector = new DomEventCollector();
     }

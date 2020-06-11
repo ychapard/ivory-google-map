@@ -30,7 +30,7 @@ class RectangleCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->rectangleCollector = new RectangleCollector();
     }

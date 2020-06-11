@@ -41,7 +41,7 @@ class JsonRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->formatter = $this->createFormatterMock();
         $this->jsonBuilder = $this->createJsonBuilderMock();

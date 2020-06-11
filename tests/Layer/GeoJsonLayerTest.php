@@ -33,7 +33,7 @@ class GeoJsonLayerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->geoJsonLayer = new GeoJsonLayer($this->url = 'https://storage.googleapis.com/mapsdevsite/json/google.json');
     }

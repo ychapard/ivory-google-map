@@ -35,7 +35,7 @@ class ZoomControlRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->zoomControlRenderer = new ZoomControlRenderer(
             $formatter = new Formatter(),

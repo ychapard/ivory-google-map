@@ -33,7 +33,7 @@ class EncodedPolylineLocationTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->encodedPolylineLocation = new EncodedPolylineLocation($this->encodedPolyline = 'value');
     }

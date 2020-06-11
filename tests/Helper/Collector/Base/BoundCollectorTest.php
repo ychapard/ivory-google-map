@@ -34,7 +34,7 @@ class BoundCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->boundCollector = new BoundCollector(new GroundOverlayCollector(), new RectangleCollector());
     }

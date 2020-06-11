@@ -29,7 +29,7 @@ class DirectionWaypointTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->waypoint = new DirectionWaypoint();
     }

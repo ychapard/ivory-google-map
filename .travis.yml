@@ -1,9 +1,11 @@
 language: php
 
 php:
-    - 7.2
-    - 7.3
-    - 7.4
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+  - 7.4
 
 dist: bionic
 
@@ -20,14 +22,6 @@ env:
 install: travis/install.sh
 script: travis/script.sh
 after_success: travis/success.sh
-
-jobs:
-    include:
-        - php: 7.2
-          services: [docker]
-          env:
-            - DOCKER_BUILD=true
-            - COMPOSER_PREFER_LOWEST=true
 
 notifications:
     email: samuel.breu@bresam.ch

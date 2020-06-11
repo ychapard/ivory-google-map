@@ -33,7 +33,7 @@ class BoundRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->boundRenderer = new BoundRenderer(new Formatter());
     }

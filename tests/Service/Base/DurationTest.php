@@ -37,7 +37,7 @@ class DurationTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->duration = new Duration($this->value = 2.3, $this->text = 'foo');
     }

@@ -33,7 +33,7 @@ class PlaceAutocompleteQueryRequestTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->request = new PlaceAutocompleteQueryRequest($this->input = 'input');
     }

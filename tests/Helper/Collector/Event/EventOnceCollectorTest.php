@@ -29,7 +29,7 @@ class EventOnceCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->eventOnceCollector = new EventOnceCollector();
     }

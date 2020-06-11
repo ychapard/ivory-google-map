@@ -33,7 +33,7 @@ class PositionExtendableRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->positionExtendableRenderer = new PositionExtendableRenderer(new Formatter());
     }

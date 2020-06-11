@@ -34,7 +34,7 @@ class MarkerShapeCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->markerShapeCollector = new MarkerShapeCollector(new MarkerCollector());
     }

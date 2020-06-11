@@ -30,7 +30,7 @@ class EncodedPolylineRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->encodedPolylineRenderer = new EncodedPolylineRenderer(
             new EncodedPolylineStyleRenderer(),

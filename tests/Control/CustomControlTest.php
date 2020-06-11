@@ -38,7 +38,7 @@ class CustomControlTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->customControl = new CustomControl(
             $this->position = ControlPosition::TOP_CENTER,

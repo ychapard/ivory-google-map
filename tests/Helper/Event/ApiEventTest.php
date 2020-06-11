@@ -34,7 +34,7 @@ class ApiEventTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->objects = [new \stdClass(), new \stdClass()];
         $this->apiEvent = new ApiEvent($this->objects);

@@ -33,7 +33,7 @@ class PathExtendableRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->pathExtendableRenderer = new PathExtendableRenderer(new Formatter());
     }

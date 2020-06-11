@@ -30,7 +30,7 @@ class DomEventRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->domEventRenderer = new DomEventRenderer(new Formatter());
     }

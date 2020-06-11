@@ -32,7 +32,7 @@ class DirectionRouteTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->route = new DirectionRoute();
     }

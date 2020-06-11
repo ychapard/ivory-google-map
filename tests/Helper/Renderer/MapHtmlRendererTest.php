@@ -33,7 +33,7 @@ class MapHtmlRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->mapHtmlRenderer = new MapHtmlRenderer(
             $formatter = new Formatter(),

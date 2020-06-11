@@ -32,7 +32,7 @@ class MarkerShapeRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->markerShapeRenderer = new MarkerShapeRenderer(new Formatter(), new JsonBuilder());
     }

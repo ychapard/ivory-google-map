@@ -39,7 +39,7 @@ class MarkerShapeTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->markerShape = new MarkerShape(
             $this->type = MarkerShapeType::CIRCLE,

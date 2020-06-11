@@ -40,7 +40,7 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
 

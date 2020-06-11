@@ -32,7 +32,7 @@ class PolygonTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->polygon = new Polygon();
     }

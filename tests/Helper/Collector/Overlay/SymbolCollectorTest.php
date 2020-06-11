@@ -38,7 +38,7 @@ class SymbolCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->symbolCollector = new SymbolCollector(
             new MarkerCollector(),

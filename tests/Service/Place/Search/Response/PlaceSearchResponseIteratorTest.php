@@ -41,7 +41,7 @@ class PlaceSearchResponseIteratorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->iterator = new PlaceSearchResponseIterator(
             $this->service = $this->createServiceMock(),

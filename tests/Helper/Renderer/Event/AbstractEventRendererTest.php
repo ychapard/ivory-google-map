@@ -31,7 +31,7 @@ class AbstractEventRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->eventRenderer = $this->createAbstractEventRendererMock();
     }

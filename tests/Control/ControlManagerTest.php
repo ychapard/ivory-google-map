@@ -35,7 +35,7 @@ class ControlManagerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->controlManager = new ControlManager();
     }

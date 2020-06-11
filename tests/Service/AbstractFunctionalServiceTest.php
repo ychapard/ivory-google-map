@@ -54,7 +54,7 @@ abstract class AbstractFunctionalServiceTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    public static function setUpBeforeClass(): void
+    public static function setUpBeforeClass()
     {
         if (null === self::$journal) {
             self::$journal = new Journal();
@@ -64,7 +64,7 @@ abstract class AbstractFunctionalServiceTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         if (isset($_SERVER['CACHE_RESET']) && $_SERVER['CACHE_RESET']) {
             sleep(2);

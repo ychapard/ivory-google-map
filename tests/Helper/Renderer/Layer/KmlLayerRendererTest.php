@@ -32,7 +32,7 @@ class KmlLayerRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->kmlLayerRenderer = new KmlLayerRenderer(new Formatter(), new JsonBuilder());
     }

@@ -34,7 +34,7 @@ class CustomControlRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->customControlRenderer = new CustomControlRenderer(
             $formatter = new Formatter(),

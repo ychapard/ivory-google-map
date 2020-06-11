@@ -29,7 +29,7 @@ class ScaleControlTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->scaleControl = new ScaleControl();
     }

@@ -28,7 +28,7 @@ abstract class AbstractEventFunctionalTest extends AbstractMapFunctionalTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
 

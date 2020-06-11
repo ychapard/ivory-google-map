@@ -29,7 +29,7 @@ class PeriodTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->period = new Period();
     }

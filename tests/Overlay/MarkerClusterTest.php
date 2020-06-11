@@ -50,7 +50,7 @@ class MarkerClusterTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->bound = $this->createBoundMock();
         $this->map = $this->createMapMock($this->bound);

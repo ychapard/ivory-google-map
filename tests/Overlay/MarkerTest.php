@@ -43,7 +43,7 @@ class MarkerTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->marker = new Marker($this->position = $this->createCoordinateMock());
     }

@@ -28,7 +28,7 @@ class SizeTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->size = new Size();
     }

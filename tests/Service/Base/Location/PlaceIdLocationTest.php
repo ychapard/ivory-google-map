@@ -33,7 +33,7 @@ class PlaceIdLocationTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->placeIdLocation = new PlaceIdLocation($this->placeId = 'place');
     }

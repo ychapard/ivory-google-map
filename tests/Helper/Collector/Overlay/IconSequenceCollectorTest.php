@@ -33,7 +33,7 @@ class IconSequenceCollectorTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->iconSequenceCollector = new IconSequenceCollector(new PolylineCollector());
     }

@@ -46,7 +46,7 @@ class HttpServiceTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->service = $this->getMockBuilder(AbstractHttpService::class)
             ->setConstructorArgs([

@@ -51,7 +51,7 @@ class DirectionServiceTest extends AbstractSerializableServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         if (!isset($_SERVER['API_KEY'])) {
             $this->markTestSkipped();

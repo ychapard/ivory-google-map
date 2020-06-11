@@ -30,7 +30,7 @@ class ScaleControlStyleRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->scaleControlStyleRenderer = new ScaleControlStyleRenderer(new Formatter());
     }

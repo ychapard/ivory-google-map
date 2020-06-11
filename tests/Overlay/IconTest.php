@@ -31,7 +31,7 @@ class IconTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->icon = new Icon();
     }

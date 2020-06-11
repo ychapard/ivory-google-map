@@ -35,7 +35,7 @@ class StaticMapEventTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->map = $this->createMapMock();
         $this->staticMapEvent = new StaticMapEvent($this->map);

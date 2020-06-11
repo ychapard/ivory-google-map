@@ -35,7 +35,7 @@ class StreetViewControlRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->streetViewControlRenderer = new StreetViewControlRenderer(
             $formatter = new Formatter(),

@@ -33,7 +33,7 @@ class PolygonRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->polygonRenderer = new PolygonRenderer(new Formatter(), new JsonBuilder());
     }

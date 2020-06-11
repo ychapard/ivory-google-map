@@ -27,7 +27,7 @@ class StaticMapHelperBuilderTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->staticMapHelperBuilder = StaticMapHelperBuilder::create($_SERVER['API_KEY'] ?? null);
     }

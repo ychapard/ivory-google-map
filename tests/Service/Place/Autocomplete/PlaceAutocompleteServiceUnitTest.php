@@ -31,7 +31,7 @@ class PlaceAutocompleteServiceUnitTest extends AbstractUnitServiceTest
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         parent::setUp();
 

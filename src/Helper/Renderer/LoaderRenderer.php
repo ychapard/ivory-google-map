@@ -125,7 +125,7 @@ class LoaderRenderer extends AbstractJsonRenderer
      *
      * @return string
      */
-    public function renderSource($callback, $libraries)
+    public function renderSource($callback, $libraries = [])
     {
         if ($this->hasKey()) {
             $arguments['key'] = $this->key;

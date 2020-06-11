@@ -34,7 +34,7 @@ class FullscreenControlRendererTest extends TestCase
     /**
      * {@inheritdoc}
      */
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->fullscreenControlRenderer = new FullscreenControlRenderer(
             $formatter = new Formatter(),
