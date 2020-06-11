@@ -1,7 +1,7 @@
 {
     "name": "ivory/google-map",
     "description": "Google Map API v3 integration for PHP ^7.0",
-    "keywords": [ "google", "map", "egeloen/google-map", "ivory-google-map"],
+    "keywords": [ "google", "map"],
     "license": "MIT",
     "authors": [
         {
@@ -36,8 +36,8 @@
         "php-http/client-implementation": "Allows to use http services",
         "php-http/message": "Allows to use http services"
     },
-    "conflict": {
-        "egeloen/google-map": "*"
+    "replace": {
+        "egeloen/google-map": "^2.0.2"
     },
     "autoload": {
         "psr-4": { "Ivory\\GoogleMap\\": "src/" }
