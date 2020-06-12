@@ -1,8 +1,8 @@
 # README
 
-[![Travis Build Status](https://travis-ci.org/egeloen/ivory-google-map.svg?branch=master)](http://travis-ci.org/egeloen/ivory-google-map)
-[![Code Coverage](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/egeloen/ivory-google-map/?branch=master)
+[![Travis Build Status](https://api.travis-ci.com/bresam/ivory-google-map.svg?branch=master)](https://travis-ci.com/github/bresam/ivory-google-map)
+[![Code Coverage](https://scrutinizer-ci.com/g/bresam/ivory-google-map/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bresam/ivory-google-map/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bresam/ivory-google-map/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bresam/ivory-google-map/?branch=master)
 
 ## Overview
 
@@ -26,9 +26,6 @@ echo $apiHelper->render([$map]);
 ```
 
 ## Documentation
-
-**You're currently browsing the 2.x documentation, if you're using the 1.x, read 
-[this documentation](https://github.com/egeloen/ivory-google-map/tree/1.4.1) instead.**
 
    - [Installation](/doc/installation.md)
    - [Usage](/doc/usage.md)

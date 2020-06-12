@@ -1,27 +1,24 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-  - 7.2
-  - 7.3
-  - 7.4
+os: linux
+dist: xenial
 
-dist: bionic
+php:
+  - '7.0'
+  - '7.1'
+  - '7.2'
+  - '7.3'
 
 branches:
-    only:
-        - master
-
-env:
-    global:
-        - COMPOSER_PREFER_LOWEST=false
-        - DOCKER_BUILD=false
-        - SYMFONY_DEPRECATIONS_HELPER=strict
+  except:
+    - /^skip-travis-.*$/
 
 install: travis/install.sh
 script: travis/script.sh
 after_success: travis/success.sh
 
+git:
+  submodules: false
+
 notifications:
-    email: samuel.breu@bresam.ch
+  email: samuel.breu@bresam.ch
