@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 3.0.1 (2020-06-12)
+
+ * fixed issue #1 Nullable return type declaration fails with php 7.0
+
 ### 3.0.0 (2020-06-11)
 
  * Forked from egeloen/ivory-google-map due to end of maintenance
