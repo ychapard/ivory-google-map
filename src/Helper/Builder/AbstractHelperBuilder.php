@@ -26,7 +26,10 @@ abstract class AbstractHelperBuilder
     /** @var string|null */
     protected $key;
 
-    public static function create(?string $key = null): AbstractHelperBuilder
+    /**
+     * @param string|null $key
+     */
+    public static function create($key = null): AbstractHelperBuilder
     {
         return (new static())->setKey($key);
     }
@@ -132,12 +135,20 @@ abstract class AbstractHelperBuilder
         return null !== $this->key;
     }
 
-    public function getKey(): ?string
+    /**
+     * @return string|null
+     */
+    public function getKey()
     {
         return $this->key;
     }
 
-    public function setKey(?string $key): self
+    /**
+     * @param string|null $key
+     *
+     * @return $this
+     */
+    public function setKey($key)
     {
         $this->key = $key;
 
