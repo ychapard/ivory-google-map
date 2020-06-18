@@ -84,18 +84,18 @@ class StylesheetTagRendererTest extends TestCase
     {
         return [
             // Debug disabled
-            ['<style type="test/css">name{}</style>', 'name'],
-            ['<style type="test/css">name{foo:bar;}</style>', 'name', ['foo' => 'bar']],
-            ['<style type="test/css" foo="bar">name{}</style>', 'name', [], ['foo' => 'bar']],
-            ['<style type="test/css">name{}</style>', 'name', [], [], false],
-            ['<style type="test/css" baz="bat">name{foo:bar;}</style>', 'name', ['foo' => 'bar'], ['baz' => 'bat'], false],
+            ['<style type="text/css">name{}</style>', 'name'],
+            ['<style type="text/css">name{foo:bar;}</style>', 'name', ['foo' => 'bar']],
+            ['<style type="text/css" foo="bar">name{}</style>', 'name', [], ['foo' => 'bar']],
+            ['<style type="text/css">name{}</style>', 'name', [], [], false],
+            ['<style type="text/css" baz="bat">name{foo:bar;}</style>', 'name', ['foo' => 'bar'], ['baz' => 'bat'], false],
 
             // Debug enabled
-            ['<style type="test/css">'."\n".'    name {}'."\n".'</style>'."\n", 'name', [], [], true, true],
-            ['<style type="test/css">'."\n".'    name {'."\n".'        foo: bar;'."\n".'    }'."\n".'</style>'."\n", 'name', ['foo' => 'bar'], [], true, true],
-            ['<style type="test/css" foo="bar">'."\n".'    name {}'."\n".'</style>'."\n", 'name', [], ['foo' => 'bar'], true, true],
-            ['<style type="test/css">'."\n".'    name {}'."\n".'</style>', 'name', [], [], false, true],
-            ['<style type="test/css" baz="bat">'."\n".'    name {'."\n".'        foo: bar;'."\n".'    }'."\n".'</style>', 'name', ['foo' => 'bar'], ['baz' => 'bat'], false, true],
+            ['<style type="text/css">'."\n".'    name {}'."\n".'</style>'."\n", 'name', [], [], true, true],
+            ['<style type="text/css">'."\n".'    name {'."\n".'        foo: bar;'."\n".'    }'."\n".'</style>'."\n", 'name', ['foo' => 'bar'], [], true, true],
+            ['<style type="text/css" foo="bar">'."\n".'    name {}'."\n".'</style>'."\n", 'name', [], ['foo' => 'bar'], true, true],
+            ['<style type="text/css">'."\n".'    name {}'."\n".'</style>', 'name', [], [], false, true],
+            ['<style type="text/css" baz="bat">'."\n".'    name {'."\n".'        foo: bar;'."\n".'    }'."\n".'</style>', 'name', ['foo' => 'bar'], ['baz' => 'bat'], false, true],
         ];
     }
 
