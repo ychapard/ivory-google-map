@@ -67,7 +67,7 @@ class StylesheetTagRenderer extends AbstractTagRenderer
                 $formatter->renderIndentation($formatter->renderLines($tagStylesheets, true, false)),
                 '}',
             ], !empty($tagStylesheets), false),
-            array_merge(['type' => 'test/css'], $attributes),
+            array_merge(['type' => 'text/css'], $attributes),
             $newLine
         );
     }
