@@ -53,7 +53,7 @@ class InfoBoxRenderer extends AbstractInfoWindowRenderer
      */
     public function renderSource()
     {
-        return 'https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox_packed.js';
+        return 'https://cdn.rawgit.com/googlemaps/v3-utility-library/infobox/1.1.13/src/infobox_packed.js';
     }
 
     /**
